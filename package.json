@@ -1,0 +1,21 @@
+{
+  "name": "ocean-theme",
+  "displayName": "Ocean Theme",
+  "description": "A family of themes that reminds you of the ocean.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.91.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Ocean Light",
+        "uiTheme": "vs",
+        "path": "./themes/ocean-light-color-theme.json"
+      }
+    ]
+  }
+}
