@@ -1,1 +1,9 @@
-# Ocean - A family of VS Code themes
+# Ocean
+
+A family of ocean-themed themes for VS Code.
+
+**These themes are a work in progress and are published only for testing purposes at this time.**
+
+These themes were originally inspired by the "Ocean" theme of Adrien Glitchbone's [base16 terminal color scales generator](https://glitchbone.github.io/vscode-base16-term/#/ocean) for VS Code.
+
+![](./_/base16.svg)
