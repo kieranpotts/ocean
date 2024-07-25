@@ -609,17 +609,21 @@
     "editorOverviewRuler.deletedForeground": "#b48ead99",
 
     /**
-     * Scrollbar Control
+     * Scrollbar Control and MiniMap
+     * The theme is designed for these two controls to blend together. The following
+     * settings are recommended to work best with this theme:
+     *
+     * {
+     *   "editor.minimap.size": "fit",
+     *   "editor.minimap.showSlider": "always",
+     *   "editor.scrollbar.vertical": "visible",
+     * }
      */
 
     "scrollbar.shadow": "#00000000",
     "scrollbarSlider.background": "#c0c5ce66",
     "scrollbarSlider.hoverBackground": "#c0c5ce66",
     "scrollbarSlider.activeBackground": "#c0c5ce66",
-
-    /**
-     * Minimap
-     */
 
     "minimapSlider.background": "#c0c5ce66",
     "minimapSlider.hoverBackground": "#c0c5ce66",
