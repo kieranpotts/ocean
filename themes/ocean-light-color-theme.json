@@ -613,16 +613,16 @@
      */
 
     "scrollbar.shadow": "#00000000",
-    "scrollbarSlider.background": "#2b303b",
-    "scrollbarSlider.hoverBackground": "#2b303b",
-    "scrollbarSlider.activeBackground": "#2b303b",
+    "scrollbarSlider.background": "#c0c5ce66",
+    "scrollbarSlider.hoverBackground": "#c0c5ce66",
+    "scrollbarSlider.activeBackground": "#c0c5ce66",
 
     /**
      * Minimap
      */
 
-    "minimapSlider.background": "#c0c5ce33",
-    "minimapSlider.hoverBackground": "#c0c5ce33",
+    "minimapSlider.background": "#c0c5ce66",
+    "minimapSlider.hoverBackground": "#c0c5ce66",
     "minimapSlider.activeBackground": "#c0c5ce66",
 
     /**
