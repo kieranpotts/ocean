@@ -556,13 +556,22 @@
      * Editor Tabs and the File Explorer.
      */
 
-    "gitDecoration.addedResourceForeground": "#a3be8c",
-    "gitDecoration.modifiedResourceForeground": "#5e81ac",
-    "gitDecoration.deletedResourceForeground": "#b48ead",
-    "gitDecoration.untrackedResourceForeground": "#65737e",
-    "gitDecoration.ignoredResourceForeground": "#65737e",
-    "gitDecoration.conflictingResourceForeground": "#bf616a",
-    "gitDecoration.submoduleResourceForeground": "#65737e",
+    // "gitDecoration.addedResourceForeground": "#a3be8c",
+    // "gitDecoration.modifiedResourceForeground": "#5e81ac",
+    // "gitDecoration.deletedResourceForeground": "#b48ead",
+    // "gitDecoration.untrackedResourceForeground": "#65737e",
+    // "gitDecoration.ignoredResourceForeground": "#65737e",
+    // "gitDecoration.conflictingResourceForeground": "#bf616a",
+    // "gitDecoration.submoduleResourceForeground": "#65737e",
+
+    /* Disable SCM decorations by using default text foreground color. */
+    "gitDecoration.addedResourceForeground": "#2b303b",
+    "gitDecoration.modifiedResourceForeground": "#2b303b",
+    "gitDecoration.deletedResourceForeground": "#2b303b",
+    "gitDecoration.untrackedResourceForeground": "#2b303b",
+    "gitDecoration.ignoredResourceForeground": "#2b303b",
+    "gitDecoration.conflictingResourceForeground": "#2b303b",
+    "gitDecoration.submoduleResourceForeground": "#2b303b",
 
     /**
      * Editor Gutter
