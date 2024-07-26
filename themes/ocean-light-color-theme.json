@@ -445,11 +445,23 @@
      */
 
     "breadcrumb.background": "#f2f4f8",
-    "breadcrumbPicker.background": "#eff1f5",
+    "breadcrumbPicker.background": "#f2f4f8",
 
     "breadcrumb.foreground": "#65737e",
     "breadcrumb.focusForeground": "#65737e",
     "breadcrumb.activeSelectionForeground": "#65737e",
+
+    /**
+     * Editor Sticky Scroll
+     * Sticks the current indentation context at the top of the editor as
+     * you scroll down - useful for understanding where you are in the code.
+     * Requires the "editor.stickyScroll.enabled" setting to be true.
+     */
+
+    "editorStickyScroll.border": "#c0c5ce",
+    "editorStickyScroll.shadow": "#00000000",
+    "editorStickyScroll.background": "#f2f4f8",
+    "editorStickyScrollHover.background": "#f2f4f8",
 
     /**
      * Editor
@@ -585,6 +597,11 @@
     "editorGutter.modifiedBackground": "#5e81ac99",
     "editorGutter.deletedBackground": "#b48ead99",
 
+    "editorGutter.foldingControlForeground": "#65737e",
+    "editorGutter.commentRangeForeground": "#65737e",
+    "editorGutter.commentGlyphForeground": "#65737e",
+    "editorGutter.commentUnresolvedGlyphForeground": "#65737e",
+
     /**
      * Diff Editor
      */
@@ -604,9 +621,26 @@
     "editorOverviewRuler.background": "#00000000",
     "editorOverviewRuler.border": "#00000000",
 
+    /* Mark changes. */
     "editorOverviewRuler.addedForeground": "#a3be8c99",
     "editorOverviewRuler.modifiedForeground": "#5e81ac99",
     "editorOverviewRuler.deletedForeground": "#b48ead99",
+
+    /* Mark problems, hide general info. */
+    "editorOverviewRuler.errorForeground": "#bf616a",
+    "editorOverviewRuler.warningForeground": "#ebcb8b",
+    "editorOverviewRuler.infoForeground": "#00000000",
+
+    /* Disable other decorations. */
+    "editorOverviewRuler.findMatchForeground": "#00000000",
+    "editorOverviewRuler.rangeHighlightForeground": "#00000000",
+    "editorOverviewRuler.selectionHighlightForeground": "#00000000",
+    "editorOverviewRuler.wordHighlightForeground": "#00000000",
+    "editorOverviewRuler.wordHighlightStrongForeground": "#00000000",
+    "editorOverviewRuler.wordHighlightTextForeground": "#00000000",
+    "editorOverviewRuler.bracketMatchForeground": "#00000000",
+    "editorOverviewRuler.inlineChatInserted": "#00000000",
+    "editorOverviewRuler.inlineChatRemoved": "#00000000",
 
     /**
      * Scrollbar Control and MiniMap
@@ -628,6 +662,24 @@
     "minimapSlider.background": "#c0c5ce66",
     "minimapSlider.hoverBackground": "#c0c5ce66",
     "minimapSlider.activeBackground": "#c0c5ce66",
+
+    /* Opacity level of the minimap's content. */
+    "minimap.foregroundOpacity": "#00000066",
+
+    /* Disable changes, these exist in the editor overview ruler already. */
+    "minimapGutter.addedBackground": "#00000000",
+    "minimapGutter.modifiedBackground": "#00000000",
+    "minimapGutter.deletedBackground": "#00000000",
+
+    /* Disable errors, warnings and general info. */
+    "minimap.errorHighlight": "#00000000",
+    "minimap.warningHighlight": "#00000000",
+    "minimap.infoHighlight": "#00000000",
+
+    /* Hide other decorations. */
+    "minimap.selectionOccurrenceHighlight": "#00000000",
+    "minimap.selectionHighlight": "#00000000",
+    "minimap.findMatchHighlight": "#00000000",
 
     /**
      * Notifications
