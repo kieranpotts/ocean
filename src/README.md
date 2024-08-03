@@ -7,8 +7,6 @@ A family of ocean-themed themes for VS Code.
 
 These themes were originally inspired by the "Ocean" theme of Adrien Glitchbone's [base16 terminal color scales generator](https://glitchbone.github.io/vscode-base16-term/#/ocean) for VS Code.
 
-![](./_/base16.svg)
-
 | Hex     | Name       | Use cases                                      |
 | ------- | ---------- | ---------------------------------------------- |
 | #2b303b | Black      | Chrome background, dark text                   |
