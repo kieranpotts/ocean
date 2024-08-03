@@ -2,13 +2,3 @@
 # The `vscodeignore` file is used to exclude certain files and directories
 # from extension packages.
 # ==============================================================================
-
-.github/**
-.vscode/**
-.vscode-test/**
-
-docs/**
-
-.editorconfig
-.gitattributes
-.gitignore
