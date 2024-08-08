@@ -12,18 +12,7 @@
 
 # Build artifacts...
 dist/*
-
-# ... But keep the README.
-!dist/README.adoc
+pkg/*
 
 # Vendor dependencies.
 node_modules/*
-
-# Log output.
-*.log
-
-# Devtool caches.
-.eslintcache
-
-# Reports.
-coverage/*

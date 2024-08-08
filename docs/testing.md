@@ -1,19 +1,15 @@
 # Testing the theme
 
-To test theme changes over the long term before [publishing](./publishing.md) the changes, you can install the theme locally. The easiest way to do this is to create a symlink from `<user-home>/.vscode/extensions` to this repository's root directory.
+To test theme changes over the long term before [publishing](./publishing.md) the changes to the VS Code Marketplace, you can package the theme as a VSIX file and install the theme locally.
 
-On UNIX-like systems:
+From the repository root, run the following command:
 
-```
-ln --symbolic --force /full/path/to/dev/ocean ~/.vscode/extensions/ocean
-```
-
-On Windows, running Powershell in administrator mode:
-
-```
-New-Item -ItemType SymbolicLink -Path "C:\Users\[User]\.vscode\extensions\ocean" -Target "C:\path\to\dev\ocean" -Force
+```bash
+npm run package
 ```
 
-Then go to `File > Preferences/Settings > Themes > Color Themes` and select "Ocean Light".
+This will generate a `.vsix` file in the `pkg` directory. You can install this local extension in VS Code via the Extension sidebar > **Install from VSIX...** and select the `.vsix` file. Then enable the theme by going to `File > Preferences/Settings > Themes > Color Themes` and selecting "Ocean Light".
 
-Unlike using the [Extension Development Host](./development.md), which hot-reloads changes, you will need to reload the VS Code window to see changes when using the symlink method. `Ctrl+P` > `Developer: Reload Window`.
+> NOTE: It is meant to be possible to install the theme by using the `code --install-extension ./pkg/ocean-vscode-theme.vsix` command, but this does not seem to be working - at least on Windows.
+
+For more information, see the [VS Code documentation](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#packaging-extensions).

@@ -1,12 +1,16 @@
 {
   "name": "ocean",
   "private": true,
-  "scripts": {
-    "package": "npx vsce package",
-    "publish": "npx vsce publish",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "devDependencies": {
+    "@vscode/vsce": "^2.31.1",
+    "chroma-js": "^2.6.0",
+    "nodemon": "^3.1.4"
   },
-  "dependencies": {
-    "@vscode/vsce": "^2.31.1"
+  "scripts": {
+    "dev": "nodemon -L --watch src src/index.mjs",
+    "build": "node src/index.mjs",
+    "package": "npm run build && mkdir -p pkg && cd dist && node ../node_modules/@vscode/vsce/vsce package -o ../pkg/ocean-vscode-theme.vsix",
+    "publish": "npm run build && cd dist && node ../node_modules/@vscode/vsce/vsce publish",
+    "test": "echo \"Error: no tests specified\" && exit 1"
   }
 }

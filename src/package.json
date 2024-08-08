@@ -1,5 +1,5 @@
 {
-  "name": "ocean-theme",
+  "name": "ocean-vscode-theme",
   "publisher": "kieranpotts",
   "displayName": "Ocean Theme",
   "description": "A family of themes that reminds you of the ocean.",
@@ -15,7 +15,7 @@
       {
         "label": "Ocean Light",
         "uiTheme": "vs",
-        "path": "./themes/ocean-light-color-theme.json"
+        "path": "./themes/vs.json"
       }
     ]
   }
