@@ -10,6 +10,7 @@ try {
 
   await copyFile('src/CHANGELOG.md', 'dist/CHANGELOG.md')
   await copyFile('src/README.md', 'dist/README.md')
+  await copyFile('src/LICENSE.txt', 'dist/LICENSE.txt')
 
   await copyFile('src/package.json', 'dist/package.json')
 } catch (err) {
