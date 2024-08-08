@@ -6,6 +6,10 @@
     "chroma-js": "^2.6.0",
     "nodemon": "^3.1.4"
   },
+  "engines": {
+    "node": "^18.18.0",
+    "npm": "^9.8.0"
+  },
   "scripts": {
     "dev": "nodemon -L --watch src src/index.mjs",
     "build": "node src/index.mjs",
