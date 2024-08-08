@@ -2,14 +2,28 @@
   "name": "ocean-vscode-theme",
   "publisher": "kieranpotts",
   "displayName": "Ocean Theme",
-  "description": "A family of themes that reminds you of the ocean.",
-  "version": "0.0.1",
+  "description": "A family of themes inspired by the ocean.",
+  "version": "0.0.0",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/kieranpotts/ocean"
+	},
+	"bugs": {
+		"url": "https://github.com/kieranpotts/ocean/issues"
+	},
   "engines": {
     "vscode": "^1.91.0"
   },
   "categories": [
     "Themes"
   ],
+	"keywords": [
+		"theme",
+		"light",
+		"dark",
+		"ocean"
+	],
   "contributes": {
     "themes": [
       {
