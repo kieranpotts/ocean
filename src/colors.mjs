@@ -16,14 +16,16 @@ const getColors = ({ theme }) => {
           },
           "defaults": {
             "text": tokens.color.neutral[700],
-            "lightText": tokens.color.neutral[500],
+            "lightText": tokens.color.neutral[400],
             "icons": tokens.color.neutral[500],
             "errorText": tokens.color.red[500],
+            "warningText": tokens.color.yellow[700],
+            "hyperlinks": tokens.color.blue[500],
           }
         },
         "chrome": {
           "text": tokens.color.neutral[700],
-          "selectedTextBackground": chroma(tokens.color.neutral[400]).alpha(0.5).hex(),
+          "lightText": tokens.color.neutral[400],
           "icons": tokens.color.neutral[500],
           "background": tokens.color.neutral[200],
           "border": tokens.color.neutral[300],
@@ -35,48 +37,48 @@ const getColors = ({ theme }) => {
           },
           "onHoverFocusItem": {
             "background": chroma(tokens.color.neutral[500]).alpha(0.15).hex(),
-            "border": tokens.color.transparent,
           },
           "remoteConnection": {
-            "background": tokens.color.blue[500],
+            "background": tokens.color.neutral[500],
             "foreground": tokens.color.neutral[200],
-          }
+          },
         },
         "editor": {
-          "selectedTextBackground": chroma(tokens.color.neutral[400]).alpha(0.5).hex(),
+          "background": tokens.color.neutral[100],
+          "text": tokens.color.neutral[700],
+          "comments": tokens.color.neutral[400],
+          "selectedTextBackground": chroma(tokens.color.neutral[400]).alpha(0.3).hex(),
           "highlightedTextBackground": chroma(tokens.color.neutral[400]).alpha(0.15).hex(),
         },
         "terminal": {
 
         },
-        // "components": { // "Elements" in VS Code's UX Guidelines
-        //   "commandPalette": {},
-        //   "quickPick": {},
-        //   "notifications": {},
-        //   "webViews": {},
-        //   "contextMenus": {},
-        //   "walkthroughs": {},
-        //   "settings": {},
-        // },
         "elements": { // "Items" in VS Code's UX Guidelines
           "badge": {
-            background: tokens.color.blue[500],
+            background: tokens.color.neutral[500],
             foreground: tokens.color.neutral[100],
           },
-          "treeView": {},
-          "welcomeView": {},
-          "viewToolbar": {},
-          "sidebarToolbar": {},
-          "editorToolbar": {},
-          "panelToolbar": {},
-          "statusBarItems": {},
+          "inputs": {
+            "background": tokens.color.neutral[100],
+            "foreground": tokens.color.neutral[700],
+            "placeholder": tokens.color.neutral[400],
+            "selectedTextBackground": chroma(tokens.color.neutral[400]).alpha(0.3).hex(),
+          },
+          "button": {
+            "primary": {
+              "background": tokens.color.neutral[700],
+              "foreground": tokens.color.neutral[100],
+            },
+            "secondary": {
+              "background": tokens.color.neutral[400],
+              "foreground": tokens.color.neutral[100],
+            },
+          },
         },
       }
 
     case 'vs-dark':
-      return {
-        "focusBorder": tokens.color.transparent,
-      }
+      throw new Error("Invalid theme")
 
     default:
       throw new Error("Invalid theme")

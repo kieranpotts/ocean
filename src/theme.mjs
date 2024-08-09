@@ -35,7 +35,7 @@ const getTheme = ({ theme, name }) => {
 
       /* Background color of text selections within text fields in the workbench.
       This does not apply to selections within the editor and terminal. */
-      "selection.background": `${colors.chrome.selectedTextBackground}`,
+      "selection.background": `${colors.elements.inputs.selectedTextBackground}`,
 
       /* Foreground color for text providing additional information, eg labels. */
       "descriptionForeground": `${colors.global.defaults.lightText}`,
@@ -72,7 +72,7 @@ const getTheme = ({ theme, name }) => {
       "titleBar.inactiveForeground": `${colors.chrome.text}`,
 
       /* Title Bar border color - always transparent. */
-      "titleBar.border": `${colors.chrome.border}`,
+      "titleBar.border": `${colors.transparent}`,
 
       /**
        * Menu Bar
@@ -89,12 +89,12 @@ const getTheme = ({ theme, name }) => {
       "menu.separatorBackground": `${colors.chrome.border}`,
 
       /* Colors of the selected item in the menubar. */
-      "menubar.selectionBorder": `${colors.chrome.onHoverFocusItem.border}`,
+      "menubar.selectionBorder": `${colors.transparent}`,
       "menubar.selectionBackground": `${colors.chrome.onHoverFocusItem.background}`,
       "menubar.selectionForeground": `${colors.chrome.text}`,
 
       /* Colors of the selected item in menus. */
-      "menu.selectionBorder": `${colors.chrome.onHoverFocusItem.border}`,
+      "menu.selectionBorder": `${colors.transparent}`,
       "menu.selectionBackground": `${colors.chrome.onHoverFocusItem.background}`,
       "menu.selectionForeground": `${colors.chrome.text}`,
 
@@ -104,7 +104,7 @@ const getTheme = ({ theme, name }) => {
 
       /* Activity Bar colors. The foreground color is used for icons as well as text.
       The border with other containers is removed with transparency. */
-      "activityBar.border": `${colors.chrome.border}`,
+      "activityBar.border": `${colors.transparent}`,
       "activityBar.background": `${colors.chrome.background}`,
       "activityBar.foreground": `${colors.chrome.icons}`,
       "activityBar.inactiveForeground": `${colors.chrome.icons}`,
@@ -141,7 +141,7 @@ const getTheme = ({ theme, name }) => {
        * These style rules apply to both.
        */
 
-      "sideBar.border": `${colors.chrome.border}`,
+      "sideBar.border": `${colors.transparent}`,
       "sideBar.background": `${colors.chrome.background}`,
       "sideBar.foreground": `${colors.chrome.text}`,
 
@@ -150,21 +150,21 @@ const getTheme = ({ theme, name }) => {
       "sideBarTitle.foreground": `${colors.chrome.text}`,
 
       /* Section header colors. */
-      "sideBarSectionHeader.border": `${colors.chrome.border}`,
+      "sideBarSectionHeader.border": `${colors.transparent}`,
       "sideBarSectionHeader.background": `${colors.chrome.background}`,
       "sideBarSectionHeader.foreground": `${colors.chrome.text}`,
 
       /* Add a border to the top/bottom  of the sidebar when the Activity
       Bar is moved to that position. (This adds a matching border to
       the top of the secondary sidebar.) */
-      "sideBarActivityBarTop.border": `${colors.chrome.border}`,
+      "sideBarActivityBarTop.border": `${colors.transparent}`,
 
       /**
        * Panel
        * These colors are for the bottom panel.
        */
 
-      "panel.border": `${colors.chrome.border}`,
+      "panel.border": `${colors.transparent}`,
       "panel.background": `${colors.chrome.background}`,
 
       "panelTitle.inactiveForeground": `${colors.chrome.text}`,
@@ -174,7 +174,7 @@ const getTheme = ({ theme, name }) => {
        * Status Bar
        */
 
-      "statusBar.border": `${colors.chrome.border}`,
+      "statusBar.border": `${colors.transparent}`,
       "statusBar.background": `${colors.chrome.background}`,
       "statusBar.foreground": `${colors.chrome.text}`,
 
@@ -276,19 +276,19 @@ const getTheme = ({ theme, name }) => {
        */
 
       /* Block quotes. */
-      "textBlockQuote.border": "#c7ccd1",
-      "textBlockQuote.background": "#f2f4f8",
+      "textBlockQuote.border": `${colors.global.defaults.lightText}`,
+      "textBlockQuote.background": `${colors.transparent}`,
 
-      /* Code and preformatted text blocks. */
-      "textCodeBlock.background": "#c7ccd1",
-      "textPreformat.foreground": "#2b303b",
+      /* Code and preformatted text blocks - inverted colors, like the terminal. */
+      "textCodeBlock.background": `${colors.editor.highlightedTextBackground}`,
+      "textPreformat.foreground": `${colors.editor.text}`,
 
       /* Separator. */
-      "textSeparator.foreground": "#f2f4f8",
+      "textSeparator.foreground": `${colors.global.defaults.lightText}`,
 
       /* Links. */
-      "textLink.foreground": "#5e81ac",
-      "textLink.activeForeground": "#5e81ac",
+      "textLink.foreground": `${colors.global.defaults.hyperlinks}`,
+      "textLink.activeForeground": `${colors.global.defaults.hyperlinks}`,
 
       /**
        * Lists and Trees
@@ -298,32 +298,31 @@ const getTheme = ({ theme, name }) => {
 
       /* The selected item when the list/tree is active. */
       "list.activeSelectionBackground": "#c7ccd166",
-      "list.activeSelectionForeground": "#2b303b",
+      "list.activeSelectionForeground": `${colors.chrome.text}`,
 
       /* The selected item when the list/tree is inactive. */
       "list.inactiveSelectionBackground": "#c7ccd166",
-      "list.inactiveSelectionForeground": "#2b303b",
+      "list.inactiveSelectionForeground": `${colors.chrome.text}`,
 
       /* The focused item when the list/tree is active. */
       "list.focusBackground": "#c7ccd133",
-      "list.focusForeground": "#2b303b",
+      "list.focusForeground": `${colors.chrome.text}`,
 
       /* Match highlights when searching inside the list/tree. */
       "list.highlightForeground": "#5e81ac",
 
       /* Hovering. */
       "list.hoverBackground": "#c7ccd133",
-      "list.hoverForeground": "#2b303b",
+      "list.hoverForeground": `${colors.chrome.text}`,
 
       /* Foreground color overrides for item statuses. These colors will also be
       used to override the tab foreground color when the file is opened in an
-      editor tab. This theme has effectively turned off "warning" colors but
-      enabled "error" ones. */
-      "list.errorForeground": "#bf616a",
-      "list.warningForeground": "#2b303b",
+      editor tab. */
+      "list.errorForeground": `${colors.global.defaults.errorText}`,
+      "list.warningForeground": `${colors.global.defaults.warningText}`,
 
       /* Tree Widget's stroke color for indent guides. */
-      "tree.indentGuidesStroke": "#c7ccd1",
+      "tree.indentGuidesStroke": `${colors.chrome.border}`,
 
       /**
        * Button Control
@@ -331,89 +330,89 @@ const getTheme = ({ theme, name }) => {
        */
 
       /* Primary button colors. */
-      "button.border": "#5e81ac",
-      "button.background": "#5e81ac",
-      "button.hoverBackground": "#5e81ac",
-      "button.foreground": "#e4e7eb",
+      "button.border": `${colors.elements.button.primary.background}`,
+      "button.background": `${colors.elements.button.primary.background}`,
+      "button.hoverBackground": `${colors.elements.button.primary.background}`,
+      "button.foreground": `${colors.elements.button.primary.foreground}`,
 
       /* Secondary button colors. */
-      "button.secondaryBackground": "#6b7280",
-      "button.secondaryHoverBackground": "#6b7280",
-      "button.secondaryForeground": "#e4e7eb",
+      "button.secondaryBackground": `${colors.elements.button.secondary.background}`,
+      "button.secondaryHoverBackground": `${colors.elements.button.secondary.background}`,
+      "button.secondaryForeground": `${colors.elements.button.secondary.foreground}`,
 
       /**
        * Checkbox Control
        */
 
-      "checkbox.border": "#c7ccd1",
-      "checkbox.background": "#e4e7eb",
-      "checkbox.foreground": "#2b303b",
+      "checkbox.border": `${colors.transparent}`,
+      "checkbox.background": `${colors.elements.inputs.background}`,
+      "checkbox.foreground": `${colors.elements.inputs.foreground}`,
 
       /**
        * Dropdown Control
        */
 
-      "dropdown.border": "#c7ccd1",
-      "dropdown.background": "#e4e7eb",
-      "dropdown.listBackground": "#e4e7eb",
-      "dropdown.foreground": "#2b303b",
+      "dropdown.border": `${colors.transparent}`,
+      "dropdown.background": `${colors.elements.inputs.background}`,
+      "dropdown.listBackground": `${colors.elements.inputs.background}`,
+      "dropdown.foreground": `${colors.elements.inputs.foreground}`,
 
       /**
-       * Input Control
+       * Text Input Control
        */
 
-      "input.border": "#c7ccd1",
-      "input.background": "#e4e7eb",
-      "input.foreground": "#2b303b",
+      "input.border": `${colors.transparent}`,
+      "input.background": `${colors.elements.inputs.background}`,
+      "input.foreground": `${colors.elements.inputs.foreground}`,
 
       /* Placeholder text. */
-      "input.placeholderForeground": "#6b7280",
+      "input.placeholderForeground": `${colors.elements.inputs.placeholder}`,
 
       /**
        * Editor Groups
        */
 
-      "editorGroup.border": "#c7ccd1",
-      "editorGroupHeader.tabsBackground": "#e4e7eb",
-      "editorGroupHeader.tabsBorder": "#c7ccd1",
+      "editorGroup.border": `${colors.chrome.background}`,
+      "editorGroupHeader.tabsBorder": `${colors.chrome.background}`,
+      "editorGroupHeader.tabsBackground": `${colors.chrome.background}`,
 
       /**
        * Editor Tabs
        */
 
       /* Border to separate tabs from each other. */
-      "tab.border": "#c7ccd1",
+      "tab.border": `${colors.transparent}`,
 
       /* Active tab in the active (focused) editor group.*/
-      "tab.activeBorder": "#e4e7eb",
-      "tab.activeBorderTop": "#2b303b",
-      "tab.activeBackground": "#f2f4f8",
-      "tab.activeForeground": "#2b303b",
+      "tab.activeBorder": `${colors.transparent}`,
+      "tab.activeBorderTop": `${colors.transparent}`,
+      "tab.activeBackground": `${colors.editor.background}`,
+      "tab.activeForeground": `${colors.chrome.text}`,
 
       /* Inactive tabs in the active (focused) editor group. */
-      "tab.inactiveBackground": "#e4e7eb",
-      "tab.inactiveForeground": "#2b303b",
+      "tab.inactiveBackground": `${colors.chrome.background}`,
+      "tab.inactiveForeground": `${colors.chrome.text}`,
 
       /* Active tab in non-active (unfocused) editor groups. */
-      "tab.unfocusedActiveBorder": "#e4e7eb",
-      "tab.unfocusedActiveBorderTop": "#e4e7eb",
-      "tab.unfocusedActiveBackground": "#f2f4f8",
-      "tab.unfocusedActiveForeground": "#6b7280",
+      "tab.unfocusedActiveBorder": `${colors.transparent}`,
+      "tab.unfocusedActiveBorderTop": `${colors.transparent}`,
+      "tab.unfocusedActiveBackground": `${colors.editor.background}`,
+      "tab.unfocusedActiveForeground": `${colors.chrome.text}`,
 
       /* Other tabs in non-active (unfocused) editor groups. */
-      "tab.unfocusedInactiveBackground": "#e4e7eb",
-      "tab.unfocusedInactiveForeground": "#6b7280",
+      "tab.unfocusedInactiveBackground": `${colors.chrome.background}`,
+      "tab.unfocusedInactiveForeground": `${colors.chrome.text}`,
 
       /* Colors when selecting multiple tabs using Ctrl+select. */
-      "tab.selectedBackground": "#c7ccd1",
-      "tab.selectedForeground": "#2b303b",
+      "tab.selectedBackground": `${colors.editor.background}`,
+      "tab.selectedForeground": `${colors.chrome.text}`,
 
       /**
        * Settings Editor
        */
 
-      "settings.headerForeground": "#2b303b",
-      "settings.modifiedItemIndicator": "#c7ccd133",
+      "settings.headerForeground": `${colors.chrome.text}`,
+      "settings.modifiedItemIndicator": `${colors.chrome.text}`,
 
       /**
        * Integrated Terminal
@@ -488,10 +487,10 @@ const getTheme = ({ theme, name }) => {
        * Editor
        */
 
-      "editorCursor.foreground": "#2b303b",
+      "editorCursor.foreground": `${colors.editor.text}`,
 
-      "editor.background": "#f2f4f8",
-      "editor.foreground": "#2b303b",
+      "editor.background": `${colors.editor.background}`,
+      "editor.foreground": `${colors.editor.text}`,
 
       /* Background color for the first line of a folded (collapsed) range. Opaque. */
       "editor.foldBackground": `${colors.editor.highlightedTextBackground}`,
@@ -518,8 +517,8 @@ const getTheme = ({ theme, name }) => {
       "editor.findMatchHighlightBackground": "#5e81ac33",
 
       /* Line numbers. */
-      "editorLineNumber.foreground": "#8c959f",
-      "editorLineNumber.activeForeground": "#2b303b",
+      "editorLineNumber.foreground": `${colors.chrome.lightText}`,
+      "editorLineNumber.activeForeground": `${colors.chrome.text}`,
 
       /* Indent guides. */
       "editorIndentGuide.background1": "#c7ccd1",
@@ -541,12 +540,12 @@ const getTheme = ({ theme, name }) => {
       "editorBracketMatch.border": `${colors.transparent}`,
 
       /* Bracket pair colorization. Disabled by using text foreground color. */
-      "editorBracketHighlight.foreground1": "#2b303b",
-      "editorBracketHighlight.foreground2": "#2b303b",
-      "editorBracketHighlight.foreground3": "#2b303b",
-      "editorBracketHighlight.foreground4": "#2b303b",
-      "editorBracketHighlight.foreground5": "#2b303b",
-      "editorBracketHighlight.foreground6": "#2b303b",
+      "editorBracketHighlight.foreground1": `${colors.editor.text}`,
+      "editorBracketHighlight.foreground2": `${colors.editor.text}`,
+      "editorBracketHighlight.foreground3": `${colors.editor.text}`,
+      "editorBracketHighlight.foreground4": `${colors.editor.text}`,
+      "editorBracketHighlight.foreground5": `${colors.editor.text}`,
+      "editorBracketHighlight.foreground6": `${colors.editor.text}`,
       "editorBracketHighlight.unexpectedBracket.foreground": "#bf616a",
 
       /* Highlights for pair guides for active and inactive brackets. Disabled. */
@@ -563,25 +562,25 @@ const getTheme = ({ theme, name }) => {
       "editorBracketPairGuide.activeBackground5": `${colors.transparent}`,
       "editorBracketPairGuide.activeBackground6": `${colors.transparent}`,
 
-      /* Inlay hints, enabled via the "editor.inlineSuggest.enabled" setting. */
-      "editorInlayHint.background": "#6b7280",
-      "editorInlayHint.foreground": "#afb8c1",
-      "editorInlayHint.typeBackground": "#6b7280",
-      "editorInlayHint.typeForeground": "#afb8c1",
+      /* Inlay hints, enabled via the "editor.inlayHint.enabled" setting. */
+      "editorInlayHint.background": `${colors.transparent}`,
+      "editorInlayHint.foreground": `${colors.editor.comments}`,
+      "editorInlayHint.typeBackground": `${colors.transparent}`,
+      "editorInlayHint.typeForeground": `${colors.editor.comments}`,
 
       /* The Editor Widget is any dialog rendered in front of the editor,
       including the Find/Replace dialog and the suggestion widget. */
-      "editorWidget.background": "#e4e7eb",
-      "editorWidget.foreground": "#2b303b",
+      "editorWidget.background": `${colors.chrome.background}`,
+      "editorWidget.foreground": `${colors.chrome.text}`,
 
       /* Background color of the editor pane visible on the left and right side
       of the centered editor layout. */
-      "editorPane.background": "#e4e7eb",
+      "editorPane.background": `${colors.chrome.background}`,
 
       /* Color to separate two editors from each other when shown
       by side in an editor group */
-      "sideBySideEditor.horizontalBorder": "#c7ccd1",
-      "sideBySideEditor.verticalBorder": "#c7ccd1",
+      "sideBySideEditor.horizontalBorder": `${colors.chrome.border}`,
+      "sideBySideEditor.verticalBorder": `${colors.chrome.border}`,
 
       /**
        * Git Decorations
@@ -589,22 +588,14 @@ const getTheme = ({ theme, name }) => {
        * Editor Tabs and the File Explorer.
        */
 
-      // "gitDecoration.addedResourceForeground": "#a3be8c",
-      // "gitDecoration.modifiedResourceForeground": "#5e81ac",
-      // "gitDecoration.deletedResourceForeground": "#b48ead",
-      // "gitDecoration.untrackedResourceForeground": "#6b7280",
-      // "gitDecoration.ignoredResourceForeground": "#6b7280",
-      // "gitDecoration.conflictingResourceForeground": "#bf616a",
-      // "gitDecoration.submoduleResourceForeground": "#6b7280",
-
       /* Disable SCM decorations by using default text foreground color. */
-      "gitDecoration.addedResourceForeground": "#2b303b",
-      "gitDecoration.modifiedResourceForeground": "#2b303b",
-      "gitDecoration.deletedResourceForeground": "#2b303b",
-      "gitDecoration.untrackedResourceForeground": "#2b303b",
-      "gitDecoration.ignoredResourceForeground": "#2b303b",
-      "gitDecoration.conflictingResourceForeground": "#2b303b",
-      "gitDecoration.submoduleResourceForeground": "#2b303b",
+      "gitDecoration.addedResourceForeground": `${colors.chrome.text}`,
+      "gitDecoration.modifiedResourceForeground": `${colors.chrome.text}`,
+      "gitDecoration.deletedResourceForeground": `${colors.chrome.text}`,
+      "gitDecoration.untrackedResourceForeground": `${colors.chrome.text}`,
+      "gitDecoration.ignoredResourceForeground": `${colors.chrome.text}`,
+      "gitDecoration.conflictingResourceForeground": `${colors.chrome.text}`,
+      "gitDecoration.submoduleResourceForeground": `${colors.chrome.text}`,
 
       /**
        * Editor Gutter
@@ -612,11 +603,12 @@ const getTheme = ({ theme, name }) => {
        */
 
       /* "editorGutter.background" overrides "editor.background" for the gutter only. */
-      // "editorGutter.background": "#e4e7eb",
+      "editorGutter.background": `${colors.transparent}`,
 
-      "editorGutter.addedBackground": "#a3be8c99",
-      "editorGutter.modifiedBackground": "#5e81ac99",
-      "editorGutter.deletedBackground": "#b48ead99",
+      /* Disable Git/SCM decorations in the gutter. */
+      "editorGutter.addedBackground": `${colors.transparent}`,
+      "editorGutter.modifiedBackground": `${colors.transparent}`,
+      "editorGutter.deletedBackground": `${colors.transparent}`,
 
       "editorGutter.foldingControlForeground": "#6b7280",
       "editorGutter.commentRangeForeground": "#6b7280",
@@ -642,14 +634,14 @@ const getTheme = ({ theme, name }) => {
       "editorOverviewRuler.background": `${colors.transparent}`,
       "editorOverviewRuler.border": `${colors.transparent}`,
 
-      /* Mark changes. */
-      "editorOverviewRuler.addedForeground": "#a3be8c99",
-      "editorOverviewRuler.modifiedForeground": "#5e81ac99",
-      "editorOverviewRuler.deletedForeground": "#b48ead99",
+      /* Mark SCM changes - all disabled. */
+      "editorOverviewRuler.addedForeground": `${colors.transparent}`,
+      "editorOverviewRuler.modifiedForeground": `${colors.transparent}`,
+      "editorOverviewRuler.deletedForeground": `${colors.transparent}`,
 
-      /* Mark problems, hide general info. */
-      "editorOverviewRuler.errorForeground": "#bf616a",
-      "editorOverviewRuler.warningForeground": "#ebcb8b",
+      /* Mark problems and warnings, but hide general info. */
+      "editorOverviewRuler.errorForeground": `${colors.global.defaults.errorText}`,
+      "editorOverviewRuler.warningForeground": `${colors.global.defaults.warningText}`,
       "editorOverviewRuler.infoForeground": `${colors.transparent}`,
 
       /* Disable other decorations. */
@@ -745,18 +737,18 @@ const getTheme = ({ theme, name }) => {
       "debugConsole.errorForeground": "#bf616a",
       "debugConsole.sourceForeground": "#a3be8c",
 
-      "debugConsoleInputIcon.foreground": "#2b303b",
+      "debugConsoleInputIcon.foreground": `${colors.global.defaults.icons}`,
 
-      "debugTokenExpression.name": "#2b303b",
-      "debugTokenExpression.value": "#2b303b",
-      "debugTokenExpression.string": "#2b303b",
-      "debugTokenExpression.boolean": "#2b303b",
-      "debugTokenExpression.number": "#2b303b",
-      "debugTokenExpression.error": "#2b303b",
+      "debugTokenExpression.name": `${colors.global.defaults.text}`,
+      "debugTokenExpression.value": `${colors.global.defaults.text}`,
+      "debugTokenExpression.string": `${colors.global.defaults.text}`,
+      "debugTokenExpression.boolean": `${colors.global.defaults.text}`,
+      "debugTokenExpression.number": `${colors.global.defaults.text}`,
+      "debugTokenExpression.error": `${colors.global.defaults.text}`,
 
     },
 
-    // https://code.visualstudio.com/api/language-extensions/semantic-highlight-guide
+    /* https://code.visualstudio.com/api/language-extensions/semantic-highlight-guide */
     "semanticHighlighting": false,
 
     "tokenColors": [
@@ -767,7 +759,7 @@ const getTheme = ({ theme, name }) => {
           "string.comment"
         ],
         "settings": {
-          "foreground": "#6b728099"
+          "foreground": `${colors.editor.comments}`
         }
       },
     ]
