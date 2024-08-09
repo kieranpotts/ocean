@@ -27,25 +27,25 @@ const getTheme = ({ theme, name }) => {
 
       /* Overall border color for focused elements. This color is used only if
       not overridden by a component. */
-      "focusBorder": `${colors.global.border.focus}`,
+      "focusBorder": `${colors.global.accessibility.focusBorder}`,
 
       /* Overall foreground color. This color is used only if not overridden
       by a component. */
-      "foreground": `${colors.global.text.foreground.default}`,
+      "foreground": `${colors.global.defaults.text}`,
 
       /* Background color of text selections within text fields in the workbench.
       This does not apply to selections within the editor and terminal. */
-      "selection.background": `${colors.global.text.background.selected}`,
+      "selection.background": `${colors.chrome.selectedTextBackground}`,
 
       /* Foreground color for text providing additional information, eg labels. */
-      "descriptionForeground": `${colors.global.text.foreground.light}`,
+      "descriptionForeground": `${colors.global.defaults.lightText}`,
 
       /* Overall foreground color for error messages.
       This color is only used if not overridden by a component. */
-      "errorForeground": `${colors.global.text.foreground.error}`,
+      "errorForeground": `${colors.global.defaults.errorText}`,
 
       /* The default color for icons in the workbench. */
-      "icon.foreground": `${colors.global.text.foreground.default}`,
+      "icon.foreground": `${colors.global.defaults.icons}`,
 
       /**
        * High-Contrast Extras
@@ -53,8 +53,8 @@ const getTheme = ({ theme, name }) => {
        */
 
       /* An extra border around elements */
-      "contrastBorder": `${colors.global.border.contrast}`,
-      "contrastActiveBorder": `${colors.global.border.contrast}`,
+      "contrastBorder": `${colors.global.accessibility.contrastBorder}`,
+      "contrastActiveBorder": `${colors.global.accessibility.contrastBorder}`,
 
       /**
        * Title Bar
@@ -64,15 +64,15 @@ const getTheme = ({ theme, name }) => {
        */
 
       /* Title Bar background, varying when the window is active and inactive. */
-      "titleBar.activeBackground": `${colors.containers.menuBar.background}`,
-      "titleBar.inactiveBackground": `${colors.containers.menuBar.background}`,
+      "titleBar.activeBackground": `${colors.chrome.background}`,
+      "titleBar.inactiveBackground": `${colors.chrome.background}`,
 
       /* Title Bar foreground, varying the window is active and inactive. */
-      "titleBar.activeForeground": `${colors.containers.menuBar.foreground}`,
-      "titleBar.inactiveForeground": `${colors.containers.menuBar.foreground}`,
+      "titleBar.activeForeground": `${colors.chrome.text}`,
+      "titleBar.inactiveForeground": `${colors.chrome.text}`,
 
       /* Title Bar border color - always transparent. */
-      "titleBar.border": "#FFFFFF00",
+      "titleBar.border": `${colors.chrome.border}`,
 
       /**
        * Menu Bar
@@ -80,39 +80,38 @@ const getTheme = ({ theme, name }) => {
 
       /* Background and foreground colors of menubar and drop-drop menus
       from the menubar. */
-      "menu.background": `${colors.containers.menuBar.background}`,
-      "menu.foreground": `${colors.containers.menuBar.foreground}`,
+      "menu.background": `${colors.chrome.background}`,
+      "menu.foreground": `${colors.chrome.text}`,
 
       /* Border around drop-down menus from the menubar, and separator
       between items in menus. */
-      "menu.border": `${colors.containers.menuBar.border}`,
-      "menu.separatorBackground": `${colors.containers.menuBar.border}`,
+      "menu.border": `${colors.chrome.border}`,
+      "menu.separatorBackground": `${colors.chrome.border}`,
 
       /* Colors of the selected item in the menubar. */
-      "menubar.selectionBorder": `${colors.containers.menuBar.hoverFocusItem.border}`,
-      "menubar.selectionBackground": `${colors.containers.menuBar.hoverFocusItem.background}`,
-      "menubar.selectionForeground": `${colors.containers.menuBar.hoverFocusItem.foreground}`,
+      "menubar.selectionBorder": `${colors.chrome.onHoverFocusItem.border}`,
+      "menubar.selectionBackground": `${colors.chrome.onHoverFocusItem.background}`,
+      "menubar.selectionForeground": `${colors.chrome.text}`,
 
       /* Colors of the selected item in menus. */
-      "menu.selectionBorder": `${colors.containers.menuBar.hoverFocusItem.border}`,
-      "menu.selectionBackground": `${colors.containers.menuBar.hoverFocusItem.background}`,
-      "menu.selectionForeground": `${colors.containers.menuBar.hoverFocusItem.foreground}`,
+      "menu.selectionBorder": `${colors.chrome.onHoverFocusItem.border}`,
+      "menu.selectionBackground": `${colors.chrome.onHoverFocusItem.background}`,
+      "menu.selectionForeground": `${colors.chrome.text}`,
 
       /**
        * Activity Bar
        */
 
-      /* Activity Bar colors. The foreground color is used for icons. */
-      "activityBar.border": `${colors.containers.activityBar.border}`,
-      "activityBar.background": `${colors.containers.activityBar.background}`,
-      "activityBar.foreground": `${colors.containers.activityBar.selectedTab.foreground}`,
+      /* Activity Bar colors. The foreground color is used for icons as well as text.
+      The border with other containers is removed with transparency. */
+      "activityBar.border": `${colors.chrome.border}`,
+      "activityBar.background": `${colors.chrome.background}`,
+      "activityBar.foreground": `${colors.chrome.icons}`,
+      "activityBar.inactiveForeground": `${colors.chrome.icons}`,
 
       /* Lighter background and border colors to indicate active item. */
-      "activityBar.activeBorder": `${colors.containers.activityBar.selectedTab.border}`,
-      "activityBar.activeBackground": `${colors.containers.activityBar.selectedTab.background}`,
-
-      /* Darker foreground color to indicate inactive items. */
-      "activityBar.inactiveForeground": `${colors.containers.activityBar.foreground}`,
+      "activityBar.activeBorder": `${colors.chrome.selectedTab.border}`,
+      "activityBar.activeBackground": `${colors.chrome.selectedTab.background}`,
 
       /* Badges in the Activity Bar - replicated from the global Badge element. */
       "activityBarBadge.background": `${colors.elements.badge.background}`,
@@ -128,18 +127,12 @@ const getTheme = ({ theme, name }) => {
        * the permanent tabs at the top of the secondary sidebar.
        */
 
-      "activityBarTop.background": `${colors.containers.sideBarTabs.background}`,
-      "activityBarTop.foreground": `${colors.containers.sideBarTabs.selectedTab.foreground}`,
+      "activityBarTop.background": `${colors.chrome.background}`,
+      "activityBarTop.foreground": `${colors.chrome.icons}`,
+      "activityBarTop.inactiveForeground": `${colors.chrome.icons}`,
 
-      "activityBarTop.activeBorder": `${colors.containers.sideBarTabs.selectedTab.border}`,
-      "activityBarTop.activeBackground": `${colors.containers.sideBarTabs.selectedTab.background}`,
-      "activityBarTop.inactiveForeground": `${colors.containers.sideBarTabs.foreground}`,
-
-      /* Override top/bottom border color of Side Bar when the Activity Bar
-      is in that position. This should always be transparent for consistent
-      rendering of the Secondary Side Bar's tabs, regardless of the position
-      of the Activity Bar. */
-      "sideBarActivityBarTop.border": "#00000000",
+      "activityBarTop.activeBorder": `${colors.chrome.selectedTab.border}`,
+      "activityBarTop.activeBackground": `${colors.chrome.selectedTab.background}`,
 
       /**
        * Side Bar
@@ -148,58 +141,63 @@ const getTheme = ({ theme, name }) => {
        * These style rules apply to both.
        */
 
-      "sideBar.border": `${colors.containers.sideBar.border}`,
-      "sideBar.background": `${colors.containers.sideBar.background}`,
-      "sideBar.foreground": `${colors.containers.sideBar.foreground}`,
+      "sideBar.border": `${colors.chrome.border}`,
+      "sideBar.background": `${colors.chrome.background}`,
+      "sideBar.foreground": `${colors.chrome.text}`,
 
       /* Side Bar title colors. */
-      "sideBarTitle.background": `${colors.containers.sideBar.background}`,
-      "sideBarTitle.foreground": `${colors.containers.sideBar.foreground}`,
+      "sideBarTitle.background": `${colors.chrome.background}`,
+      "sideBarTitle.foreground": `${colors.chrome.text}`,
 
       /* Section header colors. */
-      "sideBarSectionHeader.border": `${colors.containers.sideBar.border}`,
-      "sideBarSectionHeader.background": `${colors.containers.sideBar.background}`,
-      "sideBarSectionHeader.foreground": `${colors.containers.sideBar.foreground}`,
+      "sideBarSectionHeader.border": `${colors.chrome.border}`,
+      "sideBarSectionHeader.background": `${colors.chrome.background}`,
+      "sideBarSectionHeader.foreground": `${colors.chrome.text}`,
+
+      /* Add a border to the top/bottom  of the sidebar when the Activity
+      Bar is moved to that position. (This adds a matching border to
+      the top of the secondary sidebar.) */
+      "sideBarActivityBarTop.border": `${colors.chrome.border}`,
 
       /**
        * Panel
        * These colors are for the bottom panel.
        */
 
-      "panel.border": `${colors.containers.panel.border}`,
-      "panel.background": `${colors.containers.panel.background}`,
+      "panel.border": `${colors.chrome.border}`,
+      "panel.background": `${colors.chrome.background}`,
 
-      "panelTitle.inactiveForeground": `${colors.containers.panel.foreground}`,
-      "panelTitle.activeForeground": `${colors.containers.panel.foreground}`,
+      "panelTitle.inactiveForeground": `${colors.chrome.text}`,
+      "panelTitle.activeForeground": `${colors.chrome.text}`,
 
       /*
        * Status Bar
        */
 
-      "statusBar.border": `${colors.containers.statusBar.border}`,
-      "statusBar.background": `${colors.containers.statusBar.background}`,
-      "statusBar.foreground": `${colors.containers.statusBar.foreground}`,
+      "statusBar.border": `${colors.chrome.border}`,
+      "statusBar.background": `${colors.chrome.background}`,
+      "statusBar.foreground": `${colors.chrome.text}`,
 
       /* Status Bar colors when no folder is opened. We just keep the defaults here. */
-      "statusBar.noFolderBackground": `${colors.containers.statusBar.background}`,
-      "statusBar.noFolderForeground": `${colors.containers.statusBar.foreground}`,
+      "statusBar.noFolderBackground": `${colors.chrome.background}`,
+      "statusBar.noFolderForeground": `${colors.chrome.text}`,
 
       /* Status Bar colors while a program is being debugged. */
-      "statusBar.debuggingBackground": "#ebcb8b",
-      "statusBar.debuggingForeground": "#2b303b",
+      "statusBar.debuggingBackground": `${colors.chrome.debuggingModeBackground}`,
+      "statusBar.debuggingForeground": `${colors.chrome.text}`,
 
       /* Colors for prominent items in the status bar. */
-      "statusBarItem.prominentBackground": "#5e81ac",
+      "statusBarItem.prominentBackground": `${colors.chrome.prominentItemBackground}`,
 
       /* Overlays for item hovers and clicks. */
-      "statusBarItem.hoverBackground": "#c7ccd133",
-      "statusBarItem.activeBackground": "#c7ccd133",
+      "statusBarItem.hoverBackground": `${colors.chrome.onHoverFocusItem.background}`,
+      "statusBarItem.activeBackground": `${colors.chrome.onHoverFocusItem.background}`,
 
       /* Color for the remote indicator on the status bar. */
-      "statusBarItem.remoteBackground": "#5e81ac",
-      "statusBarItem.remoteForeground": "#e4e7eb",
-      "statusBarItem.remoteHoverBackground": "#5e81ac",
-      "statusBarItem.remoteHoverForeground": "#e4e7eb",
+      "statusBarItem.remoteBackground": `${colors.chrome.remoteConnection.background}`,
+      "statusBarItem.remoteForeground": `${colors.chrome.remoteConnection.foreground}`,
+      "statusBarItem.remoteHoverBackground": `${colors.chrome.remoteConnection.background}`,
+      "statusBarItem.remoteHoverForeground": `${colors.chrome.remoteConnection.foreground}`,
 
       /**
        * Badges
@@ -212,43 +210,42 @@ const getTheme = ({ theme, name }) => {
       /**
        * Symbol Icons
        * Symbol icons appear in the Outline view, breadcrumb navigation,
-       * and suggest widget. In this theme, we use the same color as the
-	   * default text.
+       * and suggest widget.
        */
 
-      "symbolIcon.arrayForeground": `${colors.global.text.foreground.default}`,
-      "symbolIcon.booleanForeground": `${colors.global.text.foreground.default}`,
-      "symbolIcon.classForeground": `${colors.global.text.foreground.default}`,
-      "symbolIcon.colorForeground": `${colors.global.text.foreground.default}`,
-      "symbolIcon.constantForeground": `${colors.global.text.foreground.default}`,
-      "symbolIcon.constructorForeground": `${colors.global.text.foreground.default}`,
-      "symbolIcon.enumeratorForeground": `${colors.global.text.foreground.default}`,
-      "symbolIcon.enumeratorMemberForeground": `${colors.global.text.foreground.default}`,
-      "symbolIcon.eventForeground": `${colors.global.text.foreground.default}`,
-      "symbolIcon.fieldForeground": `${colors.global.text.foreground.default}`,
-      "symbolIcon.fileForeground": `${colors.global.text.foreground.default}`,
-      "symbolIcon.folderForeground": `${colors.global.text.foreground.default}`,
-      "symbolIcon.functionForeground": `${colors.global.text.foreground.default}`,
-      "symbolIcon.interfaceForeground": `${colors.global.text.foreground.default}`,
-      "symbolIcon.keyForeground": `${colors.global.text.foreground.default}`,
-      "symbolIcon.keywordForeground": `${colors.global.text.foreground.default}`,
-      "symbolIcon.methodForeground": `${colors.global.text.foreground.default}`,
-      "symbolIcon.moduleForeground": `${colors.global.text.foreground.default}`,
-      "symbolIcon.namespaceForeground": `${colors.global.text.foreground.default}`,
-      "symbolIcon.nullForeground": `${colors.global.text.foreground.default}`,
-      "symbolIcon.numberForeground": `${colors.global.text.foreground.default}`,
-      "symbolIcon.objectForeground": `${colors.global.text.foreground.default}`,
-      "symbolIcon.operatorForeground": `${colors.global.text.foreground.default}`,
-      "symbolIcon.packageForeground": `${colors.global.text.foreground.default}`,
-      "symbolIcon.propertyForeground": `${colors.global.text.foreground.default}`,
-      "symbolIcon.referenceForeground": `${colors.global.text.foreground.default}`,
-      "symbolIcon.snippetForeground": `${colors.global.text.foreground.default}`,
-      "symbolIcon.stringForeground": `${colors.global.text.foreground.default}`,
-      "symbolIcon.structForeground": `${colors.global.text.foreground.default}`,
-      "symbolIcon.textForeground": `${colors.global.text.foreground.default}`,
-      "symbolIcon.typeParameterForeground": `${colors.global.text.foreground.default}`,
-      "symbolIcon.unitForeground": `${colors.global.text.foreground.default}`,
-      "symbolIcon.variableForeground": `${colors.global.text.foreground.default}`,
+      "symbolIcon.arrayForeground": `${colors.chrome.icons}`,
+      "symbolIcon.booleanForeground": `${colors.chrome.icons}`,
+      "symbolIcon.classForeground": `${colors.chrome.icons}`,
+      "symbolIcon.colorForeground": `${colors.chrome.icons}`,
+      "symbolIcon.constantForeground": `${colors.chrome.icons}`,
+      "symbolIcon.constructorForeground": `${colors.chrome.icons}`,
+      "symbolIcon.enumeratorForeground": `${colors.chrome.icons}`,
+      "symbolIcon.enumeratorMemberForeground": `${colors.chrome.icons}`,
+      "symbolIcon.eventForeground": `${colors.chrome.icons}`,
+      "symbolIcon.fieldForeground": `${colors.chrome.icons}`,
+      "symbolIcon.fileForeground": `${colors.chrome.icons}`,
+      "symbolIcon.folderForeground": `${colors.chrome.icons}`,
+      "symbolIcon.functionForeground": `${colors.chrome.icons}`,
+      "symbolIcon.interfaceForeground": `${colors.chrome.icons}`,
+      "symbolIcon.keyForeground": `${colors.chrome.icons}`,
+      "symbolIcon.keywordForeground": `${colors.chrome.icons}`,
+      "symbolIcon.methodForeground": `${colors.chrome.icons}`,
+      "symbolIcon.moduleForeground": `${colors.chrome.icons}`,
+      "symbolIcon.namespaceForeground": `${colors.chrome.icons}`,
+      "symbolIcon.nullForeground": `${colors.chrome.icons}`,
+      "symbolIcon.numberForeground": `${colors.chrome.icons}`,
+      "symbolIcon.objectForeground": `${colors.chrome.icons}`,
+      "symbolIcon.operatorForeground": `${colors.chrome.icons}`,
+      "symbolIcon.packageForeground": `${colors.chrome.icons}`,
+      "symbolIcon.propertyForeground": `${colors.chrome.icons}`,
+      "symbolIcon.referenceForeground": `${colors.chrome.icons}`,
+      "symbolIcon.snippetForeground": `${colors.chrome.icons}`,
+      "symbolIcon.stringForeground": `${colors.chrome.icons}`,
+      "symbolIcon.structForeground": `${colors.chrome.icons}`,
+      "symbolIcon.textForeground": `${colors.chrome.icons}`,
+      "symbolIcon.typeParameterForeground": `${colors.chrome.icons}`,
+      "symbolIcon.unitForeground": `${colors.chrome.icons}`,
+      "symbolIcon.variableForeground": `${colors.chrome.icons}`,
 
       /**
        * Quick Picker
@@ -256,22 +253,22 @@ const getTheme = ({ theme, name }) => {
        * Palette and the Color Theme Picker.
        */
 
-      "pickerGroup.border": "#c7ccd1",
-      "quickInput.background": "#e4e7eb",
-      "pickerGroup.foreground": "#6b7280",
+      "pickerGroup.border": `${colors.chrome.border}`,
+      "pickerGroup.foreground": `${colors.chrome.text}`,
 
       /* Inputs within the Quick Picker widget. */
-      "quickInput.foreground": "#2b303b",
-      "quickInputTitle.background": "#e4e7eb",
+      "quickInput.background": `${colors.chrome.background}`,
+      "quickInput.foreground": `${colors.chrome.text}`,
+      "quickInputTitle.background": `${colors.chrome.background}`,
 
       /* Lists within the Quick Picker widget. */
-      "quickInputList.focusBackground": "#c7ccd133",
-      "quickInputList.focusForeground": "#2b303b",
-      "quickInputList.focusIconForeground": "#2b303b",
+      "quickInputList.focusBackground": `${colors.chrome.onHoverFocusItem.background}`,
+      "quickInputList.focusForeground": `${colors.chrome.text}`,
+      "quickInputList.focusIconForeground": `${colors.chrome.icons}`,
 
       /* This is the foreground color for <kbd> elements within the Keyboard
       Shortcuts (keybindings) picker. */
-      "keybindingLabel.foreground": "#2b303b",
+      "keybindingLabel.foreground": `${colors.chrome.text}`,
 
       /**
        * Text Colors
@@ -483,7 +480,7 @@ const getTheme = ({ theme, name }) => {
        */
 
       "editorStickyScroll.border": "#c7ccd1",
-      "editorStickyScroll.shadow": "#FFFFFF00",
+      "editorStickyScroll.shadow": `${colors.transparent}`,
       "editorStickyScroll.background": "#f2f4f8",
       "editorStickyScrollHover.background": "#f2f4f8",
 
@@ -497,24 +494,24 @@ const getTheme = ({ theme, name }) => {
       "editor.foreground": "#2b303b",
 
       /* Background color for the first line of a folded (collapsed) range. Opaque. */
-      "editor.foldBackground": "#c7ccd133",
+      "editor.foldBackground": `${colors.editor.highlightedTextBackground}`,
 
       /* Background color of the current line with the cursor. Must be opaque. */
-      "editor.lineHighlightBackground": "#c7ccd133",
+      "editor.lineHighlightBackground": `${colors.editor.highlightedTextBackground}`,
 
       /* Selected text, and color for other text in the document that matches
       the current selection. */
-      "editor.selectionBackground": `${colors.global.text.background.selected}`,
-      "editor.selectionHighlightBackground": `${colors.global.text.background.selected}`,
+      "editor.selectionBackground": `${colors.editor.selectedTextBackground}`,
+      "editor.selectionHighlightBackground": `${colors.editor.highlightedTextBackground}`,
 
       /* Current word/symbol highlight in read and write mode. */
-      "editor.wordHighlightBackground": "#c7ccd133",
-      "editor.wordHighlightStrongBackground": "#c7ccd133",
+      "editor.wordHighlightBackground": `${colors.editor.highlightedTextBackground}`,
+      "editor.wordHighlightStrongBackground": `${colors.editor.highlightedTextBackground}`,
 
       /* In debugging mode, these are the background colors for the top stack
       frame and the focused stack frame respectively. */
-      "editor.stackFrameHighlightBackground": "#c7ccd133",
-      "editor.focusedStackFrameHighlightBackground": "#c7ccd133",
+      "editor.stackFrameHighlightBackground": `${colors.editor.highlightedTextBackground}`,
+      "editor.focusedStackFrameHighlightBackground": `${colors.editor.highlightedTextBackground}`,
 
       /* Current search match in the editor, and for other search matches. */
       "editor.findMatchBackground": "#5e81ac99",
@@ -540,8 +537,8 @@ const getTheme = ({ theme, name }) => {
       "editorWhitespace.foreground": "#c7ccd1",
 
       /* Highlight for the current matching pair of brackets. Disabled. */
-      "editorBracketMatch.background": "#FFFFFF00",
-      "editorBracketMatch.border": "#FFFFFF00",
+      "editorBracketMatch.background": `${colors.transparent}`,
+      "editorBracketMatch.border": `${colors.transparent}`,
 
       /* Bracket pair colorization. Disabled by using text foreground color. */
       "editorBracketHighlight.foreground1": "#2b303b",
@@ -553,18 +550,18 @@ const getTheme = ({ theme, name }) => {
       "editorBracketHighlight.unexpectedBracket.foreground": "#bf616a",
 
       /* Highlights for pair guides for active and inactive brackets. Disabled. */
-      "editorBracketPairGuide.background1": "#FFFFFF00",
-      "editorBracketPairGuide.background2": "#FFFFFF00",
-      "editorBracketPairGuide.background3": "#FFFFFF00",
-      "editorBracketPairGuide.background4": "#FFFFFF00",
-      "editorBracketPairGuide.background5": "#FFFFFF00",
-      "editorBracketPairGuide.background6": "#FFFFFF00",
-      "editorBracketPairGuide.activeBackground1": "#FFFFFF00",
-      "editorBracketPairGuide.activeBackground2": "#FFFFFF00",
-      "editorBracketPairGuide.activeBackground3": "#FFFFFF00",
-      "editorBracketPairGuide.activeBackground4": "#FFFFFF00",
-      "editorBracketPairGuide.activeBackground5": "#00000000",
-      "editorBracketPairGuide.activeBackground6": "#00000000",
+      "editorBracketPairGuide.background1": `${colors.transparent}`,
+      "editorBracketPairGuide.background2": `${colors.transparent}`,
+      "editorBracketPairGuide.background3": `${colors.transparent}`,
+      "editorBracketPairGuide.background4": `${colors.transparent}`,
+      "editorBracketPairGuide.background5": `${colors.transparent}`,
+      "editorBracketPairGuide.background6": `${colors.transparent}`,
+      "editorBracketPairGuide.activeBackground1": `${colors.transparent}`,
+      "editorBracketPairGuide.activeBackground2": `${colors.transparent}`,
+      "editorBracketPairGuide.activeBackground3": `${colors.transparent}`,
+      "editorBracketPairGuide.activeBackground4": `${colors.transparent}`,
+      "editorBracketPairGuide.activeBackground5": `${colors.transparent}`,
+      "editorBracketPairGuide.activeBackground6": `${colors.transparent}`,
 
       /* Inlay hints, enabled via the "editor.inlineSuggest.enabled" setting. */
       "editorInlayHint.background": "#6b7280",
@@ -642,8 +639,8 @@ const getTheme = ({ theme, name }) => {
        */
 
       /* These effectively give a background and border around the scrollbar. */
-      "editorOverviewRuler.background": "#00000000",
-      "editorOverviewRuler.border": "#00000000",
+      "editorOverviewRuler.background": `${colors.transparent}`,
+      "editorOverviewRuler.border": `${colors.transparent}`,
 
       /* Mark changes. */
       "editorOverviewRuler.addedForeground": "#a3be8c99",
@@ -653,18 +650,18 @@ const getTheme = ({ theme, name }) => {
       /* Mark problems, hide general info. */
       "editorOverviewRuler.errorForeground": "#bf616a",
       "editorOverviewRuler.warningForeground": "#ebcb8b",
-      "editorOverviewRuler.infoForeground": "#00000000",
+      "editorOverviewRuler.infoForeground": `${colors.transparent}`,
 
       /* Disable other decorations. */
-      "editorOverviewRuler.findMatchForeground": "#00000000",
-      "editorOverviewRuler.rangeHighlightForeground": "#00000000",
-      "editorOverviewRuler.selectionHighlightForeground": "#00000000",
-      "editorOverviewRuler.wordHighlightForeground": "#00000000",
-      "editorOverviewRuler.wordHighlightStrongForeground": "#00000000",
-      "editorOverviewRuler.wordHighlightTextForeground": "#00000000",
-      "editorOverviewRuler.bracketMatchForeground": "#00000000",
-      "editorOverviewRuler.inlineChatInserted": "#00000000",
-      "editorOverviewRuler.inlineChatRemoved": "#00000000",
+      "editorOverviewRuler.findMatchForeground": `${colors.transparent}`,
+      "editorOverviewRuler.rangeHighlightForeground": `${colors.transparent}`,
+      "editorOverviewRuler.selectionHighlightForeground": `${colors.transparent}`,
+      "editorOverviewRuler.wordHighlightForeground": `${colors.transparent}`,
+      "editorOverviewRuler.wordHighlightStrongForeground": `${colors.transparent}`,
+      "editorOverviewRuler.wordHighlightTextForeground": `${colors.transparent}`,
+      "editorOverviewRuler.bracketMatchForeground": `${colors.transparent}`,
+      "editorOverviewRuler.inlineChatInserted": `${colors.transparent}`,
+      "editorOverviewRuler.inlineChatRemoved": `${colors.transparent}`,
 
       /**
        * Scrollbar Control and MiniMap
@@ -678,7 +675,7 @@ const getTheme = ({ theme, name }) => {
        * }
        */
 
-      "scrollbar.shadow": "#00000000",
+      "scrollbar.shadow": `${colors.transparent}`,
       "scrollbarSlider.background": "#c7ccd166",
       "scrollbarSlider.hoverBackground": "#c7ccd166",
       "scrollbarSlider.activeBackground": "#c7ccd166",
@@ -691,19 +688,19 @@ const getTheme = ({ theme, name }) => {
       "minimap.foregroundOpacity": "#00000066",
 
       /* Disable changes, these exist in the editor overview ruler already. */
-      "minimapGutter.addedBackground": "#00000000",
-      "minimapGutter.modifiedBackground": "#00000000",
-      "minimapGutter.deletedBackground": "#00000000",
+      "minimapGutter.addedBackground": `${colors.transparent}`,
+      "minimapGutter.modifiedBackground": `${colors.transparent}`,
+      "minimapGutter.deletedBackground": `${colors.transparent}`,
 
       /* Disable errors, warnings and general info. */
-      "minimap.errorHighlight": "#00000000",
-      "minimap.warningHighlight": "#00000000",
-      "minimap.infoHighlight": "#00000000",
+      "minimap.errorHighlight": `${colors.transparent}`,
+      "minimap.warningHighlight": `${colors.transparent}`,
+      "minimap.infoHighlight": `${colors.transparent}`,
 
       /* Hide other decorations. */
-      "minimap.selectionOccurrenceHighlight": "#00000000",
-      "minimap.selectionHighlight": "#00000000",
-      "minimap.findMatchHighlight": "#00000000",
+      "minimap.selectionOccurrenceHighlight": `${colors.transparent}`,
+      "minimap.selectionHighlight": `${colors.transparent}`,
+      "minimap.findMatchHighlight": `${colors.transparent}`,
 
       /**
        * Notifications
@@ -729,8 +726,8 @@ const getTheme = ({ theme, name }) => {
        * Debug Toolbar
        */
 
-      "debugToolBar.border": "#6b7280",
-      "debugToolBar.background": "#2b303b",
+      "debugToolBar.border": `${colors.chrome.border}`,
+      "debugToolBar.background": `${colors.chrome.background}`,
 
       /**
        * Debug Icons
