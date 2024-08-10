@@ -7,74 +7,92 @@ const getColors = ({ theme }) => {
 
     case 'vs': // light
       return {
-        /* https://code.visualstudio.com/api/ux-guidelines/overview */
-        "transparent": tokens.color.transparent,
-        "global": {
-          "accessibility": {
-            "focusBorder": tokens.color.transparent,
-            "contrastBorder": tokens.color.transparent,
-          },
-          "defaults": {
-            "text": tokens.color.neutral[700],
-            "lightText": tokens.color.neutral[400],
-            "icons": tokens.color.neutral[500],
-            "errorText": tokens.color.red[500],
-            "warningText": tokens.color.yellow[700],
-            "hyperlinks": tokens.color.blue[500],
-          }
-        },
-        "chrome": {
-          "text": tokens.color.neutral[700],
-          "lightText": tokens.color.neutral[400],
-          "icons": tokens.color.neutral[500],
-          "background": tokens.color.neutral[200],
-          "border": tokens.color.neutral[300],
-          "debuggingModeBackground": tokens.color.yellow[500],
-          "prominentItemBackground": tokens.color.neutral[300],
-          "selectedTab": {
-            "border": tokens.color.neutral[500],
-            "background": tokens.color.transparent,
-          },
-          "onHoverFocusItem": {
-            "background": chroma(tokens.color.neutral[500]).alpha(0.15).hex(),
-          },
-          "remoteConnection": {
-            "background": tokens.color.neutral[500],
-            "foreground": tokens.color.neutral[200],
-          },
-        },
-        "editor": {
-          "background": tokens.color.neutral[100],
-          "text": tokens.color.neutral[700],
-          "comments": tokens.color.neutral[400],
-          "selectedTextBackground": chroma(tokens.color.neutral[400]).alpha(0.3).hex(),
-          "highlightedTextBackground": chroma(tokens.color.neutral[400]).alpha(0.15).hex(),
-        },
-        "terminal": {
+        transparent: tokens.color.transparent,
 
+        text: tokens.color.neutral[700],
+        lightText: tokens.color.neutral[400],
+        icons: tokens.color.neutral[500],
+        errorText: tokens.color.red[500],
+        warningText: tokens.color.yellow[700],
+        hyperlinks: tokens.color.blue[500],
+        progressBar: tokens.color.blue[700],
+
+        selectionBackground: chroma(tokens.color.neutral[500]).alpha(0.3).hex(),
+        matchesBackground: chroma(tokens.color.neutral[500]).alpha(0.3).hex(),
+        otherMatchesBackground: chroma(tokens.color.neutral[500]).alpha(0.15).hex(),
+        hoverFocusBackground: chroma(tokens.color.neutral[500]).alpha(0.15).hex(),
+
+        addedTextBackground: chroma(tokens.color.green[500]).alpha(0.25).hex(),
+        modifiedTextBackground: chroma(tokens.color.blue[500]).alpha(0.25).hex(),
+        deletedTextBackground: chroma(tokens.color.red[500]).alpha(0.25).hex(),
+
+        workbench: {
+          background: tokens.color.neutral[200],
+          highlightBackground: tokens.color.neutral[300],
+          debuggingBackground: tokens.color.yellow[500],
+          border: tokens.color.neutral[300],
+          separator: tokens.color.neutral[250],
         },
-        "elements": { // "Items" in VS Code's UX Guidelines
-          "badge": {
-            background: tokens.color.neutral[500],
+
+        editor: {
+          background: tokens.color.neutral[100],
+          border: tokens.color.neutral[250],
+          guides: tokens.color.neutral[250],
+          breakpoint: tokens.color.red[500],
+
+          scrollbar: chroma(tokens.color.neutral[300]).alpha(0.5).hex(),
+          minimap: chroma(tokens.color.neutral[300]).alpha(0.25).hex(),
+        },
+
+        terminal: {
+          background: tokens.color.neutral[700],
+          border: tokens.color.neutral[600],
+          foreground: tokens.color.neutral[300],
+
+          ansiBlack: tokens.color.neutral[700],
+          ansiBlue: tokens.color.blue[500],
+          ansiCyan: tokens.color.cyan[500],
+          ansiGreen: tokens.color.green[500],
+          ansiMagenta: tokens.color.magenta[500],
+          ansiRed: tokens.color.red[500],
+          ansiWhite: tokens.color.neutral[300],
+          ansiYellow: tokens.color.yellow[500],
+          ansiBrightBlack: tokens.color.neutral[500],
+          ansiBrightBlue: tokens.color.blue[300],
+          ansiBrightCyan: tokens.color.cyan[300],
+          ansiBrightGreen: tokens.color.green[300],
+          ansiBrightMagenta: tokens.color.magenta[300],
+          ansiBrightRed: tokens.color.red[300],
+          ansiBrightWhite: tokens.color.neutral[300],
+          ansiBrightYellow: tokens.color.yellow[300],
+
+          selectionBackground: chroma(tokens.color.neutral[500]).alpha(0.7).hex(),
+          matchesBackground: chroma(tokens.color.neutral[500]).alpha(0.7).hex(),
+          otherMatchesBackground: chroma(tokens.color.neutral[500]).alpha(0.15).hex(),
+        },
+
+        /* "Items" in VS Code's UX Guidelines: */
+        badge: {
+          background: tokens.color.neutral[500],
+          foreground: tokens.color.neutral[100],
+        },
+
+        button: {
+          primary: {
+            background: tokens.color.neutral[700],
             foreground: tokens.color.neutral[100],
           },
-          "inputs": {
-            "background": tokens.color.neutral[100],
-            "foreground": tokens.color.neutral[700],
-            "placeholder": tokens.color.neutral[400],
-            "selectedTextBackground": chroma(tokens.color.neutral[400]).alpha(0.3).hex(),
-          },
-          "button": {
-            "primary": {
-              "background": tokens.color.neutral[700],
-              "foreground": tokens.color.neutral[100],
-            },
-            "secondary": {
-              "background": tokens.color.neutral[400],
-              "foreground": tokens.color.neutral[100],
-            },
+          secondary: {
+            background: tokens.color.neutral[400],
+            foreground: tokens.color.neutral[100],
           },
         },
+
+        inputs: {
+          background: tokens.color.neutral[100],
+          foreground: tokens.color.neutral[700],
+        },
+
       }
 
     case 'vs-dark':
