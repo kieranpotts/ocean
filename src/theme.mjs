@@ -35,7 +35,7 @@ const getTheme = ({ theme, name }) => {
 
       /* Background color of text selections within text fields in the workbench.
       This does not apply to selections within the editor and terminal. */
-      "selection.background": `${colors.selectionBackground}`,
+      "selection.background": `${colors.alpha.selectionBackground}`,
 
       /* Foreground color for text providing additional information, eg labels. */
       "descriptionForeground": `${colors.lightText}`,
@@ -90,12 +90,12 @@ const getTheme = ({ theme, name }) => {
 
       /* Colors of the hovered/focused item in the menubar. */
       "menubar.selectionBorder": `${colors.transparent}`,
-      "menubar.selectionBackground": `${colors.hoverFocusBackground}`,
+      "menubar.selectionBackground": `${colors.alpha.hoverFocusBackground}`,
       "menubar.selectionForeground": `${colors.text}`,
 
       /* Colors of the selected item in menus. */
       "menu.selectionBorder": `${colors.transparent}`,
-      "menu.selectionBackground": `${colors.hoverFocusBackground}`,
+      "menu.selectionBackground": `${colors.alpha.hoverFocusBackground}`,
       "menu.selectionForeground": `${colors.text}`,
 
       /**
@@ -111,7 +111,7 @@ const getTheme = ({ theme, name }) => {
 
       /* Lighter background and border colors to indicate active item. */
       "activityBar.activeBorder": `${colors.transparent}`,
-      "activityBar.activeBackground": `${colors.hoverFocusBackground}`,
+      "activityBar.activeBackground": `${colors.alpha.hoverFocusBackground}`,
 
       /* Badges in the Activity Bar - replicated from the global Badge element. */
       "activityBarBadge.background": `${colors.badge.background}`,
@@ -132,7 +132,7 @@ const getTheme = ({ theme, name }) => {
       "activityBarTop.inactiveForeground": `${colors.icons}`,
 
       "activityBarTop.activeBorder": `${colors.transparent}`,
-      "activityBarTop.activeBackground": `${colors.hoverFocusBackground}`,
+      "activityBarTop.activeBackground": `${colors.alpha.hoverFocusBackground}`,
 
       /**
        * Side Bar
@@ -155,7 +155,7 @@ const getTheme = ({ theme, name }) => {
       "sideBarSectionHeader.foreground": `${colors.text}`,
 
       /* Color to mark "drop zones" when moving things in the sidebar. */
-      "sidebar.dropBackground": `${colors.highlightBackground}`,
+      "sidebar.dropBackground": `${colors.alpha.highlightBackground}`,
 
       /* Add a border to the top/bottom  of the sidebar when the Activity
       Bar is moved to that position. (This adds a matching border to
@@ -174,7 +174,7 @@ const getTheme = ({ theme, name }) => {
       "panelTitle.activeForeground": `${colors.text}`,
 
       /* Color to mark "drop zones" when moving panel sections around. */
-      "panelSection.dropBackground": `${colors.highlightBackground}`,
+      "panelSection.dropBackground": `${colors.alpha.highlightBackground}`,
 
       /*
        * Status Bar
@@ -193,11 +193,11 @@ const getTheme = ({ theme, name }) => {
       "statusBar.debuggingForeground": `${colors.text}`,
 
       /* Colors for prominent items in the status bar. */
-      "statusBarItem.prominentBackground": `${colors.highlightBackground}`,
+      "statusBarItem.prominentBackground": `${colors.alpha.highlightBackground}`,
 
       /* Overlays for item hovers and clicks. */
-      "statusBarItem.hoverBackground": `${colors.hoverFocusBackground}`,
-      "statusBarItem.activeBackground": `${colors.hoverFocusBackground}`,
+      "statusBarItem.hoverBackground": `${colors.alpha.hoverFocusBackground}`,
+      "statusBarItem.activeBackground": `${colors.alpha.hoverFocusBackground}`,
 
       /* Color for the remote indicator on the status bar. */
       "statusBarItem.remoteBackground": `${colors.button.primary.background}`,
@@ -268,7 +268,7 @@ const getTheme = ({ theme, name }) => {
       "quickInputTitle.background": `${colors.workbench.background}`,
 
       /* Lists within the Quick Picker widget. */
-      "quickInputList.focusBackground": `${colors.hoverFocusBackground}`,
+      "quickInputList.focusBackground": `${colors.alpha.hoverFocusBackground}`,
       "quickInputList.focusForeground": `${colors.text}`,
       "quickInputList.focusIconForeground": `${colors.icons}`,
 
@@ -286,7 +286,7 @@ const getTheme = ({ theme, name }) => {
       "textBlockQuote.background": `${colors.transparent}`,
 
       /* Code and preformatted text blocks - inverted colors, like the terminal. */
-      "textCodeBlock.background": `${colors.hoverFocusBackground}`,
+      "textCodeBlock.background": `${colors.alpha.hoverFocusBackground}`,
       "textPreformat.foreground": `${colors.text}`,
 
       /* Separator. */
@@ -303,19 +303,19 @@ const getTheme = ({ theme, name }) => {
        */
 
       /* The selected item when the list/tree is active. */
-      "list.activeSelectionBackground": `${colors.selectionBackground}`,
+      "list.activeSelectionBackground": `${colors.alpha.selectionBackground}`,
       "list.activeSelectionForeground": `${colors.text}`,
 
       /* The selected item when the list/tree is inactive. */
-      "list.inactiveSelectionBackground": `${colors.selectionBackground}`,
+      "list.inactiveSelectionBackground": `${colors.alpha.selectionBackground}`,
       "list.inactiveSelectionForeground": `${colors.text}`,
 
       /* The focused item when the list/tree is active. */
-      "list.focusBackground": `${colors.hoverFocusBackground}`,
+      "list.focusBackground": `${colors.alpha.hoverFocusBackground}`,
       "list.focusForeground": `${colors.text}`,
 
       /* Hovering. */
-      "list.hoverBackground": `${colors.hoverFocusBackground}`,
+      "list.hoverBackground": `${colors.alpha.hoverFocusBackground}`,
       "list.hoverForeground": `${colors.text}`,
 
       /* Match highlights when searching inside the list/tree. */
@@ -328,7 +328,7 @@ const getTheme = ({ theme, name }) => {
       "list.warningForeground": `${colors.warningText}`,
 
       /* Color to mark "drop zones" when moving things in the list view. */
-      "list.dropBackground": `${colors.highlightBackground}`,
+      "list.dropBackground": `${colors.alpha.highlightBackground}`,
 
       /* Tree Widget's stroke color for indent guides. */
       "tree.indentGuidesStroke": `${colors.workbench.border}`,
@@ -387,7 +387,7 @@ const getTheme = ({ theme, name }) => {
       "editorGroupHeader.tabsBackground": `${colors.workbench.background}`,
 
       /* Color to mark "drop zones" when moving tabs around. */
-      "editorGroup.dropBackground": `${colors.highlightBackground}`,
+      "editorGroup.dropBackground": `${colors.alpha.highlightBackground}`,
 
       /**
        * Editor Tabs
@@ -438,16 +438,16 @@ const getTheme = ({ theme, name }) => {
       "terminalCursor.foreground": `${colors.terminal.foreground}`,
 
       /* Background for selected text. */
-      "terminal.selectionBackground": `${colors.terminal.selectionBackground}`,
+      "terminal.selectionBackground": `${colors.terminal.alpha.selectionBackground}`,
 
       /* The background color when dragging on top of terminals. */
-      "terminal.dropBackground": `${colors.highlightBackground}`,
+      "terminal.dropBackground": `${colors.alpha.highlightBackground}`,
 
       /* Current search match in the terminal. */
-      "terminal.findMatchBackground": `${colors.terminal.matchesBackground}`,
+      "terminal.findMatchBackground": `${colors.terminal.alpha.matchesBackground}`,
 
       /* Other search matches in the terminal. */
-      "terminal.findMatchHighlightBackground": `${colors.otherMatchesBackground}`,
+      "terminal.findMatchHighlightBackground": `${colors.terminal.alpha.otherMatchesBackground}`,
 
       /* Border between split terminal panes. */
       "terminal.border": `${colors.terminal.border}`,
@@ -509,28 +509,28 @@ const getTheme = ({ theme, name }) => {
       "editor.foreground": `${colors.text}`,
 
       /* Background color for the first line of a folded (collapsed) range. Opaque. */
-      "editor.foldBackground": `${colors.hoverFocusBackground}`,
+      "editor.foldBackground": `${colors.alpha.hoverFocusBackground}`,
 
       /* Background color of the current line with the cursor. Must be opaque. */
-      "editor.lineHighlightBackground": `${colors.hoverFocusBackground}`,
+      "editor.lineHighlightBackground": `${colors.alpha.hoverFocusBackground}`,
 
       /* Selected text, and color for other text in the document that matches
       the current selection. */
-      "editor.selectionBackground": `${colors.selectionBackground}`,
-      "editor.selectionHighlightBackground": `${colors.matchesBackground}`,
+      "editor.selectionBackground": `${colors.alpha.selectionBackground}`,
+      "editor.selectionHighlightBackground": `${colors.alpha.matchesBackground}`,
 
       /* Current word/symbol highlight in read and write mode. */
-      "editor.wordHighlightBackground": `${colors.hoverFocusBackground}`,
-      "editor.wordHighlightStrongBackground": `${colors.hoverFocusBackground}`,
+      "editor.wordHighlightBackground": `${colors.alpha.hoverFocusBackground}`,
+      "editor.wordHighlightStrongBackground": `${colors.alpha.hoverFocusBackground}`,
 
       /* In debugging mode, these are the background colors for the top stack
       frame and the focused stack frame respectively. */
-      "editor.stackFrameHighlightBackground": `${colors.hoverFocusBackground}`,
-      "editor.focusedStackFrameHighlightBackground": `${colors.hoverFocusBackground}`,
+      "editor.stackFrameHighlightBackground": `${colors.alpha.hoverFocusBackground}`,
+      "editor.focusedStackFrameHighlightBackground": `${colors.alpha.hoverFocusBackground}`,
 
       /* Current search match in the editor, and for other search matches. */
-      "editor.findMatchBackground": `${colors.matchesBackground}`,
-      "editor.findMatchHighlightBackground": `${colors.otherMatchesBackground}`,
+      "editor.findMatchBackground": `${colors.alpha.matchesBackground}`,
+      "editor.findMatchHighlightBackground": `${colors.alpha.otherMatchesBackground}`,
 
       /* Line numbers. */
       "editorLineNumber.foreground": `${colors.lightText}`,
@@ -637,13 +637,13 @@ const getTheme = ({ theme, name }) => {
        * Diff Editor
        */
 
-      "diffEditor.insertedLineBackground": `${colors.addedTextBackground}`,
-      "diffEditor.insertedTextBackground": `${colors.addedTextBackground}`,
-      "diffEditor.removedLineBackground": `${colors.deletedTextBackground}`,
-      "diffEditor.removedTextBackground": `${colors.deletedTextBackground}`,
+      "diffEditor.insertedLineBackground": `${colors.alpha.addedTextBackground}`,
+      "diffEditor.insertedTextBackground": `${colors.alpha.addedTextBackground}`,
+      "diffEditor.removedLineBackground": `${colors.alpha.deletedTextBackground}`,
+      "diffEditor.removedTextBackground": `${colors.alpha.deletedTextBackground}`,
 
-      "diffEditorOverview.insertedForeground": `${colors.addedTextBackground}`,
-      "diffEditorOverview.removedForeground": `${colors.deletedTextBackground}`,
+      "diffEditorOverview.insertedForeground": `${colors.alpha.addedTextBackground}`,
+      "diffEditorOverview.removedForeground": `${colors.alpha.deletedTextBackground}`,
 
       "diffEditorGutter.insertedLineBackground": `${colors.transparent}`,
       "diffEditorGutter.removedLineBackground": `${colors.transparent}`,

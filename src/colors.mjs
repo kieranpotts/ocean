@@ -17,15 +17,17 @@ const getColors = ({ theme }) => {
         hyperlinks: tokens.color.blue[500],
         progressBar: tokens.color.blue[700],
 
-        highlightBackground: chroma(tokens.color.neutral[500]).alpha(0.25).hex(),
-        selectionBackground: chroma(tokens.color.neutral[500]).alpha(0.15).hex(),
-        matchesBackground: chroma(tokens.color.neutral[500]).alpha(0.15).hex(),
-        otherMatchesBackground: chroma(tokens.color.neutral[500]).alpha(0.05).hex(),
-        hoverFocusBackground: chroma(tokens.color.neutral[500]).alpha(0.1).hex(),
+        alpha: {
+          highlightBackground: chroma(tokens.color.neutral[500]).alpha(0.25).hex(),
+          selectionBackground: chroma(tokens.color.neutral[500]).alpha(0.15).hex(),
+          matchesBackground: chroma(tokens.color.neutral[500]).alpha(0.15).hex(),
+          otherMatchesBackground: chroma(tokens.color.neutral[500]).alpha(0.05).hex(),
+          hoverFocusBackground: chroma(tokens.color.neutral[500]).alpha(0.1).hex(),
 
-        addedTextBackground: chroma(tokens.color.green[600]).alpha(0.2).hex(),
-        modifiedTextBackground: chroma(tokens.color.blue[600]).alpha(0.2).hex(),
-        deletedTextBackground: chroma(tokens.color.red[600]).alpha(0.2).hex(),
+          addedTextBackground: chroma(tokens.color.green[600]).alpha(0.2).hex(),
+          // modifiedTextBackground: chroma(tokens.color.blue[600]).alpha(0.2).hex(),
+          deletedTextBackground: chroma(tokens.color.red[600]).alpha(0.2).hex(),
+        },
 
         workbench: {
           background: tokens.color.neutral[200],
@@ -66,9 +68,11 @@ const getColors = ({ theme }) => {
           ansiBrightWhite: tokens.color.neutral[300],
           ansiBrightYellow: tokens.color.yellow[300],
 
-          selectionBackground: chroma(tokens.color.neutral[500]).alpha(0.85).hex(),
-          matchesBackground: chroma(tokens.color.neutral[500]).alpha(0.85).hex(),
-          otherMatchesBackground: chroma(tokens.color.neutral[500]).alpha(0.95).hex(),
+          alpha: {
+            selectionBackground: chroma(tokens.color.neutral[500]).alpha(0.85).hex(),
+            matchesBackground: chroma(tokens.color.neutral[500]).alpha(0.85).hex(),
+            otherMatchesBackground: chroma(tokens.color.neutral[500]).alpha(0.95).hex(),
+          },
         },
 
         /* "Items" in VS Code's UX Guidelines: */
