@@ -40,6 +40,7 @@ const getColors = ({ theme }) => {
           background: tokens.color.neutral[100],
           border: tokens.color.neutral[250],
           guides: tokens.color.neutral[250],
+
           breakpoint: tokens.color.red[500],
 
           scrollbar: chroma(tokens.color.neutral[400]).alpha(0.5).hex(),

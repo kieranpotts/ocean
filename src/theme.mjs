@@ -559,12 +559,12 @@ const getTheme = ({ theme, name }) => {
       "editorBracketMatch.border": `${colors.transparent}`,
 
       /* Bracket pair colorization. Disabled by using text foreground color. */
-      "editorBracketHighlight.foreground1": `${colors.text}`,
-      "editorBracketHighlight.foreground2": `${colors.text}`,
-      "editorBracketHighlight.foreground3": `${colors.text}`,
-      "editorBracketHighlight.foreground4": `${colors.text}`,
-      "editorBracketHighlight.foreground5": `${colors.text}`,
-      "editorBracketHighlight.foreground6": `${colors.text}`,
+      "editorBracketHighlight.foreground1": `${colors.lightText}`,
+      "editorBracketHighlight.foreground2": `${colors.lightText}`,
+      "editorBracketHighlight.foreground3": `${colors.lightText}`,
+      "editorBracketHighlight.foreground4": `${colors.lightText}`,
+      "editorBracketHighlight.foreground5": `${colors.lightText}`,
+      "editorBracketHighlight.foreground6": `${colors.lightText}`,
 
       "editorBracketHighlight.unexpectedBracket.foreground": `${colors.errorText}`,
 
