@@ -154,6 +154,9 @@ const getTheme = ({ theme, name }) => {
       "sideBarSectionHeader.background": `${colors.workbench.background}`,
       "sideBarSectionHeader.foreground": `${colors.text}`,
 
+      /* Color to mark "drop zones" when moving things in the sidebar. */
+      "sidebar.dropBackground": `${colors.highlightBackground}`,
+
       /* Add a border to the top/bottom  of the sidebar when the Activity
       Bar is moved to that position. (This adds a matching border to
       the top of the secondary sidebar.) */
@@ -169,6 +172,9 @@ const getTheme = ({ theme, name }) => {
 
       "panelTitle.inactiveForeground": `${colors.text}`,
       "panelTitle.activeForeground": `${colors.text}`,
+
+      /* Color to mark "drop zones" when moving panel sections around. */
+      "panelSection.dropBackground": `${colors.highlightBackground}`,
 
       /*
        * Status Bar
@@ -187,7 +193,7 @@ const getTheme = ({ theme, name }) => {
       "statusBar.debuggingForeground": `${colors.text}`,
 
       /* Colors for prominent items in the status bar. */
-      "statusBarItem.prominentBackground": `${colors.workbench.highlightBackground}`,
+      "statusBarItem.prominentBackground": `${colors.highlightBackground}`,
 
       /* Overlays for item hovers and clicks. */
       "statusBarItem.hoverBackground": `${colors.hoverFocusBackground}`,
@@ -321,6 +327,9 @@ const getTheme = ({ theme, name }) => {
       "list.errorForeground": `${colors.errorText}`,
       "list.warningForeground": `${colors.warningText}`,
 
+      /* Color to mark "drop zones" when moving things in the list view. */
+      "list.dropBackground": `${colors.highlightBackground}`,
+
       /* Tree Widget's stroke color for indent guides. */
       "tree.indentGuidesStroke": `${colors.workbench.border}`,
 
@@ -377,6 +386,9 @@ const getTheme = ({ theme, name }) => {
       "editorGroupHeader.tabsBorder": `${colors.transparent}`,
       "editorGroupHeader.tabsBackground": `${colors.workbench.background}`,
 
+      /* Color to mark "drop zones" when moving tabs around. */
+      "editorGroup.dropBackground": `${colors.highlightBackground}`,
+
       /**
        * Editor Tabs
        */
@@ -427,6 +439,9 @@ const getTheme = ({ theme, name }) => {
 
       /* Background for selected text. */
       "terminal.selectionBackground": `${colors.terminal.selectionBackground}`,
+
+      /* The background color when dragging on top of terminals. */
+      "terminal.dropBackground": `${colors.highlightBackground}`,
 
       /* Current search match in the terminal. */
       "terminal.findMatchBackground": `${colors.terminal.matchesBackground}`,

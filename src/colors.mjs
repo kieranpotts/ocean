@@ -17,6 +17,7 @@ const getColors = ({ theme }) => {
         hyperlinks: tokens.color.blue[500],
         progressBar: tokens.color.blue[700],
 
+        highlightBackground: chroma(tokens.color.neutral[500]).alpha(0.25).hex(),
         selectionBackground: chroma(tokens.color.neutral[500]).alpha(0.15).hex(),
         matchesBackground: chroma(tokens.color.neutral[500]).alpha(0.15).hex(),
         otherMatchesBackground: chroma(tokens.color.neutral[500]).alpha(0.05).hex(),
@@ -28,7 +29,6 @@ const getColors = ({ theme }) => {
 
         workbench: {
           background: tokens.color.neutral[200],
-          highlightBackground: tokens.color.neutral[300],
           debuggingBackground: tokens.color.yellow[500],
           border: tokens.color.neutral[300],
           separator: tokens.color.neutral[250],
