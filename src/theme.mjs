@@ -374,7 +374,7 @@ const getTheme = ({ theme, name }) => {
        */
 
       "editorGroup.border": `${colors.workbench.background}`,
-      "editorGroupHeader.tabsBorder": `${colors.workbench.background}`,
+      "editorGroupHeader.tabsBorder": `${colors.transparent}`,
       "editorGroupHeader.tabsBackground": `${colors.workbench.background}`,
 
       /**
