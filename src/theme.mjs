@@ -329,8 +329,9 @@ const getTheme = ({ theme, name }) => {
        * A set of colors for button controls.
        */
 
+      "button.border": `${colors.transparent}`,
+
       /* Primary button colors. */
-      "button.border": `${colors.button.primary.background}`,
       "button.background": `${colors.button.primary.background}`,
       "button.hoverBackground": `${colors.button.primary.background}`,
       "button.foreground": `${colors.button.primary.foreground}`,
