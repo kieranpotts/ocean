@@ -48,6 +48,7 @@ const getColors = ({ theme }) => {
 
         terminal: {
           background: tokens.color.neutral[700],
+          selectionBackground: tokens.color.neutral[650], /* Cannot be transparent */
           border: tokens.color.neutral[600],
           foreground: tokens.color.neutral[300],
 
@@ -69,7 +70,6 @@ const getColors = ({ theme }) => {
           ansiBrightYellow: tokens.color.yellow[300],
 
           alpha: {
-            selectionBackground: chroma(tokens.color.neutral[500]).alpha(0.85).hex(),
             matchesBackground: chroma(tokens.color.neutral[500]).alpha(0.85).hex(),
             otherMatchesBackground: chroma(tokens.color.neutral[500]).alpha(0.95).hex(),
           },

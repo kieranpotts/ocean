@@ -438,16 +438,18 @@ const getTheme = ({ theme, name }) => {
       "terminalCursor.foreground": `${colors.terminal.foreground}`,
 
       /* Background for selected text. */
-      "terminal.selectionBackground": `${colors.terminal.alpha.selectionBackground}`,
+      "terminal.selectionBackground": `${colors.terminal.selectionBackground}`,
 
       /* The background color when dragging on top of terminals. */
       "terminal.dropBackground": `${colors.alpha.highlightBackground}`,
 
       /* Current search match in the terminal. */
       "terminal.findMatchBackground": `${colors.terminal.alpha.matchesBackground}`,
+      "terminal.findMatchBorder": `${colors.transparent}`,
 
       /* Other search matches in the terminal. */
       "terminal.findMatchHighlightBackground": `${colors.terminal.alpha.otherMatchesBackground}`,
+      "terminal.findMatchHighlightBorder": `${colors.transparent}`,
 
       /* Border between split terminal panes. */
       "terminal.border": `${colors.terminal.border}`,
