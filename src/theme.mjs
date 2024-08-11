@@ -612,8 +612,11 @@ const getTheme = ({ theme, name }) => {
       "gitDecoration.addedResourceForeground": `${colors.text}`,
       "gitDecoration.modifiedResourceForeground": `${colors.text}`,
       "gitDecoration.deletedResourceForeground": `${colors.text}`,
+      "gitDecoration.renamedResourceForeground": `${colors.text}`,
+      "gitDecoration.stageModifiedResourceForeground": `${colors.text}`,
+      "gitDecoration.stageDeletedResourceForeground": `${colors.text}`,
       "gitDecoration.untrackedResourceForeground": `${colors.text}`,
-      "gitDecoration.ignoredResourceForeground": `${colors.text}`,
+      "gitDecoration.ignoredResourceForeground": `${colors.lightText}`,
       "gitDecoration.conflictingResourceForeground": `${colors.text}`,
       "gitDecoration.submoduleResourceForeground": `${colors.text}`,
 
