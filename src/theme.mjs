@@ -481,7 +481,7 @@ const getTheme = ({ theme, name }) => {
 
       "editorStickyScroll.border": `${colors.editor.border}`,
       "editorStickyScroll.shadow": `${colors.transparent}`,
-      "editorStickyScroll.background": `${colors.workbench.background}`,
+      "editorStickyScroll.background": `${colors.editor.background}`,
       "editorStickyScrollHover.background": `${colors.workbench.background}`,
 
       /**
