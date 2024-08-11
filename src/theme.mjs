@@ -155,7 +155,7 @@ const getTheme = ({ theme, name }) => {
       "sideBarSectionHeader.foreground": `${colors.text}`,
 
       /* Color to mark "drop zones" when moving things in the sidebar. */
-      "sidebar.dropBackground": `${colors.alpha.highlightBackground}`,
+      "sideBar.dropBackground": `${colors.alpha.highlightBackground}`,
 
       /* Add a border to the top/bottom  of the sidebar when the Activity
       Bar is moved to that position. (This adds a matching border to
