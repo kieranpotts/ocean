@@ -11,8 +11,8 @@
 # ==============================================================================
 
 # Build artifacts...
-dist/*
-pkg/*
+dist
+pkg
 
 # Vendor dependencies.
 node_modules/*
