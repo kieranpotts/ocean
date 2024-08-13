@@ -1,29 +1,40 @@
 {
   "name": "ocean-vscode-theme",
-  "publisher": "kieranpotts",
-  "displayName": "Ocean Theme",
-  "description": "A family of themes inspired by the ocean.",
   "version": "0.0.0",
-	"license": "MIT",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/kieranpotts/ocean"
-	},
-	"bugs": {
-		"url": "https://github.com/kieranpotts/ocean/issues"
-	},
-  "engines": {
-    "vscode": "^1.91.0"
+  "preview": true,
+  "publisher": "kieranpotts",
+  "author":{
+    "name": "Kieran Potts"
   },
+  "license": "MIT",
+  "displayName": "The Ocean",
+  "description": "A family of minimalist themes inspired by the ocean.",
   "categories": [
     "Themes"
   ],
-	"keywords": [
-		"theme",
-		"light",
-		"dark",
-		"ocean"
-	],
+  "keywords": [
+    "theme",
+    "light",
+    "dark",
+    "ocean"
+  ],
+  "pricing": "Free",
+  "icon": "_/wave.png",
+  "galleryBanner": {
+    "color": "#5e81ac",
+    "theme": "light"
+  },
+  "homepage": "https://github.com/kieranpotts/ocean/blob/dev/src/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kieranpotts/ocean"
+  },
+  "bugs": {
+    "url": "https://github.com/kieranpotts/ocean/issues"
+  },
+  "engines": {
+    "vscode": "^1.91.0"
+  },
   "contributes": {
     "themes": [
       {
