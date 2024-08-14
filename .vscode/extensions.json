@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+
+    /* Extension Test Runner — Runs tests as you develop extensions for VS Code. */
+    "ms-vscode.extension-test-runner",
+
+  ]
+}
