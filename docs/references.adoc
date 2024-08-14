@@ -1,0 +1,29 @@
+= References
+
+== User-facing documentation
+
+* link:https://code.visualstudio.com/docs/getstarted/themes[VS Code Docs: Get Started - Themes] — User-facing documentation for installing and configuring themes.
+
+* link:https://code.visualstudio.com/api/extension-guides/overview[VS Code Docs: Extensions Guides] — Design overview of VS Code's extensions system.
+
+== Developer documentation
+
+* link:https://code.visualstudio.com/api/extension-guides/color-theme[VS Code Docs: Extensions Guide - Color Themes] — Start here to develop a custom color theme.
+
+* link:https://code.visualstudio.com/api/references/theme-color[VS Code Docs: References - Theme Color] — A list of all the tokens available for use in a VS Code color theme.
+
+* link:https://code.visualstudio.com/api/references/extension-manifest[VS Code Docs: References - Extensions Manifest] — Includes marketplace presentation guidelines.
+
+* link:https://code.visualstudio.com/api/references/contribution-points#contributes.themes[VS Code Docs: References - Contribution Points] — Contribution points available for themes.
+
+* link:https://code.visualstudio.com/api/working-with-extensions/testing-extension[VS Code Docs: Testing Extensions] — How to test your extension locally.
+
+* link:https://code.visualstudio.com/api/working-with-extensions/publishing-extension[VS Code Docs: Publishing Extensions] — Step-by-step guide to distributing extensions via the VS Code Marketplace.
+
+* link:https://code.visualstudio.com/api/ux-guidelines/overview[VS Code Docs: UX Guidelines] — Guidelines for creating extensions that integrate seamlessly with VS Code's native user interface and design patterns.
+
+* link:https://github.com/microsoft/vscode-extension-samples/tree/main[VS Code Extension Samples] — Microsoft's official repository of sample code demonstrating the VS Code extensions API.
+
+== Tools
+
+* link:https://themes.vscode.one/[VS Code Theme Editor] — Web GUI to design and generate code for color themes. *Warning: This tool is buggy; it does not save all changes as expected. Use for prototyping only.*

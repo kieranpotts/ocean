@@ -1,0 +1,19 @@
+= Theme development
+
+To begin theme development, first run `npm install` to install the necessary dependencies.
+
+Then follow these steps to start VS Code's extension development environment:
+
+1. Load this repository in Visual Studio Code, directly in its own workspace.
+
+2. Press `F5` to open a new VS Code Extension Development Host window.
+
+3. Go to *File* > *Preferences/Settings* > *Themes* > *Color Themes* and select "Ocean Light".
+
+4. Return to the original VS Code window and make changes to the theme, and use the `npm run build` command to recompile. Alternatively, you can run `npm run dev` to watch for changes and automatically recompile.
+
+Changes to the built artifacts, which are compiled to the `dist` directory, will be automatically loaded in the Extension Development Host window. Sometimes you may need to reload the Extension Development Host window to see the changes – this can be the case when working in WSL, for example.
+
+TIP: Use `npm run dev` to start a development session, during which any changes saved to the `src` files will automatically trigger a rebuild of the extension, which in turn will be hot-reloaded in the Extension Development Host window, if that is open too.
+
+To terminate the extension development session, either close the Extension Development Host window or stop the Run and Debug session in the original window.

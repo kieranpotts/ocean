@@ -19,6 +19,7 @@ const getTheme = ({ theme, name }) => {
       There are many more color tokens available, but GitHub's subset seem to be
       sufficient for a complete theme implementation.
       https://code.visualstudio.com/api/references/theme-color
+      https://github.com/microsoft/vscode/blob/main/build/lib/stylelint/vscode-known-variables.json
       */
 
       /**
