@@ -2,6 +2,8 @@
   "name": "ocean",
   "private": true,
   "devDependencies": {
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
     "@vscode/vsce": "^2.31.1",
     "chroma-js": "^2.6.0",
     "nodemon": "^3.1.4"
@@ -15,6 +17,6 @@
     "build": "node src/index.mjs",
     "package": "npm run build && mkdir -p pkg && cd dist && node ../node_modules/@vscode/vsce/vsce package -o ../pkg/ocean-vscode-theme.vsix",
     "publish": "npm run build && cd dist && node ../node_modules/@vscode/vsce/vsce publish",
-    "test": "echo \"Error: no tests specified\" && exit 1"
+    "test": "vscode-test"
   }
 }
