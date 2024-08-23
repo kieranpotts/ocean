@@ -95,6 +95,7 @@ const getColors = ({ theme }) => {
 
         inputs: {
           background: tokens.color.neutral[100],
+          border: tokens.color.neutral[200],
           foreground: tokens.color.neutral[700],
         },
 

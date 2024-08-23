@@ -118,7 +118,7 @@ const getTheme = ({ theme, name }) => {
        * Text Input Control
        */
 
-      "input.border": `${colors.transparent}`,
+      "input.border": `${colors.inputs.border}`,
       "input.background": `${colors.inputs.background}`,
       "input.foreground": `${colors.text}`,
 
