@@ -13,12 +13,12 @@ const getTheme = ({ theme, name }) => {
     "colors": {
 
       /*
-      This theme uses only the colors used in GitHub's VS Code themes:
-      https://github.com/primer/github-vscode-theme/blob/main/src/theme.js
+      The following references have been used to compile this theme.
+      Initially, the color design was based on GitHub's VS Code themes,
+      and subsequently extended.
 
-      There are many more color tokens available, but GitHub's subset seem to be
-      sufficient for a complete theme implementation.
       https://code.visualstudio.com/api/references/theme-color
+      https://github.com/primer/github-vscode-theme/blob/main/src/theme.js
       https://github.com/microsoft/vscode/blob/main/build/lib/stylelint/vscode-known-variables.json
       */
 
@@ -34,10 +34,6 @@ const getTheme = ({ theme, name }) => {
       by a component. */
       "foreground": `${colors.text}`,
 
-      /* Background color of text selections within text fields in the workbench.
-      This does not apply to selections within the editor and terminal. */
-      "selection.background": `${colors.alpha.selectionBackground}`,
-
       /* Foreground color for text providing additional information, eg labels. */
       "descriptionForeground": `${colors.lightText}`,
 
@@ -45,8 +41,31 @@ const getTheme = ({ theme, name }) => {
       This color is only used if not overridden by a component. */
       "errorForeground": `${colors.errorText}`,
 
+      /* Text links - eg in welcome page. */
+      "textLink.foreground": `${colors.hyperlinks}`,
+      "textLink.activeForeground": `${colors.hyperlinks}`,
+
+      /* Block quotes - eg in help pages. */
+      "textBlockQuote.border": `${colors.lightText}`,
+      "textBlockQuote.background": `${colors.transparent}`,
+
+      /* Code and preformatted text blocks - inverted colors, like the terminal. */
+      "textCodeBlock.background": `${colors.alpha.hoverFocusBackground}`,
+      "textPreformat.foreground": `${colors.text}`,
+
+      /* Text separator (horizontal rule). */
+      "textSeparator.foreground": `${colors.lightText}`,
+
       /* The default color for icons in the workbench. */
       "icon.foreground": `${colors.icons}`,
+
+      /* This is the foreground color for <kbd> elements within the Keyboard
+      Shortcuts (keybindings) picker. */
+      "keybindingLabel.foreground": `${colors.text}`,
+
+      /* Background color of text selections within text fields in the workbench.
+      This does not apply to selections within the editor and terminal. */
+      "selection.background": `${colors.alpha.selectionBackground}`,
 
       /**
        * High-Contrast Extras
@@ -58,11 +77,71 @@ const getTheme = ({ theme, name }) => {
       "contrastActiveBorder": `${colors.transparent}`,
 
       /**
+       * Button Control
+       * A set of colors for button controls.
+       */
+
+      "button.border": `${colors.transparent}`,
+
+      /* Primary button colors. */
+      "button.background": `${colors.button.primary.background}`,
+      "button.hoverBackground": `${colors.button.primary.background}`,
+      "button.foreground": `${colors.button.primary.foreground}`,
+
+      /* Secondary button colors. */
+      "button.secondaryBackground": `${colors.button.secondary.background}`,
+      "button.secondaryHoverBackground": `${colors.button.secondary.background}`,
+      "button.secondaryForeground": `${colors.button.secondary.foreground}`,
+
+      /* Welcome Page buttons. */
+      "welcomePage.buttonBackground": `${colors.button.primary.background}`,
+      "welcomePage.buttonHoverBackground": `${colors.button.primary.background}`,
+
+      /**
+       * Checkbox Control
+       */
+
+      "checkbox.border": `${colors.transparent}`,
+      "checkbox.background": `${colors.inputs.background}`,
+      "checkbox.foreground": `${colors.text}`,
+
+      /**
+       * Dropdown Control
+       */
+
+      "dropdown.border": `${colors.transparent}`,
+      "dropdown.background": `${colors.inputs.background}`,
+      "dropdown.listBackground": `${colors.inputs.background}`,
+      "dropdown.foreground": `${colors.text}`,
+
+      /**
+       * Text Input Control
+       */
+
+      "input.border": `${colors.transparent}`,
+      "input.background": `${colors.inputs.background}`,
+      "input.foreground": `${colors.text}`,
+
+      /* Placeholder text. */
+      "input.placeholderForeground": `${colors.lightText}`,
+
+      /**
+       * Badges
+       * Badges are small information labels, for example, search results count.
+       */
+
+      "badge.background": `${colors.badge.background}`,
+      "badge.foreground": `${colors.badge.foreground}`,
+
+      /**
        * Title Bar
        * Because the Menu Bar might be positioned within the Title Bar, we've
        * merged these color settings together for easier maintenance. The Title
        * Bar inherits the colors of the Menu Bar – they must be consistent.
        */
+
+      /* Title Bar border color - always transparent. */
+      "titleBar.border": `${colors.transparent}`,
 
       /* Title Bar background, varying when the window is active and inactive. */
       "titleBar.activeBackground": `${colors.workbench.background}`,
@@ -71,9 +150,6 @@ const getTheme = ({ theme, name }) => {
       /* Title Bar foreground, varying the window is active and inactive. */
       "titleBar.activeForeground": `${colors.text}`,
       "titleBar.inactiveForeground": `${colors.text}`,
-
-      /* Title Bar border color - always transparent. */
-      "titleBar.border": `${colors.transparent}`,
 
       /**
        * Menu Bar
@@ -164,140 +240,6 @@ const getTheme = ({ theme, name }) => {
       "sideBarActivityBarTop.border": `${colors.transparent}`,
 
       /**
-       * Panel
-       * These colors are for the bottom panel.
-       */
-
-      "panel.border": `${colors.transparent}`,
-      "panel.background": `${colors.workbench.background}`,
-
-      "panelTitle.inactiveForeground": `${colors.text}`,
-      "panelTitle.activeForeground": `${colors.text}`,
-
-      /* Color to mark "drop zones" when moving panel sections around. */
-      "panelSection.dropBackground": `${colors.alpha.highlightBackground}`,
-
-      /*
-       * Status Bar
-       */
-
-      "statusBar.border": `${colors.transparent}`,
-      "statusBar.background": `${colors.workbench.background}`,
-      "statusBar.foreground": `${colors.text}`,
-
-      /* Status Bar colors when no folder is opened. We just keep the defaults here. */
-      "statusBar.noFolderBackground": `${colors.workbench.background}`,
-      "statusBar.noFolderForeground": `${colors.text}`,
-
-      /* Status Bar colors while a program is being debugged. */
-      "statusBar.debuggingBackground": `${colors.workbench.debuggingBackground}`,
-      "statusBar.debuggingForeground": `${colors.text}`,
-
-      /* Colors for prominent items in the status bar. */
-      "statusBarItem.prominentBackground": `${colors.alpha.highlightBackground}`,
-
-      /* Overlays for item hovers and clicks. */
-      "statusBarItem.hoverBackground": `${colors.alpha.hoverFocusBackground}`,
-      "statusBarItem.activeBackground": `${colors.alpha.hoverFocusBackground}`,
-
-      /* Color for the remote indicator on the status bar. */
-      "statusBarItem.remoteBackground": `${colors.button.primary.background}`,
-      "statusBarItem.remoteForeground": `${colors.button.primary.foreground}`,
-      "statusBarItem.remoteHoverBackground": `${colors.button.primary.background}`,
-      "statusBarItem.remoteHoverForeground": `${colors.button.primary.foreground}`,
-
-      /**
-       * Badges
-       * Badges are small information labels, for example, search results count.
-       */
-
-      "badge.background": `${colors.badge.background}`,
-      "badge.foreground": `${colors.badge.foreground}`,
-
-      /**
-       * Symbol Icons
-       * Symbol icons appear in the Outline view, breadcrumb navigation,
-       * and suggest widget.
-       */
-
-      "symbolIcon.arrayForeground": `${colors.icons}`,
-      "symbolIcon.booleanForeground": `${colors.icons}`,
-      "symbolIcon.classForeground": `${colors.icons}`,
-      "symbolIcon.colorForeground": `${colors.icons}`,
-      "symbolIcon.constantForeground": `${colors.icons}`,
-      "symbolIcon.constructorForeground": `${colors.icons}`,
-      "symbolIcon.enumeratorForeground": `${colors.icons}`,
-      "symbolIcon.enumeratorMemberForeground": `${colors.icons}`,
-      "symbolIcon.eventForeground": `${colors.icons}`,
-      "symbolIcon.fieldForeground": `${colors.icons}`,
-      "symbolIcon.fileForeground": `${colors.icons}`,
-      "symbolIcon.folderForeground": `${colors.icons}`,
-      "symbolIcon.functionForeground": `${colors.icons}`,
-      "symbolIcon.interfaceForeground": `${colors.icons}`,
-      "symbolIcon.keyForeground": `${colors.icons}`,
-      "symbolIcon.keywordForeground": `${colors.icons}`,
-      "symbolIcon.methodForeground": `${colors.icons}`,
-      "symbolIcon.moduleForeground": `${colors.icons}`,
-      "symbolIcon.namespaceForeground": `${colors.icons}`,
-      "symbolIcon.nullForeground": `${colors.icons}`,
-      "symbolIcon.numberForeground": `${colors.icons}`,
-      "symbolIcon.objectForeground": `${colors.icons}`,
-      "symbolIcon.operatorForeground": `${colors.icons}`,
-      "symbolIcon.packageForeground": `${colors.icons}`,
-      "symbolIcon.propertyForeground": `${colors.icons}`,
-      "symbolIcon.referenceForeground": `${colors.icons}`,
-      "symbolIcon.snippetForeground": `${colors.icons}`,
-      "symbolIcon.stringForeground": `${colors.icons}`,
-      "symbolIcon.structForeground": `${colors.icons}`,
-      "symbolIcon.textForeground": `${colors.icons}`,
-      "symbolIcon.typeParameterForeground": `${colors.icons}`,
-      "symbolIcon.unitForeground": `${colors.icons}`,
-      "symbolIcon.variableForeground": `${colors.icons}`,
-
-      /**
-       * Quick Picker
-       * The quick picker widget is the container for pickers like the Command
-       * Palette and the Color Theme Picker.
-       */
-
-      "pickerGroup.border": `${colors.workbench.border}`,
-      "pickerGroup.foreground": `${colors.text}`,
-
-      /* Inputs within the Quick Picker widget. */
-      "quickInput.background": `${colors.workbench.background}`,
-      "quickInput.foreground": `${colors.text}`,
-      "quickInputTitle.background": `${colors.workbench.background}`,
-
-      /* Lists within the Quick Picker widget. */
-      "quickInputList.focusBackground": `${colors.alpha.hoverFocusBackground}`,
-      "quickInputList.focusForeground": `${colors.text}`,
-      "quickInputList.focusIconForeground": `${colors.icons}`,
-
-      /* This is the foreground color for <kbd> elements within the Keyboard
-      Shortcuts (keybindings) picker. */
-      "keybindingLabel.foreground": `${colors.text}`,
-
-      /**
-       * Text Colors
-       * Colors inside a text document, such as the welcome page.
-       */
-
-      /* Block quotes. */
-      "textBlockQuote.border": `${colors.lightText}`,
-      "textBlockQuote.background": `${colors.transparent}`,
-
-      /* Code and preformatted text blocks - inverted colors, like the terminal. */
-      "textCodeBlock.background": `${colors.alpha.hoverFocusBackground}`,
-      "textPreformat.foreground": `${colors.text}`,
-
-      /* Separator. */
-      "textSeparator.foreground": `${colors.lightText}`,
-
-      /* Links. */
-      "textLink.foreground": `${colors.hyperlinks}`,
-      "textLink.activeForeground": `${colors.hyperlinks}`,
-
-      /**
        * Lists and Trees
        * Colors for list and trees like the File Explorer. An active list/tree
        * has keyboard focus, an inactive does not.
@@ -313,6 +255,7 @@ const getTheme = ({ theme, name }) => {
 
       /* The focused item when the list/tree is active. */
       "list.focusBackground": `${colors.alpha.hoverFocusBackground}`,
+      "list.inactiveFocusBackground": `${colors.alpha.hoverFocusBackground}`,
       "list.focusForeground": `${colors.text}`,
 
       /* Hovering. */
@@ -335,49 +278,75 @@ const getTheme = ({ theme, name }) => {
       "tree.indentGuidesStroke": `${colors.workbench.border}`,
 
       /**
-       * Button Control
-       * A set of colors for button controls.
+       * Notifications
        */
 
-      "button.border": `${colors.transparent}`,
+      "notificationCenter.border": `${colors.workbench.border}`,
+      "notificationToast.border": `${colors.workbench.border}`,
 
-      /* Primary button colors. */
-      "button.background": `${colors.button.primary.background}`,
-      "button.hoverBackground": `${colors.button.primary.background}`,
-      "button.foreground": `${colors.button.primary.foreground}`,
+      "notificationCenterHeader.background": `${colors.workbench.background}`,
+      "notificationCenterHeader.foreground": `${colors.text}`,
 
-      /* Secondary button colors. */
-      "button.secondaryBackground": `${colors.button.secondary.background}`,
-      "button.secondaryHoverBackground": `${colors.button.secondary.background}`,
-      "button.secondaryForeground": `${colors.button.secondary.foreground}`,
+      "notifications.border": `${colors.workbench.border}`,
+      "notifications.background": `${colors.workbench.background}`,
+      "notifications.foreground": `${colors.text}`,
+
+      "notificationLink.foreground": `${colors.hyperlinks}`,
+
+      "notificationsErrorIcon.foreground": `${colors.icons}`,
+      "notificationsWarningIcon.foreground": `${colors.icons}`,
+      "notificationsInfoIcon.foreground": `${colors.icons}`,
 
       /**
-       * Checkbox Control
+       * Quick Picker
+       * The quick picker widget is the container for pickers like the Command
+       * Palette and the Color Theme Picker.
        */
 
-      "checkbox.border": `${colors.transparent}`,
-      "checkbox.background": `${colors.inputs.background}`,
-      "checkbox.foreground": `${colors.text}`,
+      "pickerGroup.border": `${colors.workbench.border}`,
+      "pickerGroup.foreground": `${colors.text}`,
 
-      /**
-       * Dropdown Control
+      /* Inputs within the Quick Picker widget. */
+      "quickInput.background": `${colors.workbench.background}`,
+      "quickInput.foreground": `${colors.text}`,
+      "quickInputTitle.background": `${colors.workbench.background}`,
+
+      /* Lists within the Quick Picker widget. */
+      "quickInputList.focusBackground": `${colors.alpha.hoverFocusBackground}`,
+      "quickInputList.focusForeground": `${colors.text}`,
+      "quickInputList.focusIconForeground": `${colors.icons}`,
+
+      /*
+       * Status Bar
        */
 
-      "dropdown.border": `${colors.transparent}`,
-      "dropdown.background": `${colors.inputs.background}`,
-      "dropdown.listBackground": `${colors.inputs.background}`,
-      "dropdown.foreground": `${colors.text}`,
+      "statusBar.border": `${colors.transparent}`,
+      "statusBar.focusBorder": `${colors.transparent}`,
 
-      /**
-       * Text Input Control
-       */
+      "statusBar.background": `${colors.workbench.background}`,
+      "statusBar.foreground": `${colors.text}`,
 
-      "input.border": `${colors.transparent}`,
-      "input.background": `${colors.inputs.background}`,
-      "input.foreground": `${colors.text}`,
+      /* Status Bar colors when no folder is opened. We just keep the defaults here. */
+      "statusBar.noFolderBackground": `${colors.workbench.background}`,
+      "statusBar.noFolderForeground": `${colors.text}`,
 
-      /* Placeholder text. */
-      "input.placeholderForeground": `${colors.lightText}`,
+      /* Status Bar colors while a program is being debugged. */
+      "statusBar.debuggingBackground": `${colors.workbench.debuggingBackground}`,
+      "statusBar.debuggingForeground": `${colors.text}`,
+
+      /* Colors for prominent items in the status bar. */
+      "statusBarItem.prominentBackground": `${colors.alpha.highlightBackground}`,
+
+      /* Overlays for item hovers and clicks. */
+      "statusBarItem.hoverBackground": `${colors.alpha.hoverFocusBackground}`,
+      "statusBarItem.activeBackground": `${colors.alpha.hoverFocusBackground}`,
+
+      /* Color for the remote indicator on the status bar. */
+      "statusBarItem.focusBorder": `${colors.transparent}`,
+      "statusBarItem.remoteBackground": `${colors.button.primary.background}`,
+      "statusBarItem.remoteForeground": `${colors.button.primary.foreground}`,
+      "statusBarItem.remoteHoverBackground": `${colors.button.primary.background}`,
+      "statusBarItem.remoteHoverForeground": `${colors.button.primary.foreground}`,
 
       /**
        * Editor Groups
@@ -407,6 +376,9 @@ const getTheme = ({ theme, name }) => {
       "tab.inactiveBackground": `${colors.workbench.background}`,
       "tab.inactiveForeground": `${colors.text}`,
 
+      // "tab.hoverBackground": "#ffffff",
+      // "tab.unfocusedHoverBackground": "#eaeef280",
+
       /* Active tab in non-active (unfocused) editor groups. */
       "tab.unfocusedActiveBorder": `${colors.transparent}`,
       "tab.unfocusedActiveBorderTop": `${colors.transparent}`,
@@ -420,58 +392,6 @@ const getTheme = ({ theme, name }) => {
       /* Colors when selecting multiple tabs using Ctrl+select. */
       "tab.selectedBackground": `${colors.editor.background}`,
       "tab.selectedForeground": `${colors.text}`,
-
-      /**
-       * Settings Editor
-       */
-
-      "settings.headerForeground": `${colors.text}`,
-      "settings.modifiedItemIndicator": `${colors.text}`,
-
-      /**
-       * Integrated Terminal
-       */
-
-      "terminal.background": `${colors.terminal.background}`,
-      "terminal.foreground": `${colors.terminal.foreground}`,
-
-      "terminalCursor.background": `${colors.transparent}`,
-      "terminalCursor.foreground": `${colors.terminal.foreground}`,
-
-      /* Background for selected text. */
-      "terminal.selectionBackground": `${colors.terminal.selectionBackground}`,
-
-      /* The background color when dragging on top of terminals. */
-      "terminal.dropBackground": `${colors.alpha.highlightBackground}`,
-
-      /* Current search match in the terminal. */
-      "terminal.findMatchBackground": `${colors.terminal.alpha.matchesBackground}`,
-      "terminal.findMatchBorder": `${colors.transparent}`,
-
-      /* Other search matches in the terminal. */
-      "terminal.findMatchHighlightBackground": `${colors.terminal.alpha.otherMatchesBackground}`,
-      "terminal.findMatchHighlightBorder": `${colors.transparent}`,
-
-      /* Border between split terminal panes. */
-      "terminal.border": `${colors.terminal.border}`,
-
-      /* ANSI colors. */
-      "terminal.ansiBlack": `${colors.terminal.ansiBlack}`,
-      "terminal.ansiBlue": `${colors.terminal.ansiBlue}`,
-      "terminal.ansiCyan": `${colors.terminal.ansiCyan}`,
-      "terminal.ansiGreen": `${colors.terminal.ansiGreen}`,
-      "terminal.ansiMagenta": `${colors.terminal.ansiMagenta}`,
-      "terminal.ansiRed": `${colors.terminal.ansiRed}`,
-      "terminal.ansiWhite": `${colors.terminal.ansiWhite}`,
-      "terminal.ansiYellow": `${colors.terminal.ansiYellow}`,
-      "terminal.ansiBrightBlack": `${colors.terminal.ansiBrightBlack}`,
-      "terminal.ansiBrightBlue": `${colors.terminal.ansiBrightBlue}`,
-      "terminal.ansiBrightCyan": `${colors.terminal.ansiBrightCyan}`,
-      "terminal.ansiBrightGreen": `${colors.terminal.ansiBrightGreen}`,
-      "terminal.ansiBrightMagenta": `${colors.terminal.ansiBrightMagenta}`,
-      "terminal.ansiBrightRed": `${colors.terminal.ansiBrightRed}`,
-      "terminal.ansiBrightWhite": `${colors.terminal.ansiBrightWhite}`,
-      "terminal.ansiBrightYellow": `${colors.terminal.ansiBrightYellow}`,
 
       /**
        * Progress Bar
@@ -517,6 +437,8 @@ const getTheme = ({ theme, name }) => {
       /* Background color of the current line with the cursor. Must be opaque. */
       "editor.lineHighlightBackground": `${colors.alpha.hoverFocusBackground}`,
 
+      // "editor.linkedEditingBackground": "#0969da12",
+
       /* Selected text, and color for other text in the document that matches
       the current selection. */
       "editor.selectionBackground": `${colors.alpha.selectionBackground}`,
@@ -539,7 +461,11 @@ const getTheme = ({ theme, name }) => {
       "editorLineNumber.foreground": `${colors.lightText}`,
       "editorLineNumber.activeForeground": `${colors.text}`,
 
-      /* Indent guides. */
+      /* Indent guides - old. */
+      "editorIndentGuide.background": `${colors.editor.guides}`,
+      "editorIndentGuide.activeBackground": `${colors.editor.guides}`,
+
+      /* Indent guides - new. */
       "editorIndentGuide.background1": `${colors.editor.guides}`,
       "editorIndentGuide.activeBackground1": `${colors.editor.guides}`,
       "editorIndentGuide.background2": `${colors.editor.guides}`,
@@ -588,6 +514,8 @@ const getTheme = ({ theme, name }) => {
       "editorInlayHint.foreground": `${colors.lightText}`,
       "editorInlayHint.typeBackground": `${colors.transparent}`,
       "editorInlayHint.typeForeground": `${colors.lightText}`,
+      // "editorInlayHint.paramBackground": "#afb8c133",
+      // "editorInlayHint.paramForeground": "#656d76",
 
       /* The Editor Widget is any dialog rendered in front of the editor,
       including the Find/Replace dialog and the suggestion widget. */
@@ -602,24 +530,6 @@ const getTheme = ({ theme, name }) => {
       by side in an editor group */
       "sideBySideEditor.horizontalBorder": `${colors.workbench.border}`,
       "sideBySideEditor.verticalBorder": `${colors.workbench.border}`,
-
-      /**
-       * Git Decorations
-       * These colors are used in the Source Control panel, but also reused in
-       * Editor Tabs and the File Explorer.
-       */
-
-      /* Disable SCM decorations by using default text foreground color. */
-      "gitDecoration.addedResourceForeground": `${colors.text}`,
-      "gitDecoration.modifiedResourceForeground": `${colors.text}`,
-      "gitDecoration.deletedResourceForeground": `${colors.text}`,
-      "gitDecoration.renamedResourceForeground": `${colors.text}`,
-      "gitDecoration.stageModifiedResourceForeground": `${colors.text}`,
-      "gitDecoration.stageDeletedResourceForeground": `${colors.text}`,
-      "gitDecoration.untrackedResourceForeground": `${colors.text}`,
-      "gitDecoration.ignoredResourceForeground": `${colors.lightText}`,
-      "gitDecoration.conflictingResourceForeground": `${colors.text}`,
-      "gitDecoration.submoduleResourceForeground": `${colors.text}`,
 
       /**
        * Editor Gutter
@@ -726,43 +636,30 @@ const getTheme = ({ theme, name }) => {
       "minimap.findMatchHighlight": `${colors.transparent}`,
 
       /**
-       * Notifications
+       * Panel
+       * These colors are for the bottom panel.
        */
 
-      "notificationCenter.border": `${colors.workbench.border}`,
-      "notificationToast.border": `${colors.workbench.border}`,
+      "panel.border": `${colors.transparent}`,
+      "panel.background": `${colors.workbench.background}`,
 
-      "notificationCenterHeader.background": `${colors.workbench.background}`,
-      "notificationCenterHeader.foreground": `${colors.text}`,
+      "panelTitle.inactiveForeground": `${colors.text}`,
+      "panelTitle.activeForeground": `${colors.text}`,
 
-      "notifications.border": `${colors.workbench.border}`,
-      "notifications.background": `${colors.workbench.background}`,
-      "notifications.foreground": `${colors.text}`,
-
-      "notificationLink.foreground": `${colors.hyperlinks}`,
-
-      "notificationsErrorIcon.foreground": `${colors.icons}`,
-      "notificationsWarningIcon.foreground": `${colors.icons}`,
-      "notificationsInfoIcon.foreground": `${colors.icons}`,
+      /* Color to mark "drop zones" when moving panel sections around. */
+      "panelSection.dropBackground": `${colors.alpha.highlightBackground}`,
 
       /**
-       * Debug Toolbar
+       * Debugging elements
        */
 
       "debugToolBar.border": `${colors.workbench.border}`,
       "debugToolBar.background": `${colors.workbench.background}`,
 
-      /**
-       * Debug Icons
-       * Used for breakpoints etc.
-       */
-
+      /* Breakpoint blob color. */
       "debugIcon.breakpointForeground": `${colors.editor.breakpoint}`,
 
-      /**
-       * Debug Console
-       */
-
+      /* Debug console. */
       "debugConsole.infoForeground": `${colors.lightText}`,
       "debugConsole.warningForeground": `${colors.warningText}`,
       "debugConsole.errorForeground": `${colors.errorText}`,
@@ -777,10 +674,121 @@ const getTheme = ({ theme, name }) => {
       "debugTokenExpression.number": `${colors.text}`,
       "debugTokenExpression.error": `${colors.text}`,
 
+      /**
+       * Integrated Terminal
+       */
+
+      "terminal.background": `${colors.terminal.background}`,
+      "terminal.foreground": `${colors.terminal.foreground}`,
+
+      "terminalCursor.background": `${colors.transparent}`,
+      "terminalCursor.foreground": `${colors.terminal.foreground}`,
+
+      /* Background for selected text. */
+      "terminal.selectionBackground": `${colors.terminal.selectionBackground}`,
+
+      /* The background color when dragging on top of terminals. */
+      "terminal.dropBackground": `${colors.alpha.highlightBackground}`,
+
+      /* Current search match in the terminal. */
+      "terminal.findMatchBackground": `${colors.terminal.alpha.matchesBackground}`,
+      "terminal.findMatchBorder": `${colors.transparent}`,
+
+      /* Other search matches in the terminal. */
+      "terminal.findMatchHighlightBackground": `${colors.terminal.alpha.otherMatchesBackground}`,
+      "terminal.findMatchHighlightBorder": `${colors.transparent}`,
+
+      /* Border between split terminal panes. */
+      "terminal.border": `${colors.terminal.border}`,
+
+      /* ANSI colors. */
+      "terminal.ansiBlack": `${colors.terminal.ansiBlack}`,
+      "terminal.ansiBlue": `${colors.terminal.ansiBlue}`,
+      "terminal.ansiCyan": `${colors.terminal.ansiCyan}`,
+      "terminal.ansiGreen": `${colors.terminal.ansiGreen}`,
+      "terminal.ansiMagenta": `${colors.terminal.ansiMagenta}`,
+      "terminal.ansiRed": `${colors.terminal.ansiRed}`,
+      "terminal.ansiWhite": `${colors.terminal.ansiWhite}`,
+      "terminal.ansiYellow": `${colors.terminal.ansiYellow}`,
+      "terminal.ansiBrightBlack": `${colors.terminal.ansiBrightBlack}`,
+      "terminal.ansiBrightBlue": `${colors.terminal.ansiBrightBlue}`,
+      "terminal.ansiBrightCyan": `${colors.terminal.ansiBrightCyan}`,
+      "terminal.ansiBrightGreen": `${colors.terminal.ansiBrightGreen}`,
+      "terminal.ansiBrightMagenta": `${colors.terminal.ansiBrightMagenta}`,
+      "terminal.ansiBrightRed": `${colors.terminal.ansiBrightRed}`,
+      "terminal.ansiBrightWhite": `${colors.terminal.ansiBrightWhite}`,
+      "terminal.ansiBrightYellow": `${colors.terminal.ansiBrightYellow}`,
+
+      /**
+       * Settings Editor
+       */
+
+      "settings.headerForeground": `${colors.text}`,
+      "settings.modifiedItemIndicator": `${colors.text}`,
+
+      /**
+       * Git Decorations
+       * These colors are used in the Source Control panel, but also reused in
+       * Editor Tabs and the File Explorer.
+       */
+
+      /* Disable SCM decorations by using default text foreground color. */
+      "gitDecoration.addedResourceForeground": `${colors.text}`,
+      "gitDecoration.modifiedResourceForeground": `${colors.text}`,
+      "gitDecoration.deletedResourceForeground": `${colors.text}`,
+      "gitDecoration.renamedResourceForeground": `${colors.text}`,
+      "gitDecoration.stageModifiedResourceForeground": `${colors.text}`,
+      "gitDecoration.stageDeletedResourceForeground": `${colors.text}`,
+      "gitDecoration.untrackedResourceForeground": `${colors.text}`,
+      "gitDecoration.ignoredResourceForeground": `${colors.lightText}`,
+      "gitDecoration.conflictingResourceForeground": `${colors.text}`,
+      "gitDecoration.submoduleResourceForeground": `${colors.text}`,
+
+
+      /**
+       * Symbol Icons
+       * Symbol icons appear in the Outline view, breadcrumb navigation,
+       * and suggest widget.
+       */
+
+      "symbolIcon.arrayForeground": `${colors.icons}`,
+      "symbolIcon.booleanForeground": `${colors.icons}`,
+      "symbolIcon.classForeground": `${colors.icons}`,
+      "symbolIcon.colorForeground": `${colors.icons}`,
+      "symbolIcon.constantForeground": `${colors.icons}`,
+      "symbolIcon.constructorForeground": `${colors.icons}`,
+      "symbolIcon.enumeratorForeground": `${colors.icons}`,
+      "symbolIcon.enumeratorMemberForeground": `${colors.icons}`,
+      "symbolIcon.eventForeground": `${colors.icons}`,
+      "symbolIcon.fieldForeground": `${colors.icons}`,
+      "symbolIcon.fileForeground": `${colors.icons}`,
+      "symbolIcon.folderForeground": `${colors.icons}`,
+      "symbolIcon.functionForeground": `${colors.icons}`,
+      "symbolIcon.interfaceForeground": `${colors.icons}`,
+      "symbolIcon.keyForeground": `${colors.icons}`,
+      "symbolIcon.keywordForeground": `${colors.icons}`,
+      "symbolIcon.methodForeground": `${colors.icons}`,
+      "symbolIcon.moduleForeground": `${colors.icons}`,
+      "symbolIcon.namespaceForeground": `${colors.icons}`,
+      "symbolIcon.nullForeground": `${colors.icons}`,
+      "symbolIcon.numberForeground": `${colors.icons}`,
+      "symbolIcon.objectForeground": `${colors.icons}`,
+      "symbolIcon.operatorForeground": `${colors.icons}`,
+      "symbolIcon.packageForeground": `${colors.icons}`,
+      "symbolIcon.propertyForeground": `${colors.icons}`,
+      "symbolIcon.referenceForeground": `${colors.icons}`,
+      "symbolIcon.snippetForeground": `${colors.icons}`,
+      "symbolIcon.stringForeground": `${colors.icons}`,
+      "symbolIcon.structForeground": `${colors.icons}`,
+      "symbolIcon.textForeground": `${colors.icons}`,
+      "symbolIcon.typeParameterForeground": `${colors.icons}`,
+      "symbolIcon.unitForeground": `${colors.icons}`,
+      "symbolIcon.variableForeground": `${colors.icons}`,
+
     },
 
     /* https://code.visualstudio.com/api/language-extensions/semantic-highlight-guide */
-    "semanticHighlighting": false,
+    "semanticHighlighting": true,
 
     "tokenColors": [
       {
@@ -793,6 +801,387 @@ const getTheme = ({ theme, name }) => {
           "foreground": `${colors.lightText}`
         }
       },
+      // {
+      //   "scope": [
+      //     "constant.other.placeholder",
+      //     "constant.character"
+      //   ],
+      //   "settings": {
+      //     "foreground": "#cf222e"
+      //   }
+      // },
+      // {
+      //   "scope": [
+      //     "constant",
+      //     "entity.name.constant",
+      //     "variable.other.constant",
+      //     "variable.other.enummember",
+      //     "variable.language",
+      //     "entity"
+      //   ],
+      //   "settings": {
+      //     "foreground": "#0550ae"
+      //   }
+      // },
+      // {
+      //   "scope": [
+      //     "entity.name",
+      //     "meta.export.default",
+      //     "meta.definition.variable"
+      //   ],
+      //   "settings": {
+      //     "foreground": "#953800"
+      //   }
+      // },
+      // {
+      //   "scope": [
+      //     "variable.parameter.function",
+      //     "meta.jsx.children",
+      //     "meta.block",
+      //     "meta.tag.attributes",
+      //     "entity.name.constant",
+      //     "meta.object.member",
+      //     "meta.embedded.expression"
+      //   ],
+      //   "settings": {
+      //     "foreground": "#1f2328"
+      //   }
+      // },
+      // {
+      //   "scope": "entity.name.function",
+      //   "settings": {
+      //     "foreground": "#8250df"
+      //   }
+      // },
+      // {
+      //   "scope": [
+      //     "entity.name.tag",
+      //     "support.class.component"
+      //   ],
+      //   "settings": {
+      //     "foreground": "#116329"
+      //   }
+      // },
+      // {
+      //   "scope": "keyword",
+      //   "settings": {
+      //     "foreground": "#cf222e"
+      //   }
+      // },
+      // {
+      //   "scope": [
+      //     "storage",
+      //     "storage.type"
+      //   ],
+      //   "settings": {
+      //     "foreground": "#cf222e"
+      //   }
+      // },
+      // {
+      //   "scope": [
+      //     "storage.modifier.package",
+      //     "storage.modifier.import",
+      //     "storage.type.java"
+      //   ],
+      //   "settings": {
+      //     "foreground": "#1f2328"
+      //   }
+      // },
+      // {
+      //   "scope": [
+      //     "string",
+      //     "string punctuation.section.embedded source"
+      //   ],
+      //   "settings": {
+      //     "foreground": "#0a3069"
+      //   }
+      // },
+      // {
+      //   "scope": "support",
+      //   "settings": {
+      //     "foreground": "#0550ae"
+      //   }
+      // },
+      // {
+      //   "scope": "meta.property-name",
+      //   "settings": {
+      //     "foreground": "#0550ae"
+      //   }
+      // },
+      // {
+      //   "scope": "variable",
+      //   "settings": {
+      //     "foreground": "#953800"
+      //   }
+      // },
+      // {
+      //   "scope": "variable.other",
+      //   "settings": {
+      //     "foreground": "#1f2328"
+      //   }
+      // },
+      // {
+      //   "scope": "invalid.broken",
+      //   "settings": {
+      //     "fontStyle": "italic",
+      //     "foreground": "#82071e"
+      //   }
+      // },
+      // {
+      //   "scope": "invalid.deprecated",
+      //   "settings": {
+      //     "fontStyle": "italic",
+      //     "foreground": "#82071e"
+      //   }
+      // },
+      // {
+      //   "scope": "invalid.illegal",
+      //   "settings": {
+      //     "fontStyle": "italic",
+      //     "foreground": "#82071e"
+      //   }
+      // },
+      // {
+      //   "scope": "invalid.unimplemented",
+      //   "settings": {
+      //     "fontStyle": "italic",
+      //     "foreground": "#82071e"
+      //   }
+      // },
+      // {
+      //   "scope": "carriage-return",
+      //   "settings": {
+      //     "fontStyle": "italic underline",
+      //     "background": "#cf222e",
+      //     "foreground": "#f6f8fa",
+      //     "content": "^M"
+      //   }
+      // },
+      // {
+      //   "scope": "message.error",
+      //   "settings": {
+      //     "foreground": "#82071e"
+      //   }
+      // },
+      // {
+      //   "scope": "string variable",
+      //   "settings": {
+      //     "foreground": "#0550ae"
+      //   }
+      // },
+      // {
+      //   "scope": [
+      //     "source.regexp",
+      //     "string.regexp"
+      //   ],
+      //   "settings": {
+      //     "foreground": "#0a3069"
+      //   }
+      // },
+      // {
+      //   "scope": [
+      //     "string.regexp.character-class",
+      //     "string.regexp constant.character.escape",
+      //     "string.regexp source.ruby.embedded",
+      //     "string.regexp string.regexp.arbitrary-repitition"
+      //   ],
+      //   "settings": {
+      //     "foreground": "#0a3069"
+      //   }
+      // },
+      // {
+      //   "scope": "string.regexp constant.character.escape",
+      //   "settings": {
+      //     "fontStyle": "bold",
+      //     "foreground": "#116329"
+      //   }
+      // },
+      // {
+      //   "scope": "support.constant",
+      //   "settings": {
+      //     "foreground": "#0550ae"
+      //   }
+      // },
+      // {
+      //   "scope": "support.variable",
+      //   "settings": {
+      //     "foreground": "#0550ae"
+      //   }
+      // },
+      // {
+      //   "scope": "support.type.property-name.json",
+      //   "settings": {
+      //     "foreground": "#116329"
+      //   }
+      // },
+      // {
+      //   "scope": "meta.module-reference",
+      //   "settings": {
+      //     "foreground": "#0550ae"
+      //   }
+      // },
+      // {
+      //   "scope": "punctuation.definition.list.begin.markdown",
+      //   "settings": {
+      //     "foreground": "#953800"
+      //   }
+      // },
+      // {
+      //   "scope": [
+      //     "markup.heading",
+      //     "markup.heading entity.name"
+      //   ],
+      //   "settings": {
+      //     "fontStyle": "bold",
+      //     "foreground": "#0550ae"
+      //   }
+      // },
+      // {
+      //   "scope": "markup.quote",
+      //   "settings": {
+      //     "foreground": "#116329"
+      //   }
+      // },
+      // {
+      //   "scope": "markup.italic",
+      //   "settings": {
+      //     "fontStyle": "italic",
+      //     "foreground": "#1f2328"
+      //   }
+      // },
+      // {
+      //   "scope": "markup.bold",
+      //   "settings": {
+      //     "fontStyle": "bold",
+      //     "foreground": "#1f2328"
+      //   }
+      // },
+      // {
+      //   "scope": [
+      //     "markup.underline"
+      //   ],
+      //   "settings": {
+      //     "fontStyle": "underline"
+      //   }
+      // },
+      // {
+      //   "scope": [
+      //     "markup.strikethrough"
+      //   ],
+      //   "settings": {
+      //     "fontStyle": "strikethrough"
+      //   }
+      // },
+      // {
+      //   "scope": "markup.inline.raw",
+      //   "settings": {
+      //     "foreground": "#0550ae"
+      //   }
+      // },
+      // {
+      //   "scope": [
+      //     "markup.deleted",
+      //     "meta.diff.header.from-file",
+      //     "punctuation.definition.deleted"
+      //   ],
+      //   "settings": {
+      //     "background": "#ffebe9",
+      //     "foreground": "#82071e"
+      //   }
+      // },
+      // {
+      //   "scope": [
+      //     "punctuation.section.embedded"
+      //   ],
+      //   "settings": {
+      //     "foreground": "#cf222e"
+      //   }
+      // },
+      // {
+      //   "scope": [
+      //     "markup.inserted",
+      //     "meta.diff.header.to-file",
+      //     "punctuation.definition.inserted"
+      //   ],
+      //   "settings": {
+      //     "background": "#dafbe1",
+      //     "foreground": "#116329"
+      //   }
+      // },
+      // {
+      //   "scope": [
+      //     "markup.changed",
+      //     "punctuation.definition.changed"
+      //   ],
+      //   "settings": {
+      //     "background": "#ffd8b5",
+      //     "foreground": "#953800"
+      //   }
+      // },
+      // {
+      //   "scope": [
+      //     "markup.ignored",
+      //     "markup.untracked"
+      //   ],
+      //   "settings": {
+      //     "foreground": "#eaeef2",
+      //     "background": "#0550ae"
+      //   }
+      // },
+      // {
+      //   "scope": "meta.diff.range",
+      //   "settings": {
+      //     "foreground": "#8250df",
+      //     "fontStyle": "bold"
+      //   }
+      // },
+      // {
+      //   "scope": "meta.diff.header",
+      //   "settings": {
+      //     "foreground": "#0550ae"
+      //   }
+      // },
+      // {
+      //   "scope": "meta.separator",
+      //   "settings": {
+      //     "fontStyle": "bold",
+      //     "foreground": "#0550ae"
+      //   }
+      // },
+      // {
+      //   "scope": "meta.output",
+      //   "settings": {
+      //     "foreground": "#0550ae"
+      //   }
+      // },
+      // {
+      //   "scope": [
+      //     "brackethighlighter.tag",
+      //     "brackethighlighter.curly",
+      //     "brackethighlighter.round",
+      //     "brackethighlighter.square",
+      //     "brackethighlighter.angle",
+      //     "brackethighlighter.quote"
+      //   ],
+      //   "settings": {
+      //     "foreground": "#57606a"
+      //   }
+      // },
+      // {
+      //   "scope": "brackethighlighter.unmatched",
+      //   "settings": {
+      //     "foreground": "#82071e"
+      //   }
+      // },
+      // {
+      //   "scope": [
+      //     "constant.other.reference.link",
+      //     "string.other.link"
+      //   ],
+      //   "settings": {
+      //     "foreground": "#0a3069"
+      //   }
+      // }
     ]
 
   }
