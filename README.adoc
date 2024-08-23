@@ -11,3 +11,7 @@ This documentation is for developers and maintainers of this project.
 * link:./docs/publishing.adoc[Publishing]
 * link:./docs/color-palette.adoc[Color palette]
 * link:./docs/references.adoc[Reference resources]
+
+''''
+
+Copyright © 2020-present Kieran Potts, link:./LICENSE.txt[MIT license]
