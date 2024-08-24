@@ -1,6 +1,6 @@
 {
   "name": "ocean-vscode-theme",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "preview": true,
   "publisher": "kieranpotts",
   "author":{
@@ -8,7 +8,7 @@
   },
   "license": "MIT",
   "displayName": "The Ocean",
-  "description": "A family of minimalist themes inspired by the ocean.",
+  "description": "A family of minimalist themes inspired by the ocean - WIP.",
   "categories": [
     "Themes"
   ],
