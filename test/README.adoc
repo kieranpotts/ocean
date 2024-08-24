@@ -1,0 +1,8 @@
+= Tests
+
+This directory contains random source code files for a wide variety of programming, markup and data interchange languages. These files are used to manually test the syntax highlighting of the Ocean theme in Visual Studio Code.
+
+The code samples have been taken from the following sources:
+
+* https://github.com/toddmath/syntax-highlighting-samples
+* https://github.com/wang95/code-demo
