@@ -99,6 +99,24 @@ const getColors = ({ theme }) => {
           foreground: tokens.color.neutral[700],
         },
 
+        syntax: {
+          default: tokens.color.neutral[700],
+          mid: tokens.color.neutral[500],
+          light: tokens.color.neutral[400],
+          veryLightNeutral: tokens.color.neutral[200],
+          green: tokens.color.green[500],
+          veryLightGreen: tokens.color.green[100],
+          blue: tokens.color.blue[500],
+          deepBlue: tokens.color.blue[800],
+          veryLightBlue: tokens.color.blue[100],
+          cyan: tokens.color.cyan[500],
+          veryLightCyan: tokens.color.cyan[100],
+          magenta: tokens.color.magenta[500],
+          red: tokens.color.red[500],
+          deepRed: tokens.color.red[700],
+          veryLightRed: tokens.color.red[100],
+        }
+
       }
 
     case 'vs-dark':
