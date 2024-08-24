@@ -1,0 +1,5 @@
+# ==============================================================================
+# The `.vscodeignore` file can be used to exclude certain files from
+# distributed VS Code extensions. Alternatively a "paths" property can be
+# added to the `package.json` file.
+# ==============================================================================
