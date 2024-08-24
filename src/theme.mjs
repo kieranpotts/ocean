@@ -13,10 +13,7 @@ const getTheme = ({ theme, name }) => {
     "colors": {
 
       /*
-      The following references have been used to compile this theme.
-      Initially, the color design was based on GitHub's VS Code themes,
-      and subsequently extended.
-
+      References:
       https://code.visualstudio.com/api/references/theme-color
       https://github.com/primer/github-vscode-theme/blob/main/src/theme.js
       https://github.com/microsoft/vscode/blob/main/build/lib/stylelint/vscode-known-variables.json
@@ -26,19 +23,16 @@ const getTheme = ({ theme, name }) => {
        * Base Colors
        */
 
-      /* Overall border color for focused elements. This color is used only if
-      not overridden by a component. */
+      /* Overall border color for focused elements. This color is used only if not overridden by a component. */
       "focusBorder": `${colors.transparent}`,
 
-      /* Overall foreground color. This color is used only if not overridden
-      by a component. */
+      /* Overall foreground color. This color is used only if not overridden by a component. */
       "foreground": `${colors.text}`,
 
       /* Foreground color for text providing additional information, eg labels. */
       "descriptionForeground": `${colors.lightText}`,
 
-      /* Overall foreground color for error messages.
-      This color is only used if not overridden by a component. */
+      /* Overall foreground color for error messages. This color is only used if not overridden by a component. */
       "errorForeground": `${colors.errorText}`,
 
       /* Text links - eg in welcome page. */
@@ -51,6 +45,8 @@ const getTheme = ({ theme, name }) => {
 
       /* Code and preformatted text blocks - inverted colors, like the terminal. */
       "textCodeBlock.background": `${colors.alpha.hoverFocusBackground}`,
+
+      "textPreformat.background": `${colors.alpha.hoverFocusBackground}`,
       "textPreformat.foreground": `${colors.text}`,
 
       /* Text separator (horizontal rule). */
@@ -59,16 +55,19 @@ const getTheme = ({ theme, name }) => {
       /* The default color for icons in the workbench. */
       "icon.foreground": `${colors.icons}`,
 
-      /* This is the foreground color for <kbd> elements within the Keyboard
-      Shortcuts (keybindings) picker. */
+      /* This is the foreground color for <kbd> elements within the Keyboard Shortcuts (keybindings) picker. */
       "keybindingLabel.foreground": `${colors.text}`,
 
-      /* Background color of text selections within text fields in the workbench.
-      This does not apply to selections within the editor and terminal. */
+      /* Background color of text selections within text fields in the workbench. This does not apply to selections
+      within the editor and terminal. */
       "selection.background": `${colors.alpha.selectionBackground}`,
+
+      /* Default colors for popover widgets such as the find/replace widget in the editor. */
+      "widget.border": `${colors.workbench.border}`,
 
       /**
        * High-Contrast Extras
+       *
        * Additional colors for high-contrast themes, to better separate items.
        */
 
@@ -78,6 +77,7 @@ const getTheme = ({ theme, name }) => {
 
       /**
        * Button Control
+       *
        * A set of colors for button controls.
        */
 
@@ -92,10 +92,6 @@ const getTheme = ({ theme, name }) => {
       "button.secondaryBackground": `${colors.button.secondary.background}`,
       "button.secondaryHoverBackground": `${colors.button.secondary.background}`,
       "button.secondaryForeground": `${colors.button.secondary.foreground}`,
-
-      /* Welcome Page buttons. */
-      "welcomePage.buttonBackground": `${colors.button.primary.background}`,
-      "welcomePage.buttonHoverBackground": `${colors.button.primary.background}`,
 
       /**
        * Checkbox Control
@@ -125,8 +121,15 @@ const getTheme = ({ theme, name }) => {
       /* Placeholder text. */
       "input.placeholderForeground": `${colors.lightText}`,
 
+      "inputOption.activeBackground": `${colors.alpha.hoverFocusBackground}`,
+      "inputOption.activeBorder": `${colors.transparent}`,
+      "inputOption.activeForeground": `${colors.text}`,
+
+      "searchEditor.textInputBorder": `${colors.inputs.border}`,
+
       /**
        * Badges
+       *
        * Badges are small information labels, for example, search results count.
        */
 
@@ -135,9 +138,9 @@ const getTheme = ({ theme, name }) => {
 
       /**
        * Title Bar
-       * Because the Menu Bar might be positioned within the Title Bar, we've
-       * merged these color settings together for easier maintenance. The Title
-       * Bar inherits the colors of the Menu Bar – they must be consistent.
+       *
+       * Because the Menu Bar might be positioned within the Title Bar, we've merged these color settings together for
+       * easier maintenance. The Title Bar inherits the colors of the Menu Bar – they must be consistent.
        */
 
       /* Title Bar border color - always transparent. */
@@ -155,13 +158,11 @@ const getTheme = ({ theme, name }) => {
        * Menu Bar
        */
 
-      /* Background and foreground colors of menubar and drop-drop menus
-      from the menubar. */
+      /* Background and foreground colors of menubar and drop-drop menus from the menubar. */
       "menu.background": `${colors.workbench.background}`,
       "menu.foreground": `${colors.text}`,
 
-      /* Border around drop-down menus from the menubar, and separator
-      between items in menus. */
+      /* Border around drop-down menus from the menubar, and separator between items in menus. */
       "menu.border": `${colors.workbench.border}`,
       "menu.separatorBackground": `${colors.workbench.separator}`,
 
@@ -179,8 +180,7 @@ const getTheme = ({ theme, name }) => {
        * Activity Bar
        */
 
-      /* Activity Bar colors. The foreground color is used for icons as well as text.
-      The border with other containers is removed with transparency. */
+      /* Activity Bar colors. The foreground color is used for icons as well as text. The border with other containers is removed with transparency. */
       "activityBar.border": `${colors.transparent}`,
       "activityBar.background": `${colors.workbench.background}`,
       "activityBar.foreground": `${colors.icons}`,
@@ -196,12 +196,11 @@ const getTheme = ({ theme, name }) => {
 
       /**
        * Side Bar Tabs
-       * "Side Bar Tabs" is not an actual UI component in VS Code. But when
-       * the Activity Bar is moved to the top or bottom of the Side Bar, it
-       * looks like the Side Bar has tabs. Without these settings, the Side
-       * Bar Tabs will inherit the default colors of the Side Bar component.
-       * These settings, when enabled, will also change the presentation of
-       * the permanent tabs at the top of the secondary sidebar.
+       *
+       * "Side Bar Tabs" is not an actual UI component in VS Code. But when the Activity Bar is moved to the top or
+       * bottom of the Side Bar, it looks like the Side Bar has tabs. Without these settings, the Side Bar Tabs will
+       * inherit the default colors of the Side Bar component. These settings, when enabled, will also change the
+       * presentation of the permanent tabs at the top of the secondary sidebar.
        */
 
       "activityBarTop.background": `${colors.workbench.background}`,
@@ -213,9 +212,9 @@ const getTheme = ({ theme, name }) => {
 
       /**
        * Side Bar
-       * The Side Bar is the container for views like Explorer and Search.
-       * There are two sidebars: the "primary" and "secondary" sidebars.
-       * These style rules apply to both.
+       *
+       * The Side Bar is the container for views like Explorer and Search. There are two sidebars: the "primary" and
+       * "secondary" sidebars. These style rules apply to both.
        */
 
       "sideBar.border": `${colors.transparent}`,
@@ -234,20 +233,20 @@ const getTheme = ({ theme, name }) => {
       /* Color to mark "drop zones" when moving things in the sidebar. */
       "sideBar.dropBackground": `${colors.alpha.highlightBackground}`,
 
-      /* Add a border to the top/bottom  of the sidebar when the Activity
-      Bar is moved to that position. (This adds a matching border to
-      the top of the secondary sidebar.) */
+      /* Add a border to the top/bottom  of the sidebar when the Activity Bar is moved to that position. (This adds a
+      matching border to the top of the secondary sidebar.) */
       "sideBarActivityBarTop.border": `${colors.transparent}`,
 
       /**
        * Lists and Trees
-       * Colors for list and trees like the File Explorer. An active list/tree
-       * has keyboard focus, an inactive does not.
+       *
+       * Colors for list and trees like the File Explorer. An active list/tree has keyboard focus, an inactive does not.
        */
 
       /* The selected item when the list/tree is active. */
       "list.activeSelectionBackground": `${colors.alpha.selectionBackground}`,
       "list.activeSelectionForeground": `${colors.text}`,
+      "list.activeSelectionIconForeground": `${colors.text}`,
 
       /* The selected item when the list/tree is inactive. */
       "list.inactiveSelectionBackground": `${colors.alpha.selectionBackground}`,
@@ -258,6 +257,9 @@ const getTheme = ({ theme, name }) => {
       "list.inactiveFocusBackground": `${colors.alpha.hoverFocusBackground}`,
       "list.focusForeground": `${colors.text}`,
 
+      /* List/Tree outline color for the focused item when the list/tree is has keyboard focus and is selected. */
+      "list.focusAndSelectionOutline": `${colors.alpha.selectionBackground}`,
+
       /* Hovering. */
       "list.hoverBackground": `${colors.alpha.hoverFocusBackground}`,
       "list.hoverForeground": `${colors.text}`,
@@ -265,9 +267,8 @@ const getTheme = ({ theme, name }) => {
       /* Match highlights when searching inside the list/tree. */
       "list.highlightForeground": `${colors.text}`,
 
-      /* Foreground color overrides for item statuses. These colors will also be
-      used to override the tab foreground color when the file is opened in an
-      editor tab. */
+      /* Foreground color overrides for item statuses. These colors will also be used to override the tab foreground
+      color when the file is opened in an editor tab. */
       "list.errorForeground": `${colors.errorText}`,
       "list.warningForeground": `${colors.warningText}`,
 
@@ -299,8 +300,8 @@ const getTheme = ({ theme, name }) => {
 
       /**
        * Quick Picker
-       * The quick picker widget is the container for pickers like the Command
-       * Palette and the Color Theme Picker.
+       *
+       * The quick picker widget is the container for pickers like the Command Palette and the Color Theme Picker.
        */
 
       "pickerGroup.border": `${colors.workbench.border}`,
@@ -336,6 +337,7 @@ const getTheme = ({ theme, name }) => {
 
       /* Colors for prominent items in the status bar. */
       "statusBarItem.prominentBackground": `${colors.alpha.highlightBackground}`,
+      "statusBarItem.errorBackground": `${colors.alpha.errorBackground}`,
 
       /* Overlays for item hovers and clicks. */
       "statusBarItem.hoverBackground": `${colors.alpha.hoverFocusBackground}`,
@@ -363,8 +365,9 @@ const getTheme = ({ theme, name }) => {
        * Editor Tabs
        */
 
-      /* Border to separate tabs from each other. */
+      /* Borders to separate tabs from each other - disabled. */
       "tab.border": `${colors.transparent}`,
+      "tab.lastPinnedBorder": `${colors.transparent}`,
 
       /* Active tab in the active (focused) editor group.*/
       "tab.activeBorder": `${colors.transparent}`,
@@ -375,9 +378,6 @@ const getTheme = ({ theme, name }) => {
       /* Inactive tabs in the active (focused) editor group. */
       "tab.inactiveBackground": `${colors.workbench.background}`,
       "tab.inactiveForeground": `${colors.text}`,
-
-      // "tab.hoverBackground": "#ffffff",
-      // "tab.unfocusedHoverBackground": "#eaeef280",
 
       /* Active tab in non-active (unfocused) editor groups. */
       "tab.unfocusedActiveBorder": `${colors.transparent}`,
@@ -392,12 +392,17 @@ const getTheme = ({ theme, name }) => {
       /* Colors when selecting multiple tabs using Ctrl+select. */
       "tab.selectedBackground": `${colors.editor.background}`,
       "tab.selectedForeground": `${colors.text}`,
+      "tab.selectedBorderTop": `${colors.transparent}`,
+
+      /* Tab hover effects are disabled. */
+      // "tab.hoverBackground": "",
+      // "tab.unfocusedHoverBackground": "",
 
       /**
        * Progress Bar
        */
 
-      "progressBar.background": `${colors.progressBar}`,
+      "progressBar.background": `${colors.runningProcess}`,
 
       /**
        * Breadcrumb
@@ -412,9 +417,9 @@ const getTheme = ({ theme, name }) => {
 
       /**
        * Editor Sticky Scroll
-       * Sticks the current indentation context at the top of the editor as
-       * you scroll down - useful for understanding where you are in the code.
-       * Requires the "editor.stickyScroll.enabled" setting to be true.
+       *
+       * Sticks the current indentation context at the top of the editor as you scroll down - useful for understanding
+       * where you are in the code. Requires the "editor.stickyScroll.enabled" setting to be true.
        */
 
       "editorStickyScroll.border": `${colors.editor.border}`,
@@ -437,19 +442,22 @@ const getTheme = ({ theme, name }) => {
       /* Background color of the current line with the cursor. Must be opaque. */
       "editor.lineHighlightBackground": `${colors.alpha.hoverFocusBackground}`,
 
-      // "editor.linkedEditingBackground": "#0969da12",
+      /* Background color when the editor is in linked-editing mode. Alpha transparency. */
+      "editor.linkedEditingBackground": `${colors.alpha.hoverFocusBackground}`,
 
-      /* Selected text, and color for other text in the document that matches
-      the current selection. */
+      /* Selected text, and color for other text in the document that matches the current selection. */
       "editor.selectionBackground": `${colors.alpha.selectionBackground}`,
       "editor.selectionHighlightBackground": `${colors.alpha.matchesBackground}`,
+
+      /* Selected text when the editor itself is not focused. */
+      "editor.inactiveSelectionBackground": `${colors.alpha.matchesBackground}`,
 
       /* Current word/symbol highlight in read and write mode. */
       "editor.wordHighlightBackground": `${colors.alpha.hoverFocusBackground}`,
       "editor.wordHighlightStrongBackground": `${colors.alpha.hoverFocusBackground}`,
 
-      /* In debugging mode, these are the background colors for the top stack
-      frame and the focused stack frame respectively. */
+      /* In debugging mode, these are the background colors for the top stack frame and the focused stack frame
+      respectively. */
       "editor.stackFrameHighlightBackground": `${colors.alpha.hoverFocusBackground}`,
       "editor.focusedStackFrameHighlightBackground": `${colors.alpha.hoverFocusBackground}`,
 
@@ -514,25 +522,26 @@ const getTheme = ({ theme, name }) => {
       "editorInlayHint.foreground": `${colors.lightText}`,
       "editorInlayHint.typeBackground": `${colors.transparent}`,
       "editorInlayHint.typeForeground": `${colors.lightText}`,
-      // "editorInlayHint.paramBackground": "#afb8c133",
-      // "editorInlayHint.paramForeground": "#656d76",
+      "editorInlayHint.paramBackground": `${colors.transparent}`,
+      "editorInlayHint.paramForeground": `${colors.lightText}`,
 
-      /* The Editor Widget is any dialog rendered in front of the editor,
-      including the Find/Replace dialog and the suggestion widget. */
+      /* The Editor Widget is any dialog rendered in front of the editor, including the Find/Replace dialog and the
+      suggestion widget. */
       "editorWidget.background": `${colors.workbench.background}`,
       "editorWidget.foreground": `${colors.text}`,
 
-      /* Background color of the editor pane visible on the left and right side
-      of the centered editor layout. */
+      "editorSuggestWidget.background": `${colors.workbench.background}`,
+
+      /* Background color of the editor pane visible on the left and right side of the centered editor layout. */
       "editorPane.background": `${colors.workbench.background}`,
 
-      /* Color to separate two editors from each other when shown
-      by side in an editor group */
+      /* Color to separate two editors from each other when shown by side in an editor group */
       "sideBySideEditor.horizontalBorder": `${colors.workbench.border}`,
       "sideBySideEditor.verticalBorder": `${colors.workbench.border}`,
 
       /**
        * Editor Gutter
+       *
        * Diff highlights in the line number gutter.
        */
 
@@ -564,10 +573,13 @@ const getTheme = ({ theme, name }) => {
       "diffEditorGutter.insertedLineBackground": `${colors.transparent}`,
       "diffEditorGutter.removedLineBackground": `${colors.transparent}`,
 
+      "diffEditor.unchangedRegionBackground": `${colors.transparent}`,
+
       /**
        * Editor Overview Ruler
-       * This component sits *under* the scrollbar on the right of the editor.
-       * It uses decorations to provide a map of changes in the file.
+       *
+       * This component sits *under* the scrollbar on the right of the editor. It uses decorations to provide a map of
+       * changes in the file.
        */
 
       /* These effectively give a background and border around the scrollbar. */
@@ -597,11 +609,12 @@ const getTheme = ({ theme, name }) => {
 
       /**
        * Scrollbar Control and MiniMap
-       * The theme is designed for these two controls to blend together. The following
-       * settings are recommended to work best with this theme:
+       *
+       * The theme is designed for these two controls to blend together. The following settings are recommended to work
+       * best with this theme:
        *
        * {
-       *   "editor.minimap.size": "fit",
+       *   "editor.minimap.size": "fill",
        *   "editor.minimap.showSlider": "always",
        *   "editor.scrollbar.vertical": "visible",
        * }
@@ -616,8 +629,8 @@ const getTheme = ({ theme, name }) => {
       "minimapSlider.hoverBackground": `${colors.editor.minimap}`,
       "minimapSlider.activeBackground": `${colors.editor.minimap}`,
 
-      /* Opacity level of the minimap's content. It's only the alpha
-      value that is used here. */
+      /* TODO: Move this opacity config to colors.mjs. */
+      /* Opacity level of the minimap's content. It's only the alpha value that's embedded directly in this config. */
       "minimap.foregroundOpacity": "#00000066",
 
       /* Disable changes, these exist in the editor overview ruler already. */
@@ -637,17 +650,21 @@ const getTheme = ({ theme, name }) => {
 
       /**
        * Panel
+       *
        * These colors are for the bottom panel.
        */
 
       "panel.border": `${colors.transparent}`,
       "panel.background": `${colors.workbench.background}`,
 
+      "panelTitle.activeBorder": `${colors.transparent}`,
       "panelTitle.inactiveForeground": `${colors.text}`,
       "panelTitle.activeForeground": `${colors.text}`,
 
       /* Color to mark "drop zones" when moving panel sections around. */
       "panelSection.dropBackground": `${colors.alpha.highlightBackground}`,
+
+      "panelInput.border": `${colors.inputs.border}`,
 
       /**
        * Debugging elements
@@ -686,6 +703,7 @@ const getTheme = ({ theme, name }) => {
 
       /* Background for selected text. */
       "terminal.selectionBackground": `${colors.terminal.selectionBackground}`,
+      "terminal.inactiveSelectionBackground": `${colors.terminal.selectionBackground}`,
 
       /* The background color when dragging on top of terminals. */
       "terminal.dropBackground": `${colors.alpha.highlightBackground}`,
@@ -700,6 +718,9 @@ const getTheme = ({ theme, name }) => {
 
       /* Border between split terminal panes. */
       "terminal.border": `${colors.terminal.border}`,
+
+      /* Multi-terminal mode: border for active terminal tab. */
+      "terminal.tab.activeBorder": `${colors.terminal.text}`,
 
       /* ANSI colors. */
       "terminal.ansiBlack": `${colors.terminal.ansiBlack}`,
@@ -720,16 +741,102 @@ const getTheme = ({ theme, name }) => {
       "terminal.ansiBrightYellow": `${colors.terminal.ansiBrightYellow}`,
 
       /**
+       * Welcome Page buttons.
+       */
+
+      "welcomePage.tileBackground": `${colors.workbench.background}`,
+      "welcomePage.buttonBackground": `${colors.button.primary.background}`,
+      "welcomePage.buttonHoverBackground": `${colors.button.primary.background}`,
+
+      /**
        * Settings Editor
        */
 
       "settings.headerForeground": `${colors.text}`,
-      "settings.modifiedItemIndicator": `${colors.text}`,
+      "settings.modifiedItemIndicator": `${colors.warningText}`,
+
+      "settings.textInputBorder": `${colors.inputs.border}`,
+      "settings.numberInputBorder": `${colors.inputs.border}`,
+
+      "settings.dropdownBackground": `${colors.inputs.background}`,
+      "settings.dropdownBorder": `${colors.inputs.border}`,
+
+      /**
+       * Notebooks
+       */
+
+      "notebook.cellBorderColor": `${colors.inputs.border}`,
+      "notebook.selectedCellBackground": `${colors.inputs.background}`,
+
+      /**
+       * Peek view editor
+       */
+
+      /* Color of the peek view borders and arrow. */
+      "peekView.border": `${colors.editor.border}`,
+
+      /* Background color of the peek view editor. */
+      "peekViewEditor.background": `${colors.editor.background}`,
+
+      /* Background color of the gutter in the peek view editor. */
+      "peekViewEditorGutter.background": `${colors.editor.background}`,
+
+      /* Match highlight color in the peek view editor. */
+      "peekViewEditor.matchHighlightBackground": `${colors.alpha.highlightBackground}`,
+
+      /* Match highlight border color in the peek view editor. */
+      "peekViewEditor.matchHighlightBorder": `${colors.transparent}`,
+
+      /* Background color of the peek view result list. */
+      "peekViewResult.background": `${colors.workbench.background}`,
+
+      /* Foreground color for file nodes in the peek view result list. */
+      "peekViewResult.fileForeground": `${colors.text}`,
+
+      /* Foreground color for line nodes in the peek view result list. */
+      "peekViewResult.lineForeground": `${colors.editor.guides}`,
+
+      /* Match highlight color in the peek view result list. */
+      "peekViewResult.matchHighlightBackground": `${colors.alpha.highlightBackground}`,
+
+      /* Background color of the selected entry in the peek view result list. */
+      "peekViewResult.selectionBackground": `${colors.alpha.selectionBackground}`,
+
+      /* Foreground color of the selected entry in the peek view result list. */
+      "peekViewResult.selectionForeground": `${colors.text}`,
+
+      /* Background color of the peek view title area. */
+      "peekViewTitle.background": `${colors.workbench.background}`,
+
+      /* Color of the peek view title info. */
+      "peekViewTitleDescription.foreground": `${colors.text}`,
+
+      /* Color of the peek view title. */
+      "peekViewTitleLabel.foreground": `${colors.lightText}`,
+
+      /* Background color of sticky scroll in the peek view editor. */
+      "peekViewEditorStickyScroll.background": `${colors.editor.scrollbar}`,
+
+      /**
+       * Action Bar
+       */
+
+      /* TODO: Not entirely sure what this is, but is probably significant as this color property is referenced in
+      VS Code's default / built-in themes. */
+      /* Background color for toggled action items in action bar. */
+      "actionBar.toggledBackground": "#dddddd",
+
+      /**
+       * Chat
+       */
+
+      "chat.slashCommandBackground": `${colors.chat.command.background}`,
+      "chat.slashCommandForeground": `${colors.chat.command.foreground}`,
 
       /**
        * Git Decorations
-       * These colors are used in the Source Control panel, but also reused in
-       * Editor Tabs and the File Explorer.
+       *
+       * These colors are used in the Source Control panel, but also reused in Editor Tabs and the File Explorer.
        */
 
       /* Disable SCM decorations by using default text foreground color. */
@@ -744,11 +851,10 @@ const getTheme = ({ theme, name }) => {
       "gitDecoration.conflictingResourceForeground": `${colors.text}`,
       "gitDecoration.submoduleResourceForeground": `${colors.text}`,
 
-
       /**
        * Symbol Icons
-       * Symbol icons appear in the Outline view, breadcrumb navigation,
-       * and suggest widget.
+       *
+       * Symbol icons appear in the Outline view, breadcrumb navigation, and suggest widget.
        */
 
       "symbolIcon.arrayForeground": `${colors.icons}`,
@@ -785,10 +891,13 @@ const getTheme = ({ theme, name }) => {
       "symbolIcon.unitForeground": `${colors.icons}`,
       "symbolIcon.variableForeground": `${colors.icons}`,
 
+      "ports.iconRunningProcessForeground": `${colors.runningProcess}`,
+
     },
 
+    /* TODO: Enable semantic highlighting once settled on TextMate configuration. */
     /* https://code.visualstudio.com/api/language-extensions/semantic-highlight-guide */
-    "semanticHighlighting": true,
+    "semanticHighlighting": false,
 
     "tokenColors": [
       {

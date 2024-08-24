@@ -7,6 +7,7 @@ const getColors = ({ theme }) => {
 
     case 'vs': // light
       return {
+        /* Transparent color - this MUST NOT change between themes. */
         transparent: tokens.color.transparent,
 
         text: tokens.color.neutral[700],
@@ -15,17 +16,17 @@ const getColors = ({ theme }) => {
         errorText: tokens.color.red[500],
         warningText: tokens.color.yellow[800],
         hyperlinks: tokens.color.blue[500],
-        progressBar: tokens.color.blue[700],
+        runningProcess: tokens.color.green[700],
 
         alpha: {
           highlightBackground: chroma(tokens.color.neutral[500]).alpha(0.25).hex(),
+          errorBackground: chroma(tokens.color.neutral[500]).alpha(0.25).hex(),
           selectionBackground: chroma(tokens.color.neutral[500]).alpha(0.15).hex(),
           matchesBackground: chroma(tokens.color.neutral[500]).alpha(0.15).hex(),
           otherMatchesBackground: chroma(tokens.color.neutral[500]).alpha(0.05).hex(),
           hoverFocusBackground: chroma(tokens.color.neutral[500]).alpha(0.1).hex(),
 
           addedTextBackground: chroma(tokens.color.green[600]).alpha(0.2).hex(),
-          // modifiedTextBackground: chroma(tokens.color.blue[600]).alpha(0.2).hex(),
           deletedTextBackground: chroma(tokens.color.red[600]).alpha(0.2).hex(),
         },
 
@@ -40,12 +41,17 @@ const getColors = ({ theme }) => {
           background: tokens.color.neutral[100],
           border: tokens.color.neutral[250],
           guides: tokens.color.neutral[250],
-
           breakpoint: tokens.color.red[500],
-
-          scrollbar: chroma(tokens.color.neutral[400]).alpha(0.5).hex(),
+          scrollbar: chroma(tokens.color.neutral[400]).alpha(0.25).hex(),
           minimap: chroma(tokens.color.neutral[400]).alpha(0.25).hex(),
         },
+
+        chat: {
+          command: {
+            background: tokens.color.blue[200] ,
+            foreground: tokens.color.blue[700],
+          }
+        }
 
         terminal: {
           background: tokens.color.neutral[700],
@@ -76,7 +82,6 @@ const getColors = ({ theme }) => {
           },
         },
 
-        /* "Items" in VS Code's UX Guidelines: */
         badge: {
           background: tokens.color.neutral[500],
           foreground: tokens.color.neutral[100],
@@ -119,8 +124,9 @@ const getColors = ({ theme }) => {
 
       }
 
-    case 'vs-dark':
-      throw new Error("Invalid theme")
+    // TODO: Add more themes here.
+    // case 'vs-dark':
+    //   throw new Error("Invalid theme")
 
     default:
       throw new Error("Invalid theme")
