@@ -4,7 +4,8 @@
   "devDependencies": {
     "@vscode/vsce": "^2.31.1",
     "chroma-js": "^2.6.0",
-    "nodemon": "^3.1.4"
+    "nodemon": "^3.1.4",
+    "readline": "^1.3.0"
   },
   "engines": {
     "node": "^18.18.0",
@@ -16,6 +17,7 @@
     "build": "node src/index.mjs",
     "package": "npm run build && mkdir -p pkg && cd dist && node ../node_modules/@vscode/vsce/vsce package -o ../pkg/ocean-vscode-theme.vsix",
     "publish": "npm run build && cd dist && node ../node_modules/@vscode/vsce/vsce publish",
+    "publish-auto": "node ./run/publish.cjs",
     "test": "echo \"Error: no tests specified\" && exit 1"
   }
 }
