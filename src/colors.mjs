@@ -51,7 +51,7 @@ const getColors = ({ theme }) => {
             background: tokens.color.blue[200] ,
             foreground: tokens.color.blue[700],
           }
-        }
+        },
 
         terminal: {
           background: tokens.color.neutral[700],
