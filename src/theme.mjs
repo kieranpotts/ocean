@@ -791,7 +791,7 @@ const getTheme = ({ theme, name }) => {
       "peekViewEditor.matchHighlightBorder": `${colors.transparent}`,
 
       /* Background color of the peek view result list. */
-      "peekViewResult.background": `${colors.workbench.background}`,
+      "peekViewResult.background": `${colors.editor.breakoutBackground}`,
 
       /* Foreground color for file nodes in the peek view result list. */
       "peekViewResult.fileForeground": `${colors.text}`,

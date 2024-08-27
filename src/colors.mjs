@@ -39,6 +39,10 @@ const getColors = ({ theme }) => {
 
         editor: {
           background: tokens.color.neutral[100],
+
+          /* breakout = peek view and other insertions within the editor view,
+          background should be midway between workbench and editor colors. */
+          breakoutBackground: tokens.color.neutral[150],
           border: tokens.color.neutral[250],
           guides: tokens.color.neutral[250],
           breakpoint: tokens.color.red[500],
