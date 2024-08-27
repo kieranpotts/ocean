@@ -321,7 +321,7 @@ const getTheme = ({ theme, name }) => {
        * Status Bar
        */
 
-      "statusBar.border": `${colors.transparent}`,
+      "statusBar.border": `${colors.workbench.separator}`,
       "statusBar.focusBorder": `${colors.transparent}`,
 
       "statusBar.background": `${colors.workbench.background}`,
