@@ -29,18 +29,6 @@ const main = async () => {
     return
   }
 
-  // try {
-  //   await execAsync(`
-  //     if [ -n "$(git diff --cached --name-only)" ]; then
-  //       exit 1
-  //     fi
-  //   `)
-  // } catch (error) {
-  //   console.error("Cannot proceed, there are staged changes.")
-  //   process.exit(1)
-  //   return
-  // }
-
   console.log(`The current version is v${version}.`)
 
   const rl = readline.createInterface({
