@@ -554,9 +554,9 @@ const getTheme = ({ theme, name }) => {
       "editorGutter.deletedBackground": `${colors.transparent}`,
 
       "editorGutter.foldingControlForeground": `${colors.lightText}`,
-      "editorGutter.commentRangeForeground": `${colors.lightText}`,
-      "editorGutter.commentGlyphForeground": `${colors.lightText}`,
-      "editorGutter.commentUnresolvedGlyphForeground": `${colors.lightText}`,
+      "editorGutter.commentRangeForeground": `${colors.text}`,
+      "editorGutter.commentGlyphForeground": `${colors.text}`,
+      "editorGutter.commentUnresolvedGlyphForeground": `${colors.errorText}`,
 
       /**
        * Diff Editor
