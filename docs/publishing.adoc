@@ -2,20 +2,6 @@
 
 NOTE: These steps assume that the user has an active personal access token (PAT) for the `kieranpotts` organization in Azure DevOps, and the token has the scope "Marketplace (manage)". link:https://code.visualstudio.com/api/working-with-extensions/publishing-extension#get-a-personal-access-token[See the VS Code documentation for more information on creating a PAT].
 
-Update the version number in `src/package.json`, then commit the change and tag it. The VS Code Marketplace follows the Semantic Versioning (SemVer) convention.
+The publication process is now fully automated using `npm run publish`. All changes to be included in the release should have been committed before running this command, and the repository's working directory and staging index should be clean.
 
-[source,sh]
-----
-git commit -am "release: v0.1.0"
-git tag v0.1.0
-git push && git push --tags
-----
-
-To publish the extension:
-
-[source,sh]
-----
-npm run publish
-----
-
-Type your Personal Access Token at the prompt.
+Paste your Personal Access Token, if prompted.
