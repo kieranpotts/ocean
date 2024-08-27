@@ -1,6 +1,6 @@
 {
   "name": "ocean-vscode-theme",
-  "version": "0.3.0",
+  "version": "0.4.2",
   "preview": true,
   "publisher": "kieranpotts",
   "author": {
@@ -21,7 +21,7 @@
   "pricing": "Free",
   "icon": "_/wave.png",
   "galleryBanner": {
-    "color": "#5e81ac",
+    "color": "#c7ccd1",
     "theme": "light"
   },
   "homepage": "https://github.com/kieranpotts/ocean/blob/dev/src/README.md",

@@ -39,7 +39,6 @@ const main = () => {
       updatedVersion[2] = 0
     } else {
       console.error('Invalid semantic release type.')
-
       return
     }
 
@@ -55,6 +54,8 @@ const main = () => {
     } catch (error) {
       console.error(`Error running CLI commands: ${error.message}`)
     }
+
+    console.log(`The Ocean v${newVersion} is being published and will be available from the marketplace shortly.`)
   })
 }
 
