@@ -9,10 +9,37 @@ const { promisify } = require('util')
 
 const execAsync = promisify(exec)
 
-const main = () => {
+const main = async () => {
   const packageJson = fs.readFileSync('./src/package.json', 'utf8')
   const packageData = JSON.parse(packageJson)
   const version = packageData.version
+
+  /* The Git working tree and staging index must both be clean before a new
+  release can be prepared and published. */
+
+  try {
+    await execAsync(`
+      if [ -n "$(git status --porcelain)" ]; then
+        exit 1
+      fi
+    `)
+  } catch (error) {
+    console.error("Cannot proceed, there are uncommitted or staged changes in the working directory.")
+    process.exit(1)
+    return
+  }
+
+  // try {
+  //   await execAsync(`
+  //     if [ -n "$(git diff --cached --name-only)" ]; then
+  //       exit 1
+  //     fi
+  //   `)
+  // } catch (error) {
+  //   console.error("Cannot proceed, there are staged changes.")
+  //   process.exit(1)
+  //   return
+  // }
 
   console.log(`The current version is v${version}.`)
 
@@ -39,6 +66,7 @@ const main = () => {
       updatedVersion[2] = 0
     } else {
       console.error('Invalid semantic release type.')
+      process.exit(1)
       return
     }
 
@@ -52,7 +80,21 @@ const main = () => {
       await execAsync('npm run build')
       await execAsync('cd dist && node ../node_modules/.bin/vsce publish')
     } catch (error) {
-      console.error(`Error running CLI commands: ${error.message}`)
+      console.error(`Error running VSCE commands: ${error.message}`)
+      process.exit(1)
+      return
+    }
+
+    /* Only if publication was successful, tag the release. */
+
+    try {
+      await execAsync(`git commit -am "release: v${newVersion}"`)
+      await execAsync(`git tag v${newVersion}`)
+      await execAsync('git push && git push --tags')
+    } catch (error) {
+      console.error(`Error running Git commands: ${error.message}`)
+      process.exit(1)
+      return
     }
 
     console.log(`The Ocean v${newVersion} is being published and will be available from the marketplace shortly.`)
