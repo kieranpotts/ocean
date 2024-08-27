@@ -532,6 +532,9 @@ const getTheme = ({ theme, name }) => {
 
       "editorSuggestWidget.background": `${colors.workbench.background}`,
 
+      /* Colors for input fields within the editor view, eg in PR comment threads. */
+      "editorCommentsWidget.replyInputBackground": `${colors.inputs.background}`,
+
       /* Background color of the editor pane visible on the left and right side of the centered editor layout. */
       "editorPane.background": `${colors.workbench.background}`,
 
@@ -821,8 +824,9 @@ const getTheme = ({ theme, name }) => {
        * Action Bar
        */
 
-      /* TODO: Not entirely sure what this is, but is probably significant as this color property is referenced in
-      VS Code's default / built-in themes. */
+      /* TODO: Not entirely sure what this is, but is probably significant as this color property is
+      referenced in VS Code's default / built-in themes.*/
+
       /* Background color for toggled action items in action bar. */
       "actionBar.toggledBackground": "#dddddd",
 
