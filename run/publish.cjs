@@ -4,21 +4,27 @@
 
 const fs = require('fs')
 const readline = require('readline')
+const { exec } = require('child_process')
+const { promisify } = require('util')
+
+const execAsync = promisify(exec)
 
 const main = () => {
   const packageJson = fs.readFileSync('./src/package.json', 'utf8')
   const packageData = JSON.parse(packageJson)
   const version = packageData.version
 
-  console.log(`The current version is ${version}.`)
+  console.log(`The current version is v${version}.`)
 
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
   })
 
-  rl.question('Is this new release a "patch", "minor" or "major" update? ', (releaseType) => {
+  rl.question('Is this new release a "patch", "minor" or "major" update? ', async (releaseType) => {
     console.log(`You selected ${releaseType} release.`)
+
+    rl.close()
 
     let updatedVersion = version.split('.')
 
@@ -33,14 +39,22 @@ const main = () => {
       updatedVersion[2] = 0
     } else {
       console.error('Invalid semantic release type.')
-      rl.close()
+
       return
     }
 
     const newVersion = updatedVersion.join('.')
-    console.log(`The new version will be ${newVersion}.`)
+    console.log(`The new release will be v${newVersion}.`)
 
-    rl.close()
+    packageData.version = newVersion
+    fs.writeFileSync('./src/package.json', JSON.stringify(packageData, null, 2))
+
+    try {
+      await execAsync('npm run build')
+      await execAsync('cd dist && node ../node_modules/.bin/vsce publish')
+    } catch (error) {
+      console.error(`Error running CLI commands: ${error.message}`)
+    }
   })
 }
 
