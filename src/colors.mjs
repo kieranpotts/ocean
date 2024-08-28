@@ -10,10 +10,14 @@ const getColors = ({ theme }) => {
         /* Transparent color - this MUST NOT change between themes. */
         transparent: tokens.color.transparent,
 
+        /* Replacement color - use this to highlight bits of the UI temporarily. */
+        replacement: tokens.color.replacement,
+
         text: tokens.color.neutral[700],
         lightText: tokens.color.neutral[400],
         icons: tokens.color.neutral[500],
         errorText: tokens.color.red[500],
+        successText: tokens.color.green[500],
         warningText: tokens.color.yellow[800],
         hyperlinks: tokens.color.blue[500],
         runningProcess: tokens.color.green[700],

@@ -533,6 +533,12 @@ const getTheme = ({ theme, name }) => {
       "editorSuggestWidget.background": `${colors.workbench.background}`,
 
       /* Colors for input fields within the editor view, eg in PR comment threads. */
+      "editorCommentsWidget.unresolvedBorder": `${colors.errorText}`,
+      "editorCommentsWidget.resolvedBorder": `${colors.successText}`,
+      // "editorCommentsWidget.rangeBackground": `${colors.workbench.background}`,
+      // "editorCommentsWidget.rangeActiveBackground": `${colors.workbench.background}`,
+      "editorCommentsWidget.rangeBackground": `${colors.replacement}`,
+      "editorCommentsWidget.rangeActiveBackground": `${colors.replacement}`,
       "editorCommentsWidget.replyInputBackground": `${colors.inputs.background}`,
 
       /* Background color of the editor pane visible on the left and right side of the centered editor layout. */
