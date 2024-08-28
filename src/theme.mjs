@@ -557,7 +557,9 @@ const getTheme = ({ theme, name }) => {
       "editorGutter.deletedBackground": `${colors.transparent}`,
 
       "editorGutter.foldingControlForeground": `${colors.lightText}`,
-      "editorGutter.commentRangeForeground": `${colors.text}`,
+
+      /* Editor gutter decoration color for commenting ranges and glyphs. */
+      "editorGutter.commentRangeForeground": `${colors.workbench.background}`,
       "editorGutter.commentGlyphForeground": `${colors.text}`,
       "editorGutter.commentUnresolvedGlyphForeground": `${colors.errorText}`,
 
