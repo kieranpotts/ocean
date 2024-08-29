@@ -1,8 +1,14 @@
 {
   "recommendations": [
 
-    /* Extension Test Runner — Runs tests as you develop extensions for VS Code. */
-    "ms-vscode.extension-test-runner",
+    /* AsciiDoc — Provides language support for AsciiDoc. */
+    "asciidoctor.asciidoctor-vscode",
+
+    /* AsciiDoc Snippets — Snippets for AsciiDoc for PDF and HTML output. */
+    "travismichette.adoc-snippets",
+
+    /* EditorConfig — .editorconfig file support. */
+    "editorconfig.editorconfig",
 
   ]
 }
