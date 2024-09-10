@@ -1,7 +1,17 @@
 = Publishing to the VS Code Marketplace
 
-NOTE: These steps assume that the user has an active personal access token (PAT) for the `kieranpotts` organization in Azure DevOps, and the token has the scope "Marketplace (manage)". link:https://code.visualstudio.com/api/working-with-extensions/publishing-extension#get-a-personal-access-token[See the VS Code documentation for more information on creating a PAT].
+:link-get-pat: https://code.visualstudio.com/api/working-with-extensions/publishing-extension#get-a-personal-access-token
 
-The publication process is now fully automated using `npm run publish`. All changes to be included in the release should have been committed before running this command, and the repository's working directory and staging index should be clean.
+NOTE: These steps assume that the user has an active personal access token (PAT)
+for the `kieranpotts` organization in Azure DevOps, and the token has the scope
+"Marketplace (manage)".
+
+{link-get-pat}[See the VS Code documentation] for more information on creating
+a PAT.
+
+The publication process is now fully automated using `npm run publish`. All
+changes to be included in the release should have been committed before running
+this command, and the repository's working directory and staging index should
+be clean.
 
 Paste your Personal Access Token, if prompted.

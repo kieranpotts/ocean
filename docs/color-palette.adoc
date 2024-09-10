@@ -1,5 +1,10 @@
 = Color palette
 
-The Ocean theme is built on the following base16 color palette, which is a modification of the "Ocean" terminal theme in Adrien Glitchbone's link:https://glitchbone.github.io/vscode-base16-term/#/ocean[base16 terminal color scales generator] for VS Code.
+:link-terminal-color-generator: https://glitchbone.github.io/vscode-base16-term/#/ocean
+
+The Ocean theme is built on the following base16 color palette, which is a
+modification of the "Ocean" terminal theme in Adrien Glitchbone's
+{link-terminal-color-generator}[base16 terminal color scales generator]
+for VS Code.
 
 image::./_/base16.svg[]

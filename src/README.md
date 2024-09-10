@@ -1,4 +1,3 @@
-
 # Ocean
 
 A family of ocean-themed themes for VS Code.
