@@ -1,17 +1,15 @@
-import getColors from './colors.mjs'
+import getColors from "./colors.mjs";
 
 const getTheme = ({ theme, name }) => {
-
-  const colors = getColors({ theme })
+  const colors = getColors({ theme });
 
   return {
-    "$schema": "vscode://schemas/color-theme",
+    $schema: "vscode://schemas/color-theme",
 
-    "name": name,
-    "type": theme,
+    name: name,
+    type: theme,
 
-    "colors": {
-
+    colors: {
       /*
       References:
       https://code.visualstudio.com/api/references/theme-color
@@ -24,16 +22,16 @@ const getTheme = ({ theme, name }) => {
        */
 
       /* Overall border color for focused elements. This color is used only if not overridden by a component. */
-      "focusBorder": `${colors.transparent}`,
+      focusBorder: `${colors.transparent}`,
 
       /* Overall foreground color. This color is used only if not overridden by a component. */
-      "foreground": `${colors.text}`,
+      foreground: `${colors.text}`,
 
       /* Foreground color for text providing additional information, eg labels. */
-      "descriptionForeground": `${colors.lightText}`,
+      descriptionForeground: `${colors.lightText}`,
 
       /* Overall foreground color for error messages. This color is only used if not overridden by a component. */
-      "errorForeground": `${colors.errorText}`,
+      errorForeground: `${colors.errorText}`,
 
       /* Text links - eg in welcome page. */
       "textLink.foreground": `${colors.hyperlinks}`,
@@ -72,8 +70,8 @@ const getTheme = ({ theme, name }) => {
        */
 
       /* An extra border around elements */
-      "contrastBorder": `${colors.transparent}`,
-      "contrastActiveBorder": `${colors.transparent}`,
+      contrastBorder: `${colors.transparent}`,
+      contrastActiveBorder: `${colors.transparent}`,
 
       /**
        * Button Control
@@ -408,7 +406,7 @@ const getTheme = ({ theme, name }) => {
        * Breadcrumb
        */
 
-      "breadcrumb.background": `${colors.workbench.background}`,
+      "breadcrumb.background": `${colors.editor.background}`,
       "breadcrumbPicker.background": `${colors.workbench.background}`,
 
       "breadcrumb.foreground": `${colors.lightText}`,
@@ -904,409 +902,353 @@ const getTheme = ({ theme, name }) => {
       "symbolIcon.variableForeground": `${colors.icons}`,
 
       "ports.iconRunningProcessForeground": `${colors.runningProcess}`,
-
     },
 
     /* TODO: Enable semantic highlighting once settled on TextMate configuration. */
     /* https://code.visualstudio.com/api/language-extensions/semantic-highlight-guide */
-    "semanticHighlighting": false,
+    semanticHighlighting: false,
 
-    "tokenColors": [
+    tokenColors: [
       {
-        "scope": [
-          "comment",
-          "punctuation.definition.comment",
-          "string.comment"
-        ],
-        "settings": {
-          "foreground": `${colors.syntax.light}`
-        }
+        scope: ["comment", "punctuation.definition.comment", "string.comment"],
+        settings: {
+          foreground: `${colors.syntax.light}`,
+        },
       },
       {
-        "scope": [
-          "constant.other.placeholder",
-          "constant.character"
-        ],
-        "settings": {
-          "foreground": `${colors.syntax.red}`
-        }
+        scope: ["constant.other.placeholder", "constant.character"],
+        settings: {
+          foreground: `${colors.syntax.red}`,
+        },
       },
       {
-        "scope": [
+        scope: [
           "constant",
           "entity.name.constant",
           "variable.other.constant",
           "variable.other.enummember",
           "variable.language",
-          "entity"
+          "entity",
         ],
-        "settings": {
-          "foreground": `${colors.syntax.blue}`
-        }
+        settings: {
+          foreground: `${colors.syntax.blue}`,
+        },
       },
       {
-        "scope": [
-          "entity.name",
-          "meta.export.default",
-          "meta.definition.variable"
-        ],
-        "settings": {
-          "foreground": `${colors.syntax.cyan}`
-        }
+        scope: ["entity.name", "meta.export.default", "meta.definition.variable"],
+        settings: {
+          foreground: `${colors.syntax.cyan}`,
+        },
       },
       {
-        "scope": [
+        scope: [
           "variable.parameter.function",
           "meta.jsx.children",
           "meta.block",
           "meta.tag.attributes",
           "entity.name.constant",
           "meta.object.member",
-          "meta.embedded.expression"
+          "meta.embedded.expression",
         ],
-        "settings": {
-          "foreground": `${colors.syntax.default}`
-        }
+        settings: {
+          foreground: `${colors.syntax.default}`,
+        },
       },
       {
-        "scope": "entity.name.function",
-        "settings": {
-          "foreground": `${colors.syntax.magenta}`
-        }
+        scope: "entity.name.function",
+        settings: {
+          foreground: `${colors.syntax.magenta}`,
+        },
       },
       {
-        "scope": [
-          "entity.name.tag",
-          "support.class.component"
-        ],
-        "settings": {
-          "foreground": `${colors.syntax.green}`
-        }
+        scope: ["entity.name.tag", "support.class.component"],
+        settings: {
+          foreground: `${colors.syntax.green}`,
+        },
       },
       {
-        "scope": "keyword",
-        "settings": {
-          "foreground": `${colors.syntax.red}`
-        }
+        scope: "keyword",
+        settings: {
+          foreground: `${colors.syntax.red}`,
+        },
       },
       {
-        "scope": [
-          "storage",
-          "storage.type"
-        ],
-        "settings": {
-          "foreground": `${colors.syntax.red}`
-        }
+        scope: ["storage", "storage.type"],
+        settings: {
+          foreground: `${colors.syntax.red}`,
+        },
       },
       {
-        "scope": [
-          "storage.modifier.package",
-          "storage.modifier.import",
-          "storage.type.java"
-        ],
-        "settings": {
-          "foreground": `${colors.syntax.default}`
-        }
+        scope: ["storage.modifier.package", "storage.modifier.import", "storage.type.java"],
+        settings: {
+          foreground: `${colors.syntax.default}`,
+        },
       },
       {
-        "scope": [
-          "string",
-          "string punctuation.section.embedded source"
-        ],
-        "settings": {
-          "foreground": `${colors.syntax.deepBlue}`
-        }
+        scope: ["string", "string punctuation.section.embedded source"],
+        settings: {
+          foreground: `${colors.syntax.deepBlue}`,
+        },
       },
       {
-        "scope": "support",
-        "settings": {
-          "foreground": `${colors.syntax.blue}`
-        }
+        scope: "support",
+        settings: {
+          foreground: `${colors.syntax.blue}`,
+        },
       },
       {
-        "scope": "meta.property-name",
-        "settings": {
-          "foreground": `${colors.syntax.blue}`
-        }
+        scope: "meta.property-name",
+        settings: {
+          foreground: `${colors.syntax.blue}`,
+        },
       },
       {
-        "scope": "variable",
-        "settings": {
-          "foreground": `${colors.syntax.cyan}`
-        }
+        scope: "variable",
+        settings: {
+          foreground: `${colors.syntax.cyan}`,
+        },
       },
       {
-        "scope": "variable.other",
-        "settings": {
-          "foreground": `${colors.syntax.default}`
-        }
+        scope: "variable.other",
+        settings: {
+          foreground: `${colors.syntax.default}`,
+        },
       },
       {
-        "scope": "invalid.broken",
-        "settings": {
-          "fontStyle": "italic",
-          "foreground": `${colors.syntax.deepRed}`
-        }
+        scope: "invalid.broken",
+        settings: {
+          fontStyle: "italic",
+          foreground: `${colors.syntax.deepRed}`,
+        },
       },
       {
-        "scope": "invalid.deprecated",
-        "settings": {
-          "fontStyle": "italic",
-          "foreground": `${colors.syntax.deepRed}`
-        }
+        scope: "invalid.deprecated",
+        settings: {
+          fontStyle: "italic",
+          foreground: `${colors.syntax.deepRed}`,
+        },
       },
       {
-        "scope": "invalid.illegal",
-        "settings": {
-          "fontStyle": "italic",
-          "foreground": `${colors.syntax.deepRed}`
-        }
+        scope: "invalid.illegal",
+        settings: {
+          fontStyle: "italic",
+          foreground: `${colors.syntax.deepRed}`,
+        },
       },
       {
-        "scope": "invalid.unimplemented",
-        "settings": {
-          "fontStyle": "italic",
-          "foreground": `${colors.syntax.deepRed}`
-        }
+        scope: "invalid.unimplemented",
+        settings: {
+          fontStyle: "italic",
+          foreground: `${colors.syntax.deepRed}`,
+        },
       },
       {
-        "scope": "carriage-return",
-        "settings": {
-          "fontStyle": "italic underline",
-          "background": `${colors.syntax.red}`,
-          "foreground": `${colors.syntax.veryLightNeutral}`,
-          "content": "^M"
-        }
+        scope: "carriage-return",
+        settings: {
+          fontStyle: "italic underline",
+          background: `${colors.syntax.red}`,
+          foreground: `${colors.syntax.veryLightNeutral}`,
+          content: "^M",
+        },
       },
       {
-        "scope": "message.error",
-        "settings": {
-          "foreground": `${colors.syntax.deepRed}`
-        }
+        scope: "message.error",
+        settings: {
+          foreground: `${colors.syntax.deepRed}`,
+        },
       },
       {
-        "scope": "string variable",
-        "settings": {
-          "foreground": `${colors.syntax.blue}`
-        }
+        scope: "string variable",
+        settings: {
+          foreground: `${colors.syntax.blue}`,
+        },
       },
       {
-        "scope": [
-          "source.regexp",
-          "string.regexp"
-        ],
-        "settings": {
-          "foreground": `${colors.syntax.deepBlue}`
-        }
+        scope: ["source.regexp", "string.regexp"],
+        settings: {
+          foreground: `${colors.syntax.deepBlue}`,
+        },
       },
       {
-        "scope": [
+        scope: [
           "string.regexp.character-class",
           "string.regexp constant.character.escape",
           "string.regexp source.ruby.embedded",
-          "string.regexp string.regexp.arbitrary-repitition"
+          "string.regexp string.regexp.arbitrary-repitition",
         ],
-        "settings": {
-          "foreground": `${colors.syntax.deepBlue}`
-        }
+        settings: {
+          foreground: `${colors.syntax.deepBlue}`,
+        },
       },
       {
-        "scope": "string.regexp constant.character.escape",
-        "settings": {
-          "fontStyle": "bold",
-          "foreground": `${colors.syntax.green}`
-        }
+        scope: "string.regexp constant.character.escape",
+        settings: {
+          fontStyle: "bold",
+          foreground: `${colors.syntax.green}`,
+        },
       },
       {
-        "scope": "support.constant",
-        "settings": {
-          "foreground": `${colors.syntax.blue}`
-        }
+        scope: "support.constant",
+        settings: {
+          foreground: `${colors.syntax.blue}`,
+        },
       },
       {
-        "scope": "support.variable",
-        "settings": {
-          "foreground": `${colors.syntax.blue}`
-        }
+        scope: "support.variable",
+        settings: {
+          foreground: `${colors.syntax.blue}`,
+        },
       },
       {
-        "scope": "support.type.property-name.json",
-        "settings": {
-          "foreground": `${colors.syntax.green}`
-        }
+        scope: "support.type.property-name.json",
+        settings: {
+          foreground: `${colors.syntax.green}`,
+        },
       },
       {
-        "scope": "meta.module-reference",
-        "settings": {
-          "foreground": `${colors.syntax.blue}`
-        }
+        scope: "meta.module-reference",
+        settings: {
+          foreground: `${colors.syntax.blue}`,
+        },
       },
       {
-        "scope": "punctuation.definition.list.begin.markdown",
-        "settings": {
-          "foreground": `${colors.syntax.cyan}`
-        }
+        scope: "punctuation.definition.list.begin.markdown",
+        settings: {
+          foreground: `${colors.syntax.cyan}`,
+        },
       },
       {
-        "scope": [
-          "markup.heading",
-          "markup.heading entity.name"
-        ],
-        "settings": {
-          "fontStyle": "bold",
-          "foreground": `${colors.syntax.blue}`
-        }
+        scope: ["markup.heading", "markup.heading entity.name"],
+        settings: {
+          fontStyle: "bold",
+          foreground: `${colors.syntax.blue}`,
+        },
       },
       {
-        "scope": "markup.quote",
-        "settings": {
-          "foreground": `${colors.syntax.green}`
-        }
+        scope: "markup.quote",
+        settings: {
+          foreground: `${colors.syntax.green}`,
+        },
       },
       {
-        "scope": "markup.italic",
-        "settings": {
-          "fontStyle": "italic",
-          "foreground": `${colors.syntax.default}`
-        }
+        scope: "markup.italic",
+        settings: {
+          fontStyle: "italic",
+          foreground: `${colors.syntax.default}`,
+        },
       },
       {
-        "scope": "markup.bold",
-        "settings": {
-          "fontStyle": "bold",
-          "foreground": `${colors.syntax.default}`
-        }
+        scope: "markup.bold",
+        settings: {
+          fontStyle: "bold",
+          foreground: `${colors.syntax.default}`,
+        },
       },
       {
-        "scope": [
-          "markup.underline"
-        ],
-        "settings": {
-          "fontStyle": "underline"
-        }
+        scope: ["markup.underline"],
+        settings: {
+          fontStyle: "underline",
+        },
       },
       {
-        "scope": [
-          "markup.strikethrough"
-        ],
-        "settings": {
-          "fontStyle": "strikethrough"
-        }
+        scope: ["markup.strikethrough"],
+        settings: {
+          fontStyle: "strikethrough",
+        },
       },
       {
-        "scope": "markup.inline.raw",
-        "settings": {
-          "foreground": `${colors.syntax.blue}`
-        }
+        scope: "markup.inline.raw",
+        settings: {
+          foreground: `${colors.syntax.blue}`,
+        },
       },
       {
-        "scope": [
-          "markup.deleted",
-          "meta.diff.header.from-file",
-          "punctuation.definition.deleted"
-        ],
-        "settings": {
-          "background": `${colors.syntax.veryLightRed}`,
-          "foreground": `${colors.syntax.deepRed}`
-        }
+        scope: ["markup.deleted", "meta.diff.header.from-file", "punctuation.definition.deleted"],
+        settings: {
+          background: `${colors.syntax.veryLightRed}`,
+          foreground: `${colors.syntax.deepRed}`,
+        },
       },
       {
-        "scope": [
-          "punctuation.section.embedded"
-        ],
-        "settings": {
-          "foreground": `${colors.syntax.red}`
-        }
+        scope: ["punctuation.section.embedded"],
+        settings: {
+          foreground: `${colors.syntax.red}`,
+        },
       },
       {
-        "scope": [
-          "markup.inserted",
-          "meta.diff.header.to-file",
-          "punctuation.definition.inserted"
-        ],
-        "settings": {
-          "background": `${colors.syntax.veryLightGreen}`,
-          "foreground": `${colors.syntax.green}`
-        }
+        scope: ["markup.inserted", "meta.diff.header.to-file", "punctuation.definition.inserted"],
+        settings: {
+          background: `${colors.syntax.veryLightGreen}`,
+          foreground: `${colors.syntax.green}`,
+        },
       },
       {
-        "scope": [
-          "markup.changed",
-          "punctuation.definition.changed"
-        ],
-        "settings": {
-          "background": `${colors.syntax.veryLightCyan}`,
-          "foreground": `${colors.syntax.cyan}`
-        }
+        scope: ["markup.changed", "punctuation.definition.changed"],
+        settings: {
+          background: `${colors.syntax.veryLightCyan}`,
+          foreground: `${colors.syntax.cyan}`,
+        },
       },
       {
-        "scope": [
-          "markup.ignored",
-          "markup.untracked"
-        ],
-        "settings": {
-          "foreground": `${colors.syntax.veryLightBlue}`,
-          "background": `${colors.syntax.blue}`
-        }
+        scope: ["markup.ignored", "markup.untracked"],
+        settings: {
+          foreground: `${colors.syntax.veryLightBlue}`,
+          background: `${colors.syntax.blue}`,
+        },
       },
       {
-        "scope": "meta.diff.range",
-        "settings": {
-          "foreground": `${colors.syntax.magenta}`,
-          "fontStyle": "bold"
-        }
+        scope: "meta.diff.range",
+        settings: {
+          foreground: `${colors.syntax.magenta}`,
+          fontStyle: "bold",
+        },
       },
       {
-        "scope": "meta.diff.header",
-        "settings": {
-          "foreground": `${colors.syntax.blue}`
-        }
+        scope: "meta.diff.header",
+        settings: {
+          foreground: `${colors.syntax.blue}`,
+        },
       },
       {
-        "scope": "meta.separator",
-        "settings": {
-          "fontStyle": "bold",
-          "foreground": `${colors.syntax.blue}`
-        }
+        scope: "meta.separator",
+        settings: {
+          fontStyle: "bold",
+          foreground: `${colors.syntax.blue}`,
+        },
       },
       {
-        "scope": "meta.output",
-        "settings": {
-          "foreground": `${colors.syntax.blue}`
-        }
+        scope: "meta.output",
+        settings: {
+          foreground: `${colors.syntax.blue}`,
+        },
       },
       {
-        "scope": [
+        scope: [
           "brackethighlighter.tag",
           "brackethighlighter.curly",
           "brackethighlighter.round",
           "brackethighlighter.square",
           "brackethighlighter.angle",
-          "brackethighlighter.quote"
+          "brackethighlighter.quote",
         ],
-        "settings": {
-          "foreground": `${colors.syntax.mid}`
-        }
+        settings: {
+          foreground: `${colors.syntax.mid}`,
+        },
       },
       {
-        "scope": "brackethighlighter.unmatched",
-        "settings": {
-          "foreground": `${colors.syntax.deepRed}`
-        }
+        scope: "brackethighlighter.unmatched",
+        settings: {
+          foreground: `${colors.syntax.deepRed}`,
+        },
       },
       {
-        "scope": [
-          "constant.other.reference.link",
-          "string.other.link"
-        ],
-        "settings": {
-          "foreground": `${colors.syntax.deepBlue}`
-        }
-      }
-    ]
+        scope: ["constant.other.reference.link", "string.other.link"],
+        settings: {
+          foreground: `${colors.syntax.deepBlue}`,
+        },
+      },
+    ],
+  };
+};
 
-  }
-
-}
-
-export default getTheme
+export default getTheme;
