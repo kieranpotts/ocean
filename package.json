@@ -1,5 +1,4 @@
 {
-  "name": "ocean",
   "private": true,
   "devDependencies": {
     "@vscode/vsce": "^2.31.1",
