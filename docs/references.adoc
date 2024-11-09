@@ -39,3 +39,7 @@
 * https://themes.vscode.one/[VS Code Theme Editor] — Web GUI to design and
   generate code for color themes. *Warning: This tool is buggy; it does not save
   all changes as expected. Use for prototyping only.*
+
+* https://rodrigoluglio.github.io/vscode-theme-generator/[VS Code Theme Generator]
+  — Another web GUI for visual theme design, this one specializing in syntax
+  highlighting. By Rodrigo Luglio.
