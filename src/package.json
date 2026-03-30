@@ -24,13 +24,13 @@
     "color": "#e4e7eb",
     "theme": "light"
   },
-  "homepage": "https://github.com/kieranpotts/ocean/blob/dev/src/README.md",
+  "homepage": "https://github.com/kieranpotts/vscode-theme-ocean/blob/dev/src/README.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kieranpotts/ocean"
+    "url": "https://github.com/kieranpotts/vscode-theme-ocean"
   },
   "bugs": {
-    "url": "https://github.com/kieranpotts/ocean/issues"
+    "url": "https://github.com/kieranpotts/vscode-theme-ocean/issues"
   },
   "engines": {
     "vscode": "^1.91.0"

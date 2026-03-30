@@ -13,7 +13,7 @@ const main = async () => {
   try {
     await execAsync('npm run build')
     await execAsync('mkdir -p pkg')
-    await execAsync('cd dist && node ../node_modules/.bin/vsce package -o ../pkg/ocean-vscode-theme.vsix')
+    await execAsync('cd dist && node ../node_modules/.bin/vsce package -o ../pkg/vscode-theme-ocean.vsix')
   } catch (error) {
     console.error(`Error running CLI commands: ${error.message}`)
   }
