@@ -12,6 +12,6 @@ This documentation is for developers and maintainers of this project.
 - [Color palette](./docs/color-palette.md)
 - [Reference resources](./docs/references.md)
 
----
+-----
 
 Copyright © 2020-present Kieran Potts, [MIT license](./LICENSE.txt)
