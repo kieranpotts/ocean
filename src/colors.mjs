@@ -1,5 +1,5 @@
 import chroma from 'chroma-js'
-import tokens from './tokens.json' assert { type: "json" }
+import tokens from './tokens.json' with { type: "json" }
 
 const getColors = ({ theme }) => {
 
