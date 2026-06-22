@@ -7,8 +7,9 @@
     "name": "Kieran Potts"
   },
   "license": "MIT",
-  "displayName": "The Ocean",
-  "description": "A family of minimalist themes inspired by the ocean - WIP.",
+  "displayName": "The Ocean [DEPRECATED]",
+  "description": "⚠️ NO LONGER MAINTAINED. A family of minimalist themes inspired by the ocean.",
+  "deprecated": "This extension is no longer maintained.",
   "categories": [
     "Themes"
   ],
