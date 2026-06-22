@@ -1,8 +1,8 @@
-# Lumex
+# Ocean theme for VS Code
 
-**🚧 Under reconstruction.**
+> **🔒 ARCHIVED – This project is no longer maintained.** It's being replaced by [Lumex](https://github.com/kieranpotts/lumex/).
 
-A modern theme for VS Code.
+This repository contains the source code and build scripts for my Visual Studio Code theme, "The Ocean". You can find the theme in the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=kieranpotts.ocean-vscode-theme).
 
 ## Documentation
 
