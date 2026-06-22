@@ -6,4 +6,4 @@
 
 The publication process is now fully automated using `npm run publish`. All changes to be included in the release should have been committed before running this command, and the repository's working directory and staging index should be clean.
 
-Paste your Personal Access Token, if prompted. (This is encrypted in the `secrets` repository.)
+Paste your Personal Access Token, if prompted.
