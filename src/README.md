@@ -1,8 +1,8 @@
 # Ocean
 
-A family of ocean-themed themes for VS Code.
+> **🔒 ARCHIVED – This project is no longer maintained.**
 
-**These themes are a work in progress and are published only for testing purposes at this time.**
+A family of ocean-themed themes for VS Code.
 
 ## Acknowledgements
 
